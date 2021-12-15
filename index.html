@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Jio Mart</title>
     <style>
       #slider {
         overflow: hidden;
@@ -268,6 +268,82 @@
             background-color:#bce1fe;
             border-radius: 20px;            
         }
+
+      .essential_main_box {
+        /* border:1px solid red; */
+        width: 100%;
+        margin-bottom: 20px;
+        margin: auto;
+      }
+      .essentials {
+        height: 250px;
+        /* border:1px solid red; */
+        width: 90%;
+        margin: auto;
+        display: flex;
+        margin-bottom: 20px;
+        cursor: pointer;
+      }
+      .essential_small_box {
+        width: 23.5%;
+        margin-right: 16px;
+        /* border: 1px solid black; */
+        border-top: 20px;
+        background-color: #efd6da;
+        border-radius: 20px;
+      }
+      .offer_tags {
+        width: 100%;
+        height: 24px;
+        background-size: 100%;
+        text-align: center;
+        padding: 8px 0px 0px;
+        color: white;
+        font-weight: bold;
+        margin-bottom: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        background-image: url("https://www.jiomart.com/assets/version1638198149/smartweb/images/offer_bg.png");
+      }
+      b {
+        font-style: italic;
+      }
+      .essential_img {
+        width: 200px;
+        height: 200px;
+        margin: auto;
+        text-align: center;
+        font-weight: bold;
+      }
+      .essential_img:hover {
+        font-size: 20px;
+        /* shape-image-threshold: 300px; */
+        /* width:300px; */
+        inline-size: 300px;
+        /* margin: auto;    */
+        /* image-rendering: auto;  */
+        /* box-sizing: 400px;         */
+      }
+      .tital_box {
+        /* border:1px solid red; */
+        width: 90%;
+        margin: auto;
+      }
+      .essential_small_box:hover {
+        /* box-shadow: rgba(12, 12, 12, 0.48) 6px 2px 16px 0px, rgba(253, 247, 247, 0.8) -6px -2px 16px 0px; */
+        box-shadow: 10px 5px 5px #a6a6a6;
+      }
+      .essential_name {
+        color: black;
+      }
+      .houshold_small_box {
+        width: 23.5%;
+        margin-right: 16px;
+        /* border: 1px solid black; */
+        border-top: 20px;
+        background-color: #c5f8c0;
+        border-radius: 20px;
+      }
+
     </style>
   </head>
   <body>
@@ -318,180 +394,217 @@
     <div style="height: 246px; border: 1px solid red; text-align: center">
       <h1>Sliding part</h1>
     </div>
-    <!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Offer_on_daily_essential</title>
-    <style>
-    </style>
-</head>
-<body> -->
-<div class="essential_main_box">
-    <div class="tital_box">
+
+    <div class="essential_main_box">
+      <div class="tital_box">
         <h2>Offers on daily essentials</h2>
+      </div>
+      <div class="essentials">
+        <div class="essential_small_box">
+          <div class="offer_tags">
+            <span class="offers">
+              Up To
+              <b>20%</b>
+              OFF
+            </span>
+          </div>
+          <a
+            href="https://www.jiomart.com/c/groceries/home-care/all-purpose-cleaners/152"
+            title="dals & pulses"
+            class="home_essential"
+          >
+            <div class="essential_img">
+              <span class="imgspan">
+                <img
+                  img="hov"
+                  src="https://www.jiomart.com/images/category/17/thumb/dals-pulses-20200714.png"
+                  width="150px"
+                  height="150px"
+                /> </span
+              ><br />
+              <span class="essential_name">Dals & Pulses</span>
+            </div>
+          </a>
+        </div>
+        <div class="essential_small_box">
+          <div class="offer_tags">
+            <span class="offers">
+              Up To
+              <b>50%</b>
+              OFF
+            </span>
+          </div>
+          <a
+            href="https://www.jiomart.com/c/groceries/home-care/all-purpose-cleaners/152"
+            title="Atta"
+            class="home_essential"
+          >
+            <div class="essential_img">
+              <span class="imgspan">
+                <img
+                  src="https://www.jiomart.com/images/category/14/thumb/0-14.png"
+                  width="150px"
+                  height="150px"
+                /> </span
+              ><br />
+              <span class="essential_name">Atta, Flours & Sooji</span>
+            </div>
+          </a>
+        </div>
+        <div class="essential_small_box">
+          <div class="offer_tags">
+            <span class="offers">
+              Up To
+              <b>20%</b>
+              OFF
+            </span>
+          </div>
+          <a
+            href="https://www.jiomart.com/c/groceries/home-care/all-purpose-cleaners/152"
+            title="Edible Oil"
+            class="home_essential"
+          >
+            <div class="essential_img">
+              <span class="imgspan">
+                <img
+                  src="https://www.jiomart.com/images/category/18/thumb/0-18.png"
+                  width="150px"
+                  height="150px"
+                /> </span
+              ><br />
+              <span class="essential_name">Edible Oils</span>
+            </div>
+          </a>
+        </div>
+        <div class="essential_small_box">
+          <div class="offer_tags">
+            <span class="offers">
+              Up To
+              <b>10%</b>
+              OFF
+            </span>
+          </div>
+          <a
+            href="https://www.jiomart.com/c/groceries/home-care/all-purpose-cleaners/152"
+            title="Salt"
+            class="home_essential"
+          >
+            <div class="essential_img">
+              <span class="imgspan">
+                <img
+                  src="https://www.jiomart.com/images/category/20/thumb/0-20.png"
+                  width="150px"
+                  height="150px"
+                /> </span
+              ><br />
+              <span class="essential_name">Salt, Sugar & Jaggery</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="essentials">
+        <div class="essential_small_box">
+          <div class="offer_tags">
+            <span class="offers">
+              Up To
+              <b>15%</b>
+              OFF
+            </span>
+          </div>
+          <a
+            href="https://www.jiomart.com/c/groceries/home-care/all-purpose-cleaners/152"
+            title="Bath"
+            class="home_essential"
+          >
+            <div class="essential_img">
+              <span class="imgspan">
+                <img
+                  src="https://www.jiomart.com/images/category/119/thumb/bath-hand-wash-20200714.png"
+                  width="150px"
+                  height="150px"
+                /> </span
+              ><br />
+              <span class="essential_name">Bath & Hand Wash</span>
+            </div>
+          </a>
+        </div>
+        <div class="essential_small_box">
+          <div class="offer_tags">
+            <span class="offers">
+              Up To
+              <b>33%</b>
+              OFF
+            </span>
+          </div>
+          <a
+            href="https://www.jiomart.com/c/groceries/home-care/all-purpose-cleaners/152"
+            title="Toothpaste"
+            class="home_essential"
+          >
+            <div class="essential_img">
+              <span class="imgspan">
+                <img
+                  src="https://www.jiomart.com/images/category/7/thumb/toothpaste-20200520.png"
+                  width="150px"
+                  height="150px"
+                /> </span
+              ><br />
+              <span class="essential_name">Toothpaste</span>
+            </div>
+          </a>
+        </div>
+        <div class="essential_small_box">
+          <div class="offer_tags">
+            <span class="offers">
+              Up To
+              <b>50%</b>
+              OFF
+            </span>
+          </div>
+          <a
+            href="https://www.jiomart.com/c/groceries/home-care/all-purpose-cleaners/152"
+            title="Noodle"
+            class="home_essential"
+          >
+            <div class="essential_img">
+              <span class="imgspan">
+                <img
+                  src="https://www.jiomart.com/images/category/191/thumb/noodle-pasta-vermicelli-20200603.png"
+                  width="150px"
+                  height="150px"
+                /> </span
+              ><br />
+              <span class="essential_name">Noodle, Pasta, Vermicell</span>
+            </div>
+          </a>
+        </div>
+        <div class="essential_small_box">
+          <div class="offer_tags">
+            <span class="offers">
+              Up To
+              <b>30%</b>
+              OFF
+            </span>
+          </div>
+          <a
+            href="https://www.jiomart.com/c/groceries/home-care/all-purpose-cleaners/152"
+            title="biscuits"
+            class="home_essential"
+          >
+            <div class="essential_img">
+              <span class="imgspan">
+                <img
+                  src="https://www.jiomart.com/images/category/44/thumb/0-44.png"
+                  width="150px"
+                  height="150px"
+                /> </span
+              ><br />
+              <span class="essential_name">Biscuits & Cookies</span>
+            </div>
+          </a>
+        </div>
+      </div>
     </div>
-    <div class="essentials">
-        <div class="essential_small_box">
-            <div class="offer_tags">
-                <span class="offers">
-                     Up To 
-                    <b>20%</b>
-                     OFF 
-                </span>
-            </div>
-            <a href="https://www.jiomart.com/c/groceries/home-care/all-purpose-cleaners/152" title="dals & pulses" class="home_essential">
-                <div class="essential_img">
-                    <span class="imgspan">
-                        <img  img=  "hov" src="https://www.jiomart.com/images/category/17/thumb/dals-pulses-20200714.png" 
-                        width="150px" 
-                        height="150px" />    
-                    </span><br/>
-                    <span class="essential_name">Dals & Pulses</span>
-                </div>    
-            </a>
-        </div>
-        <div class="essential_small_box">
-            <div class="offer_tags">
-                <span class="offers">
-                     Up To 
-                    <b>50%</b>
-                     OFF 
-                </span>
-            </div>
-            <a href="https://www.jiomart.com/c/groceries/home-care/all-purpose-cleaners/152" title="Atta" class="home_essential">          
-                <div class="essential_img">
-                    <span class="imgspan">
-                        <img src="https://www.jiomart.com/images/category/14/thumb/0-14.png" 
-                        width="150px" 
-                        height="150px" />    
-                    </span><br/>
-                    <span class="essential_name">Atta, Flours & Sooji</span>
-                </div>     
-            </a>
-        </div>
-        <div class="essential_small_box">
-            <div class="offer_tags">
-                <span class="offers">
-                     Up To 
-                    <b>20%</b>
-                     OFF 
-                </span>
-            </div>
-            <a href="https://www.jiomart.com/c/groceries/home-care/all-purpose-cleaners/152" title="Edible Oil" class="home_essential">
-                <div class="essential_img">
-                    <span class="imgspan">
-                        <img src="https://www.jiomart.com/images/category/18/thumb/0-18.png" 
-                        width="150px" 
-                        height="150px" />    
-                    </span><br/>
-                    <span class="essential_name">Edible Oils</span>
-                </div>    
-            </a>   
-        </div>
-        <div class="essential_small_box">
-            <div class="offer_tags">
-                <span class="offers">
-                     Up To 
-                    <b>10%</b>
-                     OFF 
-                </span>
-            </div>
-            <a href="https://www.jiomart.com/c/groceries/home-care/all-purpose-cleaners/152" title="Salt" class="home_essential">
-                <div class="essential_img">
-                    <span class="imgspan">
-                        <img src="https://www.jiomart.com/images/category/20/thumb/0-20.png" 
-                        width="150px" 
-                        height="150px" />    
-                    </span><br/>
-                    <span class="essential_name">Salt, Sugar & Jaggery</span>
-                </div>    
-            </a>
-        </div>
-    </div>
-    <div class="essentials">
-        <div class="essential_small_box">
-            <div class="offer_tags">
-                <span class="offers">
-                     Up To 
-                    <b>15%</b>
-                     OFF 
-                </span>
-            </div>
-            <a href="https://www.jiomart.com/c/groceries/home-care/all-purpose-cleaners/152" title="Bath" class="home_essential">
-                <div class="essential_img">
-                    <span class="imgspan">
-                        <img src="https://www.jiomart.com/images/category/119/thumb/bath-hand-wash-20200714.png" 
-                        width="150px" 
-                        height="150px" />    
-                    </span><br/>
-                    <span class="essential_name">Bath & Hand Wash</span>
-                </div>     
-            </a>
-        </div>
-        <div class="essential_small_box">
-            <div class="offer_tags">
-                <span class="offers">
-                     Up To 
-                    <b>33%</b>
-                     OFF 
-                </span>
-            </div>
-            <a href="https://www.jiomart.com/c/groceries/home-care/all-purpose-cleaners/152" title="Toothpaste" class="home_essential">
-                <div class="essential_img">
-                    <span class="imgspan">
-                        <img src="https://www.jiomart.com/images/category/7/thumb/toothpaste-20200520.png" 
-                        width="150px" 
-                        height="150px" />    
-                    </span><br/>
-                    <span class="essential_name">Toothpaste</span>
-                </div>    
-            </a>
-        </div>
-        <div class="essential_small_box">
-            <div class="offer_tags">
-                <span class="offers">
-                     Up To 
-                    <b>50%</b>
-                     OFF 
-                </span>
-            </div>
-            <a href="https://www.jiomart.com/c/groceries/home-care/all-purpose-cleaners/152" title="Noodle" class="home_essential">
-                <div class="essential_img">
-                    <span class="imgspan">
-                        <img src="https://www.jiomart.com/images/category/191/thumb/noodle-pasta-vermicelli-20200603.png" 
-                        width="150px" 
-                        height="150px" />    
-                    </span><br/>
-                    <span class="essential_name">Noodle, Pasta, Vermicell</span>
-                </div>        
-            </a>
-        </div>
-        <div class="essential_small_box">
-            <div class="offer_tags">
-                <span class="offers">
-                     Up To 
-                    <b>30%</b>
-                     OFF 
-                </span>
-            </div>
-            <a href="https://www.jiomart.com/c/groceries/home-care/all-purpose-cleaners/152" title="biscuits" class="home_essential">
-                <div class="essential_img">
-                    <span class="imgspan">
-                        <img src="https://www.jiomart.com/images/category/44/thumb/0-44.png" 
-                        width="150px" 
-                        height="150px" />    
-                    </span><br/>
-                    <span class="essential_name">Biscuits & Cookies</span>
-                </div>    
-            </a>
-        </div>
-    </div>    
-</div>
-<!-- </body> -->
-</html>
     <h2 class="topCat">Shop from Top Categories</h2>
     <div style="height: 246px; border: 1px solid red; text-align: center">
       <h1>Sliding part</h1>
@@ -561,165 +674,215 @@
     <!------------------------------------------ Sayli's Work start------------------------------------->
     <div class="essential_main_box">
       <div class="tital_box">
-          <h2>Offers on Household & Personal care</h2>
+        <h2>Offers on Household & Personal care</h2>
       </div>
       <div class="essentials">
-          <div class="houshold_small_box">
-              <div class="offer_tags">
-                  <span class="offers">
-                       Up To 
-                      <b>20%</b>
-                       OFF 
-                  </span>
-              </div>
-              <a href="https://www.jiomart.com/c/groceries/home-care/all-purpose-cleaners/152" title="dals & pulses" class="home_essential">
-                  <div class="essential_img">
-                      <span class="imgspan">
-                          <img  img=  "hov" src="https://www.jiomart.com/images/category/37/thumb/all-purpose-cleaners-20200603.png" 
-                          width="150px" 
-                          height="150px" />    
-                      </span><br/>
-                      <span class="essential_name">All Purpose Cleaners</span>
-                  </div>    
-              </a>
+        <div class="houshold_small_box">
+          <div class="offer_tags">
+            <span class="offers">
+              Up To
+              <b>20%</b>
+              OFF
+            </span>
           </div>
-          <div class="houshold_small_box">
-              <div class="offer_tags">
-                  <span class="offers">
-                       Up To 
-                      <b>50%</b>
-                       OFF 
-                  </span>
-              </div>
-              <a href="https://www.jiomart.com/c/groceries/home-care/all-purpose-cleaners/152" title="Atta" class="home_essential">          
-                  <div class="essential_img">
-                      <span class="imgspan">
-                          <img src="https://www.jiomart.com/images/category/43/thumb/detergent-bars-20200520.png" 
-                          width="150px" 
-                          height="150px" />    
-                      </span><br/>
-                      <span class="essential_name">Detergent Bars</span>
-                  </div>     
-              </a>
+          <a
+            href="https://www.jiomart.com/c/groceries/home-care/all-purpose-cleaners/152"
+            title="dals & pulses"
+            class="home_essential"
+          >
+            <div class="essential_img">
+              <span class="imgspan">
+                <img
+                  img="hov"
+                  src="https://www.jiomart.com/images/category/37/thumb/all-purpose-cleaners-20200603.png"
+                  width="150px"
+                  height="150px"
+                /> </span
+              ><br />
+              <span class="essential_name">All Purpose Cleaners</span>
+            </div>
+          </a>
+        </div>
+        <div class="houshold_small_box">
+          <div class="offer_tags">
+            <span class="offers">
+              Up To
+              <b>50%</b>
+              OFF
+            </span>
           </div>
-          <div class="houshold_small_box">
-              <div class="offer_tags">
-                  <span class="offers">
-                       Up To 
-                      <b>20%</b>
-                       OFF 
-                  </span>
-              </div>
-              <a href="https://www.jiomart.com/c/groceries/home-care/all-purpose-cleaners/152" title="Edible Oil" class="home_essential">
-                  <div class="essential_img">
-                      <span class="imgspan">
-                          <img src="https://www.jiomart.com/images/category/17/thumb/feminine-hygiene-20200605.png" 
-                          width="150px" 
-                          height="150px" />    
-                      </span><br/>
-                      <span class="essential_name">Feminine Hygiene</span>
-                  </div>    
-              </a>   
+          <a
+            href="https://www.jiomart.com/c/groceries/home-care/all-purpose-cleaners/152"
+            title="Atta"
+            class="home_essential"
+          >
+            <div class="essential_img">
+              <span class="imgspan">
+                <img
+                  src="https://www.jiomart.com/images/category/43/thumb/detergent-bars-20200520.png"
+                  width="150px"
+                  height="150px"
+                /> </span
+              ><br />
+              <span class="essential_name">Detergent Bars</span>
+            </div>
+          </a>
+        </div>
+        <div class="houshold_small_box">
+          <div class="offer_tags">
+            <span class="offers">
+              Up To
+              <b>20%</b>
+              OFF
+            </span>
           </div>
-          <div class="houshold_small_box">
-              <div class="offer_tags">
-                  <span class="offers">
-                       Up To 
-                      <b>10%</b>
-                       OFF 
-                  </span>
-              </div>
-              <a href="https://www.jiomart.com/c/groceries/home-care/all-purpose-cleaners/152" title="Salt" class="home_essential">
-                  <div class="essential_img">
-                      <span class="imgspan">
-                          <img src="https://www.jiomart.com/images/category/28/thumb/0-28.png" 
-                          width="150px" 
-                          height="150px" />    
-                      </span><br/>
-                      <span class="essential_name">Skin Care</span>
-                  </div>    
-              </a>
+          <a
+            href="https://www.jiomart.com/c/groceries/home-care/all-purpose-cleaners/152"
+            title="Edible Oil"
+            class="home_essential"
+          >
+            <div class="essential_img">
+              <span class="imgspan">
+                <img
+                  src="https://www.jiomart.com/images/category/17/thumb/feminine-hygiene-20200605.png"
+                  width="150px"
+                  height="150px"
+                /> </span
+              ><br />
+              <span class="essential_name">Feminine Hygiene</span>
+            </div>
+          </a>
+        </div>
+        <div class="houshold_small_box">
+          <div class="offer_tags">
+            <span class="offers">
+              Up To
+              <b>10%</b>
+              OFF
+            </span>
           </div>
+          <a
+            href="https://www.jiomart.com/c/groceries/home-care/all-purpose-cleaners/152"
+            title="Salt"
+            class="home_essential"
+          >
+            <div class="essential_img">
+              <span class="imgspan">
+                <img
+                  src="https://www.jiomart.com/images/category/28/thumb/0-28.png"
+                  width="150px"
+                  height="150px"
+                /> </span
+              ><br />
+              <span class="essential_name">Skin Care</span>
+            </div>
+          </a>
+        </div>
       </div>
       <div class="essentials">
-          <div class="houshold_small_box">
-              <div class="offer_tags">
-                  <span class="offers">
-                       Up To 
-                      <b>15%</b>
-                       OFF 
-                  </span>
-              </div>
-              <a href="https://www.jiomart.com/c/groceries/home-care/all-purpose-cleaners/152" title="Bath" class="home_essential">
-                  <div class="essential_img">
-                      <span class="imgspan">
-                          <img src="https://www.jiomart.com/images/category/6/thumb/oral-care-20200603.png" 
-                          width="150px" 
-                          height="150px" />    
-                      </span><br/>
-                      <span class="essential_name">Oral Care</span>
-                  </div>     
-              </a>
+        <div class="houshold_small_box">
+          <div class="offer_tags">
+            <span class="offers">
+              Up To
+              <b>15%</b>
+              OFF
+            </span>
           </div>
-          <div class="houshold_small_box">
-              <div class="offer_tags">
-                  <span class="offers">
-                       Up To 
-                      <b>33%</b>
-                       OFF 
-                  </span>
-              </div>
-              <a href="https://www.jiomart.com/c/groceries/home-care/all-purpose-cleaners/152" title="Toothpaste" class="home_essential">
-                  <div class="essential_img">
-                      <span class="imgspan">
-                          <img src="https://www.jiomart.com/images/category/31/thumb/0-31.png" 
-                          width="150px" 
-                          height="150px" />    
-                      </span><br/>
-                      <span class="essential_name">Hair Care</span>
-                  </div>    
-              </a>
+          <a
+            href="https://www.jiomart.com/c/groceries/home-care/all-purpose-cleaners/152"
+            title="Bath"
+            class="home_essential"
+          >
+            <div class="essential_img">
+              <span class="imgspan">
+                <img
+                  src="https://www.jiomart.com/images/category/6/thumb/oral-care-20200603.png"
+                  width="150px"
+                  height="150px"
+                /> </span
+              ><br />
+              <span class="essential_name">Oral Care</span>
+            </div>
+          </a>
+        </div>
+        <div class="houshold_small_box">
+          <div class="offer_tags">
+            <span class="offers">
+              Up To
+              <b>33%</b>
+              OFF
+            </span>
           </div>
-          <div class="houshold_small_box">
-              <div class="offer_tags">
-                  <span class="offers">
-                       Up To 
-                      <b>50%</b>
-                       OFF 
-                  </span>
-              </div>
-              <a href="https://www.jiomart.com/c/groceries/home-care/all-purpose-cleaners/152" title="Noodle" class="home_essential">
-                  <div class="essential_img">
-                      <span class="imgspan">
-                          <img src="https://www.jiomart.com/images/category/10/thumb/0-10.png" 
-                          width="150px" 
-                          height="150px" />    
-                      </span><br/>
-                      <span class="essential_name">Baby Care</span>
-                  </div>        
-              </a>
+          <a
+            href="https://www.jiomart.com/c/groceries/home-care/all-purpose-cleaners/152"
+            title="Toothpaste"
+            class="home_essential"
+          >
+            <div class="essential_img">
+              <span class="imgspan">
+                <img
+                  src="https://www.jiomart.com/images/category/31/thumb/0-31.png"
+                  width="150px"
+                  height="150px"
+                /> </span
+              ><br />
+              <span class="essential_name">Hair Care</span>
+            </div>
+          </a>
+        </div>
+        <div class="houshold_small_box">
+          <div class="offer_tags">
+            <span class="offers">
+              Up To
+              <b>50%</b>
+              OFF
+            </span>
           </div>
-          <div class="houshold_small_box">
-              <div class="offer_tags">
-                  <span class="offers">
-                       Up To 
-                      <b>30%</b>
-                       OFF 
-                  </span>
-              </div>
-              <a href="https://www.jiomart.com/c/groceries/home-care/all-purpose-cleaners/152" title="biscuits" class="home_essential">
-                  <div class="essential_img">
-                      <span class="imgspan">
-                          <img src="https://www.jiomart.com/images/category/213/thumb/paper-tissues-napkins-20210727.png" 
-                          width="150px" 
-                          height="150px" />    
-                      </span><br/>
-                      <span class="essential_name">Papers Tissues & Napkins</span>
-                  </div>    
-              </a>
+          <a
+            href="https://www.jiomart.com/c/groceries/home-care/all-purpose-cleaners/152"
+            title="Noodle"
+            class="home_essential"
+          >
+            <div class="essential_img">
+              <span class="imgspan">
+                <img
+                  src="https://www.jiomart.com/images/category/10/thumb/0-10.png"
+                  width="150px"
+                  height="150px"
+                /> </span
+              ><br />
+              <span class="essential_name">Baby Care</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="houshold_small_box">
+          <div class="offer_tags">
+            <span class="offers">
+              Up To
+              <b>30%</b>
+              OFF
+            </span>
           </div>
-      </div>    
-  </div>
+          <a
+            href="https://www.jiomart.com/c/groceries/home-care/all-purpose-cleaners/152"
+            title="biscuits"
+            class="home_essential"
+          >
+            <div class="essential_img">
+              <span class="imgspan">
+                <img
+                  src="https://www.jiomart.com/images/category/213/thumb/paper-tissues-napkins-20210727.png"
+                  width="150px"
+                  height="150px"
+                /> </span
+              ><br />
+              <span class="essential_name">Papers Tissues & Napkins</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
     <!------------------------------------------ Sayli's Work end ------------------------------------->
     <!---------------------------------------------- largeImageStart start here ------------------------------------>
     <div class="largeImageStart">
