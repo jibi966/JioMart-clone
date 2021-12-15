@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/683b4b40e3.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+    <style>
+    
+      #nav_bar {
+        width: 100%;
+        height: 80px;
+        background-color: #008ecc;
+        display: flex;
+      }
+      #menu {
+        color: white;
+        font-size: 40px;
+        margin-left: 120px;
+        margin-top: 20px;
+      }
+      h1 {
+        margin-left: 30px;
+        color: white;
+
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+      #search {
+        height: 40px;
+        width: 700px;
+        background-color: white;
+        margin-left: 40px;
+        margin-top: 20px;
+        border-radius: 5px;
+        display: flex;
+      }
+      #search_menu {
+        color: rgb(7, 7, 7);
+        font-size: 20px;
+        margin-left: 40px;
+        margin-top: 5px;
+      }
+      #search_bar {
+        height: 30px;
+        width: 600px;
+        margin-left: 20px;
+        margin-top: 3px;
+        border-radius: 5px;
+        border: none;
+        background-color: transparent;
+        resize: none;
+        outline: none;
+      }
+      #search_button {
+        border: none;
+        background-color: transparent;
+        resize: none;
+        outline: none;
+        color: rgb(7, 7, 7);
+        font-size: 20px;
+        margin-right: 20px;
+        margin-bottom: 3px;
+      }
+
+      #signin_icon {
+        margin-left: 60px;
+        font-size: 25px;
+        border: none;
+        background-color: transparent;
+        outline: none;
+        color: white;
+      }
+      #signin_text {
+        font-size: 14px;
+        font-weight: bold;
+        border: none;
+        background-color: transparent;
+        outline: none;
+        color: white;
+      }
+      #cart_icon {
+        margin-left: 50px;
+        font-size: 20px;
+        border: none;
+        background-color: transparent;
+        resize: none;
+        outline: none;
+        color: white;
+      }
+      #cart_text {
+        font-weight: bold;
+        font-size: 14px;
+        border: none;
+        background-color: transparent;
+        resize: none;
+        outline: none;
+        color: white;
+      }
+      /* -- --------------------------------------------------nav bar 2------------------------------------------- -- */
+      #nav_bar2 {
+        width: 100%;
+        height: 50px;
+        background-color: #ececed;
+        display: flex;
+        align-items: center;
+      }
+      #loction {
+        display: flex;
+      }
+      #loction > i {
+        margin-left: 120px;
+        font-size: 30px;
+        margin-top: 20px;
+        margin-right: 10px;
+        color: #878b9c;
+      }
+      #nav_bar2 > a {
+        margin-left: 70px;
+        text-decoration: none;
+        font-weight: bold;
+        color: black;
+        font-family: JioLight;
+      }
+      #nav_bar2 > a > i {
+        margin-left: 2px;
+        color: #767676;
+      }
+      /* -------------------------------------------------------------sidenav bar------------------------------------------------------ */
+      .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: white;
+        overflow: hidden;
+        transition: 0.5s;
+      }
+      #sidenav_home > a {
+        padding: 20px 8px 8px 20px;
+        text-decoration: none;
+        color: black;
+        display: block;
+        transition: 0.3s;
+       
+      }
+      .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 25px;
+        margin-left: 70px;
+        color: white;
+        margin-top: 10px;
+      }
+      .myacc {
+        background-color: #008ecc;
+        height: 100px;
+      }
+      #hello_button {
+        display: flex;
+        border: none;
+        background-color: transparent;
+        resize: none;
+        outline: none;
+        color: white;
+        margin-left: 10px;
+      }
+      #hello_icon {
+        font-size: 20px;
+        margin-top: 10px;
+        
+      }
+      #hello_text {
+      margin-left: 10px;
+        font-size: 15px;
+      }
+      #account {
+        display: flex;
+      }
+      .accdiv {
+        border: 1px solid white;
+        width: 150px;
+        height: 25px;
+        color: white;
+        text-align: center;
+        margin-left: 7px;
+        padding-top: 7px;
+        font-weight: bold;
+      }
+      #order_box {
+        margin-left: 5px;
+      }
+      .line {
+        height: 5px;
+        width: 100%;
+        background-color: #ececed;
+        margin-top: 6px;
+      }
+      #sidenav_home {
+        overflow: scroll;
+        height: 600px;
+        top: 0;
+        left: 0;
+        background-color: white;
+      }
+      #sidenav_home > h4 ,p{
+        padding: 0px 0px 0px 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- -------------------------------------------------Nav Bar-----------------------------------------------  -->
+    <div id="nav_bar">
+      <i onclick="sidenav()" id="menu" class="fas fa-bars"></i>
+      <h1>JioMart</h1>
+      <div id="search">
+        <input
+          id="search_bar"
+          type="text"
+          placeholder="Search essentials,grcoceries,and more...."
+        />
+        <button id="search_button">
+          <i id="search_menu" class="fas fa-list-ul"></i>
+        </button>
+      </div>
+      <button id="signin_icon" class="signin">
+        <i class="fas fa-user-alt"></i>
+      </button>
+      <button id="signin_text" class="signin">Sign in/ sign up</button>
+      <button id="cart_icon"><i class="fas fa-shopping-cart"></i></button>
+      <button id="cart_text">Cart</button>
+    </div>
+    <!-- --------------------------------------------------nav bar 2------------------------------------------- -->
+    <div id="nav_bar2">
+      <div id="loction">
+        <i id="loctin_icon" class="fas fa-map-marker-alt"></i>
+        <p>Deliver to <br />444303</p>
+      </div>
+      <a href="">Fruits & Vegetables <i class="fas fa-chevron-down"></i></a>
+      <a href="">Premium Fruits <i class="fas fa-chevron-down"></i></a>
+      <a href="">Dairy & Bakery <i class="fas fa-chevron-down"></i></a>
+      <a href="">Staples <i class="fas fa-chevron-down"></i></a>
+      <a href="">Men <i class="fas fa-chevron-down"></i></a>
+      <a href="">Boys <i class="fas fa-chevron-down"></i></a>
+      <a href="">Girls <i class="fas fa-chevron-down"></i></a>
+    </div>
+  </body>
+
+  <!-- -------------------------------------------------sidenav side ----------------------------------- -->
+  <div id="mysidebar" class="sidenav">
+    <div id="myacc" class="myacc">
+      <a href="" class="closebtn" onclick="closenav()"
+        ><i class="fas fa-times"></i
+      ></a>
+      <button id="hello_button">
+        <span id="hello_icon" class="hello"
+          ><i class="fas fa-user-circle"></i>
+        </span>
+        <h3 id="hello_text" class="hello">Hello, Sign in</h3>
+      </button>
+
+      <div id="account">
+        <div id="account_box" class="accdiv">Account</div>
+        <div id="order_box" class="accdiv">Orders</div>
+      </div>
+    </div>
+
+    <div id="sidenav_home">
+      <a href="">Home</a>
+      <a href="">Shop Category</a>
+      <a href="">My list</a>
+      <a href="">JioMart wallet</a>
+      <a href="">Jiomart cashback</a>
+      <a href="">Jiomart Gift Store</a>
+      <a href="">Jiomart Gift Card</a>
+      <a href="">All offers</a>
+      <div class="line"></div>
+      <a href="">My Account</a>
+      <a href="">Need Help</a>
+      <a href="">About us</a>
+      <a href="">Guide</a>
+      <div class="line"></div>
+      
+      <h4>CONTACT US</h4>
+      <p>WhatsApp us : 70003 70003</p>
+      <p>
+        Call Us : 1800 890 1222 <br/>
+        8:00 AM to 8:00 PM, 365 days
+      </p>
+
+      <p>
+        Please note that you are accessing the BETA Version of www.jiomart.com
+      </p>
+
+      <p>
+        Should you encounter any bugs, glitches, lack of functionality, delayed
+        deliveries, billing errors or other problems on the beta website, please
+        email us on cs@jiomart.com 
+      </p>
+      <p>DOWNLOAD APP</p>
+    </div>
+  </div>
+</html>
+<script>
+  function sidenav() {
+    document.getElementById("mysidebar").style.width = "330px";
+  }
+  function closenav() {
+    document.getElementById("mysidebar").style.width = "0";
+  }
+</script>
