@@ -1,30 +1,20 @@
 document.querySelector('#Gotp').addEventListener('click',otpValidate);
-var numArr = JSON.parse(localStorage.getItem('numLists')) || [] ;
+var numArr = JSON.parse(localStorage.getItem('DataBase')) || [] ;
 var mobNum = document.querySelector('#mob').value ;
+var numberIdentifier = JSON.parse(localStorage.getItem('NumbersArray')) || [];
+if(numberIdentifier.length > 0){
+    numberIdentifier.length = 0;
+}
 
 
 function otpValidate(){
 
+    if(mobNum.length == 10 && numArr.length > 0 ){
 
-
-    // document.querySelector('#otpnum').value ="";
-    // document.querySelector('#name').value="";
-    // document.querySelector('#email').value="";
-
-    if(mobNum.length != 10){
-        alert('Please enter valid Number');
-        // document.getElementById('Gotp').hidden = false;
-        // document.getElementById('loginbtn').hidden = true;
-    }
-    else{
-        if(numArr.length == 0 ){
-            signInForm();
-        }
-        else{
-            document.querySelector('#otpnum').value="";
+        document.querySelector('#otpnum').value="";
             numArr.map(function(elem){
 
-                if(Number(mobNum) == Number(elem.mobile)){
+                if(mobNum == elem.mobile){
 
                     document.getElementById('Gotp').hidden = true;
                     document.querySelector('#loginbtn').hidden = false ;
@@ -33,22 +23,25 @@ function otpValidate(){
                     document.querySelector('#loginbtn').addEventListener('click',function(){
                         var check = document.querySelector('#otpnum').value;
                         if( check == '123456'){
+                            var numObj={
+                                enteredNum : mobNum,
+                            }
+                            numberIdentifier.push(numObj);
+                            localStorage.setItem('NumbersArray',JSON.stringify(numberIdentifier));
                             window.location.href ='Products.html';
                         }
                     })
-
-
                 }
                 else{
                     signInForm();
                 }
             });
-        }
 
 
     }
-
-
+    else{
+        signInForm();
+    }
 }
 function FormData(){
 
@@ -63,26 +56,23 @@ function FormData(){
         document.querySelector('#otp').hidden = true ;
         document.getElementById('Gotp').hidden = false;
         document.getElementById('loginbtn').hidden = true;
-
-
     });
-
-
 }
 
 function signInForm(){
-
 
     document.querySelector('#form').hidden = false ;
     document.getElementById('Gotp').hidden = true;
     document.querySelector('#loginbtn').hidden = false ;
     document.querySelector('#otp').hidden = false ;
-    document.querySelectorAll('input').textContent ="";
+    document.querySelector('#name').value ="";
+    document.querySelector('#email').value ="";
+    document.querySelector('#otpnum').value ="";
+
 
     FormData();
 
     document.querySelector('#loginbtn').addEventListener('click',function(){
-        console.log("cjeck");
 
         var name = document.querySelector('#name').value;
         var email = document.querySelector('#email').value;
@@ -97,19 +87,30 @@ function signInForm(){
         };
 
         if( mobNum.length == 10 && name.length >=3 && password.length > 5 && password == repassword  && check == '123456'){
-            console.log("object");
+            var numObj={
+                enteredNum : mobNum,
+            }
+            numberIdentifier.push(numObj);
+            localStorage.setItem('NumbersArray',JSON.stringify(numberIdentifier));
             numArr.push(details);
-            localStorage.setItem('numLists',JSON.stringify(numArr));
+            localStorage.setItem('DataBase',JSON.stringify(numArr));
             window.location.href = 'myAccount.html';
 
         }
         else{
-            console.log("object");
+            alert('check the details again');
         }
 
     });
-
 }
+
+document.querySelector('.terms').addEventListener('click', function(){
+    window.location.href ='Terms.html'
+});
+
+document.querySelector('.privacy').addEventListener('click', function(){
+    window.location.href ='Privacy.html'
+});
 
 
 
