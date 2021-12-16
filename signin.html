@@ -290,6 +290,147 @@
         margin-top: 10px;
       }
     </style>
+    <style id='sign'>
+            /* media Queries */
+            @media only screen and (min-width:591px) and (max-width:800px){
+
+            #form>input{
+                width: 250px;
+            }
+
+            }
+            @media screen and (min-width:0px) and (max-width:590px){
+
+            .imgDiv{
+                display: none;
+            }
+
+            #form>input{
+                width: 250px;
+            }
+            .signin{
+                min-width: 500px;
+            }
+
+            }
+
+
+            /* box shadows */
+            .signin{
+            border-radius: 18px;
+            display: flex;
+            flex-flow: wrap;
+            width: 75%;
+            margin: auto;
+            margin-top: 30px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            }
+            .signinDiv{
+            padding: 5% 10%;
+            }
+            .signin>.imgDiv{
+            width: 488px;
+            height: 528px;
+            }
+            img{
+            border-radius:18px 0px;
+            }
+
+            .mobDiv{
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            width: auto;
+            padding:1%;
+
+
+            }
+            #mob{
+            width: auto;
+
+            }
+            #numRemoval{
+            color: red;
+            margin-left: 10%;
+            }
+
+            .forward{
+            padding:5% 45%;
+            }
+
+            /* For scrolls disappearence */
+            .signin>div>div>div>input{
+            border: none;
+            -moz-appearance: textfield;
+            width: 250px;
+            font-size: 15px;
+            }
+            input:focus ,textarea:focus, select:focus{
+            outline: none;
+            }
+
+            input::-webkit-inner-spin-button,
+            input::-webkit-outer-spin-button{
+            -webkit-appearance: none;
+            margin: 0;
+            }
+
+            .info>p{
+            margin: -2% 0% 10% -5%;
+            color: grey;
+            }
+
+            .prefix{
+            margin-right: 5px;
+            }
+            .terms,.privacy{
+            color: red;
+            }
+            .TandC{
+            margin: auto;
+            width: 330px;
+            line-height: 25px;
+            text-align: center;
+            }
+            #form>input{
+            margin-top: 5%;
+            width: 97%;
+            font-size: 14px;
+            padding: 1.5%;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            }
+            #whatsappCB{
+            display: grid;
+            grid-template-columns: 50px 300px 25px;
+            }
+            #whatsappCB>img{
+            margin-top: 15px;
+            }
+            #otp>h3{
+            color: lightseagreen;
+            margin-top: 10px;
+            }
+            #otp>input{
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            padding: 2%;
+            margin-top: 10px;
+
+
+            }
+            #loginbtn{
+            background-color:#0191D8 ;
+            color: white;
+            padding: 10px 200px;
+            border: #0191D8;
+            margin-left: -170px;
+            font-size: 14px;
+            border-radius: 6px;
+
+            }
+            .terms,.privacy:hover{
+            cursor: pointer;
+            }
+
+
+    </style>
   </head>
   <body>
         <div id='navBar'>
@@ -527,6 +668,54 @@
               </div>
             </div>
         </div>
+        <div id='signin'>
+            <div class="signin">
+                <div class='imgDiv'>
+                    <img src="https://www.jiomart.com/msassets/images/login-banner.jpg" alt="advertisement">
+                </div>
+                <div class='signinDiv'>
+                    <div >
+                        <div class='info'>
+                            <h2>Sign in</h2>
+                            <p id='signininfo'>Sign in to access your Orders, Offers and Wishlist.</p>
+                        </div>
+                        <div class='mobDiv'>
+                            <span class='prefix'> +91 -</span>
+                            <input  id='mob' type="number" placeholder=' Enter Your Mobile Number' ><span id='numRemoval'></span>
+                        </div>
+                        <!-- Hide Div -->
+                        <form id='form' hidden>
+
+                            <input id='name'  type="text"  placeholder='Full Name' ><br>
+                            <input id='email' placeholder='Enter your mail' type="email "><br>
+                            <input id='password' placeholder='Enter your password' type="password" ><br>
+                            <input id='re-t-password' placeholder='Re-enter your password' type="password" ><br>
+                            <div id='logo'>
+                                <div id='whatsappCB'>
+                                    <img src='https://www.jiomart.com/msassets/images/icons/whatsapp.png' width='40px' height='40px' id='whatAppimg'>
+                                    <p>Enable order updates and important information on Whatsapp </p>
+                                    <input type="checkbox" id="">
+                                </div>
+                                <hr>
+                            </div>
+
+                        </form>
+                        <!--  -->
+                        <div id='otp' hidden>
+                            <h3>Verify OTP</h3>
+                            <input type="number" id='otpnum'>
+                        </div>
+                        <div class='forward'>
+                            <img id='Gotp' src="https://img.icons8.com/ios-filled/60/008ECC/circled-chevron-right.png"/>
+                            <button id='loginbtn' hidden>verify</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='TandC'>
+                <p>By continuing you agree to our <span class='terms'>Terms of service</span> and <span class='privacy'> Privacy & Legal Policy.</span></p>
+            </div>
+        </div>
 
 
 </html>
@@ -537,4 +726,136 @@
   function closenav() {
     document.getElementById("mysidebar").style.width = "0";
   }
+  document.querySelector('#Gotp').addEventListener('click',otpValidate);
+    var numArr = JSON.parse(localStorage.getItem('DataBase')) || [] ;
+    var mobNum = document.querySelector('#mob').value ;
+    var numberIdentifier = JSON.parse(localStorage.getItem('NumbersArray')) || [];
+    if(numberIdentifier.length > 0){
+        numberIdentifier.length = 0;
+    }
+
+
+    function otpValidate(){
+
+
+        if(mobNum.length == 10 && numArr.length > 0 ){
+
+            document.querySelector('#otpnum').value="";
+                numArr.map(function(elem){
+
+                    if(mobNum == elem.mobile){
+
+                        document.getElementById('Gotp').hidden = true;
+                        document.querySelector('#loginbtn').hidden = false ;
+                        document.querySelector('#otp').hidden = false ;
+
+                        document.querySelector('#loginbtn').addEventListener('click',function(){
+                            var check = document.querySelector('#otpnum').value;
+                            if( check == '123456'){
+                                var numObj={
+                                    enteredNum : mobNum,
+                                }
+                                numberIdentifier.push(numObj);
+                                localStorage.setItem('NumbersArray',JSON.stringify(numberIdentifier));
+                                window.location.href ='Products.html';
+                            }
+                        })
+                    }
+
+                    else{
+                        signInForm();
+                    }
+                });
+
+
+        }
+        else if(mobNum == '007'){
+            document.getElementById('Gotp').hidden = true;
+            document.querySelector('#loginbtn').hidden = false ;
+            document.querySelector('#otp').hidden = false ;
+            document.querySelector('#loginbtn').addEventListener('click',function(){
+                var check = document.querySelector('#otpnum').value;
+                if( check == '007'){
+                    window.location.href ='admin.html';
+                }
+                else{
+                    alert('check your Number');
+                }
+
+            });
+        }
+
+        else{
+            signInForm();
+        }
+    }
+    function FormData(){
+
+        document.querySelector('#numRemoval').textContent = "Change";
+
+        document.querySelector('#numRemoval').addEventListener('click',function(){
+
+            document.querySelector('#signininfo').innerHTML = "please enter your details.";
+            document.querySelector('#mob').value = "";
+            document.querySelector('#numRemoval').textContent = "";
+            document.querySelector('#form').hidden = true ;
+            document.querySelector('#otp').hidden = true ;
+            document.getElementById('Gotp').hidden = false;
+            document.getElementById('loginbtn').hidden = true;
+        });
+    }
+
+    function signInForm(){
+
+        document.querySelector('#form').hidden = false ;
+        document.getElementById('Gotp').hidden = true;
+        document.querySelector('#loginbtn').hidden = false ;
+        document.querySelector('#otp').hidden = false ;
+        document.querySelector('#name').value ="";
+        document.querySelector('#email').value ="";
+        document.querySelector('#otpnum').value ="";
+
+
+        FormData();
+
+        document.querySelector('#loginbtn').addEventListener('click',function(){
+
+            var name = document.querySelector('#name').value;
+            var email = document.querySelector('#email').value;
+            var password = document.querySelector('#password').value;
+            var repassword = document.querySelector('#re-t-password').value;
+            var check = document.querySelector('#otpnum').value ;
+            var details = {
+                Fname : name,
+                mail : email,
+                pwd : password,
+                mobile : mobNum ,
+            };
+
+            if( mobNum.length == 10 && name.length >=3 && password.length > 5 && password == repassword  && check == '123456'){
+                var numObj={
+                    enteredNum : mobNum,
+                }
+                numberIdentifier.push(numObj);
+                localStorage.setItem('NumbersArray',JSON.stringify(numberIdentifier));
+                numArr.push(details);
+                localStorage.setItem('DataBase',JSON.stringify(numArr));
+                window.location.href = 'myAccount.html';
+
+            }
+            else{
+                alert('check the details again');
+            }
+
+        });
+    }
+
+    document.querySelector('.terms').addEventListener('click', function(){
+        window.location.href ='Terms.html'
+    });
+
+    document.querySelector('.privacy').addEventListener('click', function(){
+        window.location.href ='Privacy.html'
+    });
+
 </script>
