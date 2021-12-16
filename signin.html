@@ -308,7 +308,7 @@
             #form>input{
                 width: 250px;
             }
-            .signin{
+            .login{
                 min-width: 500px;
             }
 
@@ -316,7 +316,7 @@
 
 
             /* box shadows */
-            .signin{
+            .login{
             border-radius: 18px;
             display: flex;
             flex-flow: wrap;
@@ -328,7 +328,7 @@
             .signinDiv{
             padding: 5% 10%;
             }
-            .signin>.imgDiv{
+            .login>.imgDiv{
             width: 488px;
             height: 528px;
             }
@@ -357,7 +357,7 @@
             }
 
             /* For scrolls disappearence */
-            .signin>div>div>div>input{
+            .login>div>div>div>input{
             border: none;
             -moz-appearance: textfield;
             width: 250px;
@@ -669,7 +669,7 @@
             </div>
         </div>
         <div id='signin'>
-            <div class="signin">
+            <div class="login">
                 <div class='imgDiv'>
                     <img src="https://www.jiomart.com/msassets/images/login-banner.jpg" alt="advertisement">
                 </div>
@@ -681,7 +681,7 @@
                         </div>
                         <div class='mobDiv'>
                             <span class='prefix'> +91 -</span>
-                            <input  id='mob' type="number" placeholder=' Enter Your Mobile Number' ><span id='numRemoval'></span>
+                            <input  id='mob' type="number" placeholder=' Enter Your Mobile Number' ><button></button><span id='numRemoval'></span>
                         </div>
                         <!-- Hide Div -->
                         <form id='form' hidden>
@@ -726,9 +726,10 @@
   function closenav() {
     document.getElementById("mysidebar").style.width = "0";
   }
+
+
   document.querySelector('#Gotp').addEventListener('click',otpValidate);
     var numArr = JSON.parse(localStorage.getItem('DataBase')) || [] ;
-    var mobNum = document.querySelector('#mob').value ;
     var numberIdentifier = JSON.parse(localStorage.getItem('NumbersArray')) || [];
     if(numberIdentifier.length > 0){
         numberIdentifier.length = 0;
@@ -736,9 +737,28 @@
 
 
     function otpValidate(){
+        var mobNum = document.querySelector('#mob').value ;
 
+        if(mobNum == 007 ){
+          FormData()
 
-        if(mobNum.length == 10 && numArr.length > 0 ){
+          document.getElementById('Gotp').hidden = true;
+          document.querySelector('#loginbtn').hidden = false ;
+          document.querySelector('#otp').hidden = false ;
+          document.querySelector('#loginbtn').addEventListener('click',function(){
+          var check = document.querySelector('#otpnum').value;
+            if( check == 007){
+              window.location.href ='admin.html';
+            }
+            else{
+              alert('check your Number');
+            }
+
+          });
+
+        }
+
+        else if(mobNum.length == 10 && numArr.length > 0 ){
 
             document.querySelector('#otpnum').value="";
                 numArr.map(function(elem){
@@ -748,16 +768,19 @@
                         document.getElementById('Gotp').hidden = true;
                         document.querySelector('#loginbtn').hidden = false ;
                         document.querySelector('#otp').hidden = false ;
-
+                        FormData();
                         document.querySelector('#loginbtn').addEventListener('click',function(){
                             var check = document.querySelector('#otpnum').value;
-                            if( check == '123456'){
+                            if( check == 123456){
                                 var numObj={
                                     enteredNum : mobNum,
                                 }
                                 numberIdentifier.push(numObj);
                                 localStorage.setItem('NumbersArray',JSON.stringify(numberIdentifier));
                                 window.location.href ='Products.html';
+                            }
+                            else{
+                              alert('enter valid OTP')
                             }
                         })
                     }
@@ -769,24 +792,8 @@
 
 
         }
-        else if(mobNum == '007'){
-            document.getElementById('Gotp').hidden = true;
-            document.querySelector('#loginbtn').hidden = false ;
-            document.querySelector('#otp').hidden = false ;
-            document.querySelector('#loginbtn').addEventListener('click',function(){
-                var check = document.querySelector('#otpnum').value;
-                if( check == '007'){
-                    window.location.href ='admin.html';
-                }
-                else{
-                    alert('check your Number');
-                }
-
-            });
-        }
-
         else{
-            signInForm();
+          signInForm();
         }
     }
     function FormData(){
@@ -814,6 +821,7 @@
         document.querySelector('#name').value ="";
         document.querySelector('#email').value ="";
         document.querySelector('#otpnum').value ="";
+        var mobNum = document.querySelector('#mob').value ;
 
 
         FormData();
@@ -832,10 +840,8 @@
                 mobile : mobNum ,
             };
 
-            if( mobNum.length == 10 && name.length >=3 && password.length > 5 && password == repassword  && check == '123456'){
-                var numObj={
-                    enteredNum : mobNum,
-                }
+            if( mobNum.length == 10 && name.length >=3 && password.length > 5 && password == repassword  && check == 123456){
+
                 numberIdentifier.push(numObj);
                 localStorage.setItem('NumbersArray',JSON.stringify(numberIdentifier));
                 numArr.push(details);
