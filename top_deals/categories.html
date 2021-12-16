@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .header{border: 1px solid red; height: 150px;}
+        .leftside{width: 245px;height:900px;}
+        .cat{font-size: 20px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+             font-weight: normal; padding-left: 10px;padding-top: 5px;
+            margin-bottom: 10px;}
+        .content{
+            padding-left: 25px;
+            cursor: pointer;
+            display: none;
+            overflow: hidden;
+        line-height: 25px;}
+        .collapsible{
+            cursor: pointer;
+            padding-top: 8px;
+             display:flex;
+             width: 90%;
+             border: 0;
+             background-color: transparent;
+             font-size: 15px;
+             height: 35px;
+             box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+            }
+        .dropdown{
+            height: 15px;
+            width: 15px;
+            margin-right: 5px;
+        } 
+        .box{
+            box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+        }        
+    </style>
+</head>
+<body>
+    <div class="header"></div>
+    <div style="display: flex;"></div>
+    <div class="leftside">
+    <div class="box">
+      <div class="cat">Categories</div>
+      <button type="button" class="collapsible"><div><img class="dropdown" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzlpy2TiXEoF3kZEDe12lk1ctYhZfrubOZ-aBnjX6VnMjgN1Lj9EK5sIoC1MEcu7as_Rg&usqp=CAU"  alt=""></div>
+        Fruits & Vegetables 
+          </button>
+      <div class="content">
+          <a>Fresh Fruits</a><br>
+          <a>Fresh Vegetables</a><br>
+          <a>Herbs & Seasonings</a><br>
+          <a>Exotic Fruits & Vegetables</a>
+      </div>
+      <button type="button" class="collapsible"><div><img class="dropdown" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQgd_M8knU3KW37lgwgIapz4qemt9xLbjW5cNAsvpTvlPel8fGe"  alt=""></div>
+        Premium Fruits
+          </button>
+      <div class="content">
+          <a>Avocado, Peach, Plum</a><br>
+          <a>Cherries, Berries & Exotic Fruits</a><br>
+          <a>Pomegranate, Papaya & Pineapple</a><br>
+          <a>Citrus, Mango & Grapes</a><br>
+          <a>Apples & Pears</a><br>
+          <a>Banana, Melons & Coconut</a><br>
+          <a>Seasonal & Minor Fruits</a><br>
+          <a>Dates</a><br>
+          <a>Organic & Residue Certified</a><br>
+          <a>Gift, Assorted & XL Packs</a><br>
+      </div>
+      <button type="button" class="collapsible"><div><img class="dropdown" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQgd_M8knU3KW37lgwgIapz4qemt9xLbjW5cNAsvpTvlPel8fGe"  alt=""></div>
+        Dairy & Bakery
+          </button>
+      <div class="content">
+          <a>Dairy</a><br>
+          <a>Toast & Khari</a><br>
+          <a>Cakes & Muffins</a><br>
+          <a>Breads and Buns</a><br>
+          <a>Baked Cookies</a><br>
+          <a>Bakery Snacks</a><br>
+          <a>Batter & Chutney</a><br>
+          <a>Cheese</a><br>
+          <a>Ghee</a><br>
+          <a>Paneer & Tofu</a><br>
+      </div>
+      <button type="button" class="collapsible"><div><img class="dropdown" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQgd_M8knU3KW37lgwgIapz4qemt9xLbjW5cNAsvpTvlPel8fGe"  alt=""></div>
+       Staples
+          </button>
+      <div class="content">
+          <a>Atta, Flours & Sooji</a><br>
+          <a>Dals & Pulses</a><br>
+          <a>Rice & Rice Products</a><br>
+          <a>Edible Oils</a><br>
+          <a>Masalas & Spices</a><br>
+          <a>Salt, Sugar & Jaggery</a><br>
+          <a>Soya Products, Wheat & Other Grains</a><br>
+          <a>Dry Fruits & Nuts</a><br>
+          <a>Combo Offer</a><br>
+          <a></a><br>
+      </div>
+      <button type="button" class="collapsible"><div><img class="dropdown" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQgd_M8knU3KW37lgwgIapz4qemt9xLbjW5cNAsvpTvlPel8fGe"  alt=""></div>
+        Snacks & Branded Foods
+           </button>
+       <div class="content">
+           <a>Biscuits & Cookies</a><br>
+           <a>Noodle, Pasta, Vermicelli</a><br>
+           <a>Breakfast Cereals</a><br>
+           <a>Snacks & Namkeen</a><br>
+           <a>Chocolates & Candies</a><br>
+           <a>Ready To Cook & Eat</a><br>
+           <a>Frozen Veggies & Snacks</a><br>
+           <a>Spreads, Sauces, Ketchup</a><br>
+           <a>Indian Sweets</a><br>
+           <a>Pickles & Chutney</a><br>
+           <a>Extracts & Flavouring</a><br>
+       </div>
+       <button type="button" class="collapsible"><div><img class="dropdown" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQgd_M8knU3KW37lgwgIapz4qemt9xLbjW5cNAsvpTvlPel8fGe"  alt=""></div>
+        Beverages
+           </button>
+       <div class="content">
+           <a>Tea</a><br>
+           <a>Coffee</a><br>
+           <a>Fruit juices</a><br>
+           <a>Energy & Soft Drinks</a><br>
+           <a>Health Drink & Supplement</a><br>
+           <a>Soda & Flavoured Water</a><br>
+       </div>
+       <button type="button" class="collapsible"><div><img class="dropdown" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQgd_M8knU3KW37lgwgIapz4qemt9xLbjW5cNAsvpTvlPel8fGe"  alt=""></div>
+        Personal Care
+           </button>
+       <div class="content">
+           <a>Hair Care</a><br>
+           <a>Oral Care</a><br>
+           <a>Skin Care</a><br>
+           <a>Bath & Hand Wash</a><br>
+           <a>Body Wash & Bathing Accessories</a><br>
+           <a>Feminine Hygiene</a><br>
+           <a>Men's Grooming</a><br>
+           <a>Deo & Fragrances</a><br>
+           <a>Health & Wellness</a><br>
+           <a>Makeup</a><br>
+       </div>
+       <button type="button" class="collapsible"><div><img class="dropdown" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQgd_M8knU3KW37lgwgIapz4qemt9xLbjW5cNAsvpTvlPel8fGe"  alt=""></div>
+        Home Care
+           </button>
+       <div class="content">
+           <a>Detergents</a><br>
+           <a>Dishwash</a><br>
+           <a>All Purpose Cleaners</a><br>
+           <a>Fresheners & Repellents</a><br>
+           <a>Shoe Care</a><br>
+           <a>Pet Supplies</a><br>
+       </div>
+       <button type="button" class="collapsible"><div><img class="dropdown" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQgd_M8knU3KW37lgwgIapz4qemt9xLbjW5cNAsvpTvlPel8fGe"  alt=""></div>
+        Home & Kitchen
+           </button>
+       <div class="content">
+           <a>Kitchenware</a><br>
+           <a>Dining</a><br>
+           <a>Furnishing</a><br>
+           <a>Home Decor</a><br>
+           <a>Furniture</a><br>
+           <a>Home Appliances</a><br>
+           <a>Toys, Games & Fitness</a><br>
+           <a>Electrical</a><br>
+           <a>Bathroom & Laundry Accessories</a><br>
+           <a>Disposables</a><br>
+           <a>Stationery</a><br>
+           <a>Bags & Travel Luggage</a><br>
+           <a>Mops, Brushes & Scrubs</a><br>
+           <a>Auto Care</a><br>
+           <a>Garden & Outdoor</a><br>
+           <a>Carpentry & work accessories</a><br>
+           <a>Pooja Needs</a><br>
+           <a>Bathroom & Laundry</a><br>
+           <a>Industrial & Scientific Supplies</a><br>
+       </div>
+       <button type="button" class="collapsible"><div><img class="dropdown" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQgd_M8knU3KW37lgwgIapz4qemt9xLbjW5cNAsvpTvlPel8fGe"  alt=""></div>
+        Mom & Baby Care
+           </button>
+       <div class="content">
+           <a>Feeding</a><br>
+           <a>Baby Grooming</a><br>
+           <a>Baby Bedding Sets & Pillows</a><br>
+           <a>Baby Food & Formula</a><br>
+           <a>Baby Bath & Hygiene</a><br>
+           <a>Diapers & Wipes</a><br>
+           <a>Health & Wellness</a><br>
+           <a>Child Proof & Safety</a><br>
+           <a>Baby Gear</a><br>
+           <a>Baby Furnishing</a><br>
+           <a>Baby Furniture</a><br>
+           <a>Baby Toys</a><br>
+           <a>Mom & Maternity</a><br>
+       </div>
+       <button type="button" class="collapsible"><div><img class="dropdown" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQgd_M8knU3KW37lgwgIapz4qemt9xLbjW5cNAsvpTvlPel8fGe"  alt=""></div>
+        Books
+           </button>
+       <div class="content">
+           <a>Children's Books</a><br>
+           <a>Fiction Books</a><br>  
+           <a>School Textbooks</a><br>  
+           <a>Non Fiction Books</a><br>  
+           <a>Exam Central</a><br>    
+           <a>Textbooks</a><br>  
+       </div>
+       <button type="button" class="collapsible"><div><img class="dropdown" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQgd_M8knU3KW37lgwgIapz4qemt9xLbjW5cNAsvpTvlPel8fGe"  alt=""></div>
+        Pets
+           </button>
+       <div class="content">
+           <a>Dogs</a><br>
+           <a>Cats</a><br>  
+           <a>Birds</a><br>    
+       </div>
+    </div>
+      
+    <div class="right"></div>
+</body>
+</html>
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
