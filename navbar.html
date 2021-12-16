@@ -10,6 +10,10 @@
     ></script>
     <title>Document</title>
     <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
     
       #nav_bar {
         width: 100%;
@@ -26,7 +30,7 @@
       h1 {
         margin-left: 30px;
         color: white;
-
+        margin-top: 20px;
         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
       }
       #search {
@@ -101,7 +105,7 @@
         color: white;
       }
       /* -- --------------------------------------------------nav bar 2------------------------------------------- -- */
-      #nav_bar2 {
+      /* #nav_bar2 {
         width: 100%;
         height: 50px;
         background-color: #ececed;
@@ -114,9 +118,14 @@
       #loction > i {
         margin-left: 120px;
         font-size: 30px;
-        margin-top: 20px;
-        margin-right: 10px;
+        margin-top: 5px;
+        margin-right: 0px;
         color: #878b9c;
+      }
+      #loction > p{
+        padding-left: 5px;
+        font-weight: bold;
+        padding-left: 8px;
       }
       #nav_bar2 > a {
         margin-left: 70px;
@@ -128,7 +137,111 @@
       #nav_bar2 > a > i {
         margin-left: 2px;
         color: #767676;
-      }
+      } */
+      .navbar2{
+    background-color: #ececed;
+    text-align: center;
+  
+}
+.navbar2 ul {
+    display: flex;
+    list-style: none;
+   margin-left: 50px;
+    
+
+}
+.navbar2 ul li{
+    width: 160px;
+    height: 40px;
+    text-align: center;
+    margin-top: 20px;
+   
+}
+.navbar2 ul li a{
+    text-decoration: none;
+    color: black;
+    font-family:sans-serif;
+font-weight: bolder;
+    font-size:15px;
+}
+.navbar2 ul li i{
+  color: #878b9c;
+}
+#loction_icon{
+    display: flex;    
+}
+#loction_icon p{
+    margin-bottom: 0;
+    margin-top: -15px;
+    margin-left: -10px;
+}
+#loction_icon i{
+    font-size: 30px;
+    color: #878b9c;
+}
+.menu_text:nth-child(1){
+    margin-left: 70px ;
+}
+ .menu_text:nth-child(2){
+    margin-left: 0px ;
+   
+}
+.menu_text:nth-child(3){
+    margin-left: 50px ;
+}
+ .menu_text:nth-child(4){
+    margin-left: 40px ;
+   
+}
+.menu_text:nth-child(5){
+    margin-left: 20px ;
+}
+ .menu_text:nth-child(6){
+    margin-left: -20px ;
+   
+}
+.menu_text:nth-child(7){
+    margin-left: -30px ;
+}
+ .menu_text:nth-child(8){
+    margin-left: -30px ;
+   
+}
+.sub_menu_1{
+    display: none;
+}
+.navbar2 ul li:hover .sub_menu_1{
+    display: block;
+    position: absolute;
+    background-color: #ececed;
+ 
+
+}
+.navbar2 ul li:hover .sub_menu_1 ul{
+    display: block;
+    margin-left: 20px;
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+   
+    
+}
+.navbar2 ul li:hover .sub_menu_1 ul li{
+    background: transparent;
+    border-radius: 0;
+    text-align: left;
+  
+    margin-top: 10px;
+    width: 250px;
+    
+   
+}
+.navbar2 ul li:hover .sub_menu_1 ul li a:hover{
+    
+    color: lightskyblue;
+  
+}
+
       /* -------------------------------------------------------------sidenav bar------------------------------------------------------ */
       .sidenav {
         height: 100%;
@@ -171,13 +284,14 @@
         margin-left: 10px;
       }
       #hello_icon {
-        font-size: 20px;
-        margin-top: 10px;
-        
+        font-size: 25px;
+        margin-top: 18px;
+        margin-left: 5px;
       }
       #hello_text {
-      margin-left: 10px;
+      margin-left: 14px;
         font-size: 15px;
+        margin-top: 25px;
       }
       #account {
         display: flex;
@@ -191,11 +305,12 @@
         margin-left: 7px;
         padding-top: 7px;
         font-weight: bold;
+        margin-top: 10px;
       }
       #order_box {
         margin-left: 5px;
       }
-      .line {
+      /* .line {
         height: 5px;
         width: 100%;
         background-color: #ececed;
@@ -210,6 +325,28 @@
       }
       #sidenav_home > h4 ,p{
         padding: 0px 0px 0px 20px;
+      } */
+      .line {
+        height: 5px;
+        width: 100%;
+        background-color: #ececed;
+        margin-top: 6px;
+      }
+      #sidenav_home {
+        overflow: scroll;
+        height: 600px;
+        top: 0;
+        left: 0;
+        background-color: white;
+      }
+      #sidenav_home > h4 ,p{
+        padding: 10px 0px 0px 20px;
+        margin-right: 20px;
+      }
+      #playstore{
+          display: flex;
+          margin-left: 20px;
+          margin-top: 10px;
       }
     </style>
   </head>
@@ -236,7 +373,7 @@
       <button id="cart_text">Cart</button>
     </div>
     <!-- --------------------------------------------------nav bar 2------------------------------------------- -->
-    <div id="nav_bar2">
+    <!-- <div id="nav_bar2">
       <div id="loction">
         <i id="loctin_icon" class="fas fa-map-marker-alt"></i>
         <p>Deliver to <br />444303</p>
@@ -248,7 +385,85 @@
       <a href="">Men <i class="fas fa-chevron-down"></i></a>
       <a href="">Boys <i class="fas fa-chevron-down"></i></a>
       <a href="">Girls <i class="fas fa-chevron-down"></i></a>
-    </div>
+    </div> -->
+    <div class="navbar2">
+      <ul class="menu">
+          <li id="loction_icon" class="menu_text" >
+              <i id="loction_icon" class="fas fa-map-marker-alt"></i>
+              <p>Deliver to <br />444303</p>
+          </li>
+          <li class="menu_text"><a href="">Fruits & Vegetables <i class="fas fa-chevron-down"></i></a>
+          <div class="sub_menu_1">
+              <ul>
+               <li><a href="">Fresh Fruits</a></li>
+               <li><a href="">Fresh Vegetables</a></li>
+               <li><a href="">Herbs & Seasonings</a></li>
+               <li><a href="">Exotic & Vegetables</a></li>
+              </ul>
+          </div>
+          </li>
+          <li  class="menu_text"> <a href="">Premium Fruits <i class="fas fa-chevron-down"></i></a>
+              <div class="sub_menu_1">
+                  <ul>
+                   <li><a href="">Fresh Fruits</a></li>
+                   <li><a href="">Fresh Vegetables</a></li>
+                   <li><a href="">Herbs & Seasonings</a></li>
+                   <li><a href="">Exotic & Vegetables</a></li>
+                  </ul>
+              </div>
+          </li>
+          <li  class="menu_text"> <a href="">Dairy & Bakery <i class="fas fa-chevron-down"></i></a>
+              <div class="sub_menu_1">
+                  <ul>
+                   <li><a href="">Fresh Fruits</a></li>
+                   <li><a href="">Fresh Vegetables</a></li>
+                   <li><a href="">Herbs & Seasonings</a></li>
+                   <li><a href="">Exotic & Vegetables</a></li>
+                  </ul>
+              </div>
+          </li>
+          <li  class="menu_text"><a href="">Staples <i class="fas fa-chevron-down"></i></a>
+              <div class="sub_menu_1">
+                  <ul>
+                   <li><a href="">Fresh Fruits</a></li>
+                   <li><a href="">Fresh Vegetables</a></li>
+                   <li><a href="">Herbs & Seasonings</a></li>
+                   <li><a href="">Exotic & Vegetables</a></li>
+                  </ul>
+              </div>
+          </li>
+          <li  class="menu_text"><a href="">Men <i class="fas fa-chevron-down"></i></a>
+              <div class="sub_menu_1">
+                  <ul>
+                   <li><a href="">Fresh Fruits</a></li>
+                   <li><a href="">Fresh Vegetables</a></li>
+                   <li><a href="">Herbs & Seasonings</a></li>
+                   <li><a href="">Exotic & Vegetables</a></li>
+                  </ul>
+              </div>
+          </li>
+          <li  class="menu_text" > <a href="">Boys <i class="fas fa-chevron-down"></i></a>
+              <div class="sub_menu_1">
+                  <ul>
+                   <li><a href="">Fresh Fruits</a></li>
+                   <li><a href="">Fresh Vegetables</a></li>
+                   <li><a href="">Herbs & Seasonings</a></li>
+                   <li><a href="">Exotic & Vegetables</a></li>
+                  </ul>
+              </div>
+          </li>
+          <li  class="menu_text"> <a href="">Girls <i class="fas fa-chevron-down"></i></a>
+              <div class="sub_menu_1">
+                  <ul>
+                   <li><a href="">Fresh Fruits</a></li>
+                   <li><a href="">Fresh Vegetables</a></li>
+                   <li><a href="">Herbs & Seasonings</a></li>
+                   <li><a href="">Exotic & Vegetables</a></li>
+                  </ul>
+              </div>
+          </li>
+      </ul>
+      </div>
   </body>
 
   <!-- -------------------------------------------------sidenav side ----------------------------------- -->
@@ -285,24 +500,51 @@
       <a href="">About us</a>
       <a href="">Guide</a>
       <div class="line"></div>
-      
       <h4>CONTACT US</h4>
-      <p>WhatsApp us : 70003 70003</p>
       <p>
-        Call Us : 1800 890 1222 <br/>
-        8:00 AM to 8:00 PM, 365 days
+        WhatsApp us :
+        <a
+          href="https://api.whatsapp.com/send/?phone=917000370003&text=Hi&app_absent=0"
+          target="_blank"
+          >70003 70003</a
+        >
       </p>
-
+      <span id="footerspan">
+        <p>Call Us : <a href="">1800 890 1222</a></p>
+        <p>8:00 AM to 8:00 PM,365 days</p>
+      </span>
       <p>
-        Please note that you are accessing the BETA Version of www.jiomart.com
+        Please note that you are accessing the BETA Version of
+        <a href="">www.jiomart.com</a>
       </p>
-
       <p>
-        Should you encounter any bugs, glitches, lack of functionality, delayed
-        deliveries, billing errors or other problems on the beta website, please
-        email us on cs@jiomart.com 
+        Should you encounter any bugs, glitches, lack of functionality,
+        delayed deliveries, billing errors or other problems on the beta
+        website, please email us on <a href="">cs@jiomart.com</a>
       </p>
-      <p>DOWNLOAD APP</p>
+      <h4>DOWNLOAD APP</h4>
+      <div id="playstore"> 
+      <a
+      href="https://play.google.com/store/apps/details?id=com.jpl.jiomart"
+      target="_blank"
+      style="margin-right: 16px"
+    >
+      <img
+        src="https://www.jiomart.com/images/cms/wysiwyg/app-icons/play_store.png"
+        alt="Donwload Jio mart app from Play store"
+      />
+    </a>
+    <a
+      href="https://apps.apple.com/in/app/jiomart/id1522085683"
+      target="_blank"
+    >
+      <img
+        src="https://www.jiomart.com/images/cms/wysiwyg/app-icons/ios_store.png"
+        alt="Donwload Jio mart for IOS app from App store"
+      />
+    </a>
+</div>
+     
     </div>
   </div>
 </html>
