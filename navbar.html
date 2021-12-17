@@ -466,18 +466,18 @@
               </div>
 
               <div id="sidenav_home">
-                <a href="">Home</a>
-                <a href="">Shop Category</a>
-                <a href="">My list</a>
+                <a href="index.html">Home</a>
+                <a href="products.html">Shop Category</a>
+                <a href="cart.html">My list</a>
                 <a href="">JioMart wallet</a>
                 <a href="">Jiomart cashback</a>
                 <a href="">Jiomart Gift Store</a>
                 <a href="">Jiomart Gift Card</a>
                 <a href="">All offers</a>
                 <div class="line"></div>
-                <a href="">My Account</a>
+                <a href="myaccount.html">My Account</a>
                 <a href="">Need Help</a>
-                <a href="">About us</a>
+                <a href="about.html">About us</a>
                 <a href="">Guide</a>
                 <div class="line"></div>
                 <h4>CONTACT US</h4>
@@ -537,4 +537,19 @@
   function closenav() {
     document.getElementById("mysidebar").style.width = "0";
   }
+  var personalInfo = JSON.parse(localStorage.getItem('UserDetails')) || [] ;
+  document.querySelector('#hello_text').textContent = personalInfo[0].Fname || 'Hello Signin';
+  document.querySelector('#signin_text').textContent = personalInfo[0].Fname || 'signup';
+  document.querySelector('#hello_button').addEventListener('click',function(){
+    window.location.href = 'myaccount.html';
+  });
+  document.querySelector('#signin_text').addEventListener('click',function(){
+    window.location.href = 'myaccount.html';
+  });
+  document.querySelector('#loction_icon').addEventListener('click',function(){
+    window.location.href = 'https://www.google.com/maps';
+  });
+
+
+
 </script>

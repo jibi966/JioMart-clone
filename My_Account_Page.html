@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account Page</title>
+    <style>
+        #My_Account_main_box{
+            height: 650px;
+            /* border:1px solid red; */
+            width:90%;
+            margin: auto;
+        }
+        #My_Account_Title{
+            width:50%;
+            height: 35px;
+            /* border:1px solid black; */
+            padding:0 0 20px 20px;           
+        }
+        #My_Account_Profile_Page{
+        width:100%;
+        height: 230px;
+        /* border:1px solid red; */
+        display: flex;
+        }
+        #My_Profile_Details_Methods{
+            height: 100%;
+            width:40%;
+            /* border:1px solid black; */
+            margin-right: 30px;
+            /* display: flex; */
+            background-color:  #008ecc;                  
+        }
+        #My_profile_bg_Name_email_phon{
+            width:400px;
+            height: 30%;
+            /* border:1px solid red; */
+            display: flex;
+            margin-left: 20px;
+            margin-top:15px;
+        }
+        #My_Profile_bg{  
+            width:56px;
+            height: 56px;  
+            margin-right:20px ;  
+            /* margin-top: 15px;                */
+            background-image: url("https://www.jiomart.com/msassets/images/icons/profile_white.svg"); 
+        }
+        #profile_name_email_phon{
+            width:300px;
+            height: 100%;            
+            /* border:1px solid red; */
+            /* display: flex; */
+            /* margin-left: 20px;
+            margin-top:15px; */
+        }
+        #Customer_Name{
+            font-weight: bold;
+            font-size:20px ;
+            color: white;
+        }
+        #My_Account_Link{
+            width:400px;
+            height: 50%;
+            /* border:1px solid red; */
+            margin-left: 20px;
+            margin-top:15px;
+        }
+        .Account_Link{
+            width:100%;
+            height: 47%;
+            /* border:1px solid blue; */
+            display: flex;
+            margin-bottom: 5px;
+            background-color: #66bbe0;
+        }
+        #payment_bg{
+            width:20%;
+            height: 100%;
+            margin-right: 15px;
+            /* border:1px solid red; */
+            background-position-x: 12px;
+            background-position-y: 12px;
+            background-repeat: no-repeat;
+            background-image: url("https://www.jiomart.com/msassets/images/icons/credit_card.svg");
+        }
+        .Payment_Methods{
+            width:48%;
+            height:100%;
+            /* border:1px solid red; */
+            display: flex;
+            /* margin-right:4%; */
+        }
+        .methods_tital{
+            width:78%;
+            height: 60%;
+            /* border:1px solid yellow; */
+            margin: auto;
+        } 
+        #order_history_bg{
+            width:20%;
+            height: 100%;
+            margin-right: 15px;
+            /* border:1px solid red; */
+            background-position-x: 12px;
+            background-position-y: 12px;
+            background-repeat: no-repeat;
+            background-image: url("https://www.jiomart.com/msassets/images/icons/orders.svg");
+        } 
+        #Delivery_bg{
+            width:20%;
+            height: 100%;
+            margin-right: 15px;
+            /* border:1px solid red; */
+            background-position-x: 12px;
+            background-position-y: 12px;
+            background-repeat: no-repeat;
+            background-image: url("https://www.jiomart.com/msassets/images/icons/location_white.svg");
+        } 
+        #Account_Info_Title{
+            width:95%;
+            height: 20%;
+            /* border: 1px solid green; */
+            display: flex;
+            justify-content: space-between;
+            padding-left: 15px;
+            padding-right: 15px;
+        } 
+        #Account_Info{
+            height: 100%;
+            width:60%;
+            /* border:1px solid red; */
+        }
+        #Account_Info_Detail{
+            width:95%;
+            height:50%;
+            /* border: 1px solid green; */
+            display: flex;
+            margin-top: 15px;
+            justify-content: space-between;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .Account_Info_box{
+            width: 48%;
+            height: 100%;
+            /* border:1px solid red; */
+        }
+        #full_name{
+            width:100%;
+            height: 46%;
+            /* border:1px solid black; */
+            margin-bottom: 2%;
+        }
+        #Email_id{
+            width:100%;
+            height: 46%;
+            /* border:1px solid black;  */
+        }
+        #mobile_no{
+            width:100%;
+            height: 46%;
+            /* border:1px solid black;   */
+            margin-bottom: 2%; 
+        }
+        #Default_Address{
+            width:100%;
+            height: 46%;
+            /* border:1px solid black;    */
+        }
+        .color_change{
+            color:#868e96;
+        }
+        #My_List{
+            height:55%;
+            width:39%;
+            /* border:1px solid black; */
+            margin-right: 30px;
+            /* display: flex; */
+            /* background-color: pink;   */
+            margin-top: 20px;                
+        }
+        #List_Div{
+            width:90%;
+            height: 72%;
+            /* border:1px solid red; */
+            margin: auto;
+            margin-top: 20px;
+        }
+        #List_Div>a{
+            text-decoration: 0;
+            color: black;
+            font-weight: bold;
+        }
+        #Log_out{
+            width:90%;
+            height: 20%;
+            /* border:1px solid red; */
+            margin: auto;
+            color: black;
+        }
+        #Log_out>a{
+            text-decoration: 0;
+            color: black;
+            font-weight: bold; 
+        }
+          
+    </style>
+</head>
+<body>
+    <div id="My_Account_main_box">
+        <div id="My_Account_Title">
+            <h1>My Account</h1>
+        </div> 
+        <div id="My_Account_Profile_Page">
+            <div id="My_Profile_Details_Methods">
+                <div>
+                    <div id="My_profile_bg_Name_email_phon">
+                        <div id="My_Profile_bg"></div>
+                        <div id="profile_name_email_phon">
+                            <span id="Customer_Name">Sayli</span>
+                            <div id="Costumer_Mail">sayligiri555@gmail.com</div>
+                            <div id="Customer_Phon">+91-7420959650</div>    
+                        </div>
+                    </div>    
+                </div>
+                <div id="My_Account_Link">
+                    <div class="Account_Link">
+                        <div class="Payment_Methods" style="margin-right:4%;">
+                                <div id="payment_bg">
+                                </div>
+                                <div class="methods_tital">
+                                    <span class="pm">Payment Methods</span>
+                                </div>    
+                        </div>
+                        <div class="Payment_Methods" style="margin-right:4%;">
+                            <div id="order_history_bg">
+                            </div>
+                            <div class="methods_tital">
+                                <span class="pm">Order History</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Account_Link">
+                        <div class="Payment_Methods" style="margin-right:4%;">
+                            <div id="Delivery_bg">
+                            </div>
+                            <div class="methods_tital">
+                                <span class="pm">Delivery Addresees</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            <div id="Account_Info">
+                <div id="Account_Info_Title">
+                    <h3>Account Information</h3>
+                    <button>EDIT</button>
+                </div>
+                <div id="Account_Info_Detail">
+                    <div class="Account_Info_box">
+                        <div id="full_name">
+                            <span class="color_change">Full Name</span>
+                            <br/>
+                            <span>---------</span>
+                        </div>
+                        <div id="Email_id">
+                            <span class="color_change">Email id</span>
+                            <br/>
+                            <span>---------</span>
+                        </div>
+                    </div>
+                    <div class="Account_Info_box">
+                        <div id="mobile_no">
+                            <span class="color_change">Mobile No</span>
+                            <br/>
+                            <span>---------</span>
+                        </div>
+                        <div id="Default_Address">
+                            <span class="color_change">Default Address</span>
+                            <br/>
+                            <span>---------</span>
+                        </div>
+                    </div>
+                </div>
+            </div>         
+        </div>   
+        <div id="My_List">
+            <div id="List_Div">
+                <a href="https://www.jiomart.com/customer/mylist" class="My_List">
+                    <span></span>
+                    My List
+                </a>  
+                 <br class="break_line"> 
+                 <br>
+                 <hr class="horizontal_line"> 
+                <a href="https://www.jiomart.com/customer/mylist" class="Wish_List">
+                    <span></span>
+                    Wishlist
+                </a> 
+                <br class="break_line"> 
+                <br>
+                <hr class="horizontal_line"> 
+                <a href="https://www.jiomart.com/customer/mylist" class="legal_info">
+                    <span></span>
+                    Legal information
+                </a>     
+                <br class="break_line"> 
+                <br>
+                <hr class="horizontal_line"> 
+                <a href="https://www.jiomart.com/customer/mylist" class="Need_help">
+                    <span></span>
+                    Need Help
+                </a> 
+                <br class="break_line"> 
+                <br>
+                <hr class="horizontal_line">   
+                <a href="https://www.jiomart.com/customer/mylist" class="Contact_Us">
+                    <span></span>
+                    Contact us
+                </a> 
+                <br class="break_line"> 
+                <br>
+                <hr class="horizontal_line">   
+            </div>
+            <div id="Log_out">
+                <a href="https://www.jiomart.com/customer/mylist" class="Contact_Us">
+                    <span></span>
+                    Logout
+                </a> 
+                <br class="break_line"> 
+                <br>
+                <hr class="horizontal_line">   
+            </div>
+        </div>         
+</body>
+</html>

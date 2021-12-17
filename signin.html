@@ -390,12 +390,19 @@
             line-height: 25px;
             text-align: center;
             }
-            #form>input{
+            #form>input,select{
             margin-top: 5%;
+            /* background-color: white; */
             width: 97%;
             font-size: 14px;
             padding: 1.5%;
             box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            }
+            #gen{
+              margin-top: 5%;
+            width: 97%;
+            font-size: 14px;
+            padding: 1.5%;
             }
             #whatsappCB{
             display: grid;
@@ -607,18 +614,18 @@
               </div>
 
               <div id="sidenav_home">
-                <a href="">Home</a>
-                <a href="">Shop Category</a>
-                <a href="">My list</a>
+                <a href="index.html">Home</a>
+                <a href="products.html">Shop Category</a>
+                <a href="cart.html">My list</a>
                 <a href="">JioMart wallet</a>
                 <a href="">Jiomart cashback</a>
                 <a href="">Jiomart Gift Store</a>
                 <a href="">Jiomart Gift Card</a>
                 <a href="">All offers</a>
                 <div class="line"></div>
-                <a href="">My Account</a>
+                <a href="myaccount.html">My Account</a>
                 <a href="">Need Help</a>
-                <a href="">About us</a>
+                <a href="about.html">About us</a>
                 <a href="">Guide</a>
                 <div class="line"></div>
                 <h4>CONTACT US</h4>
@@ -688,8 +695,12 @@
 
                             <input id='name'  type="text"  placeholder='Full Name' ><br>
                             <input id='email' placeholder='Enter your mail' type="email "><br>
-                            <input id='password' placeholder='Enter your password' type="password" ><br>
-                            <input id='re-t-password' placeholder='Re-enter your password' type="password" ><br>
+                            <select id="gen">
+                              <option value="Male">M</option>
+                              <option value="Female">F</option>
+                              <option value="Transgender">T</option>
+                            </select><br>
+                            <input type="date" id="Date"><br>
                             <div id='logo'>
                                 <div id='whatsappCB'>
                                     <img src='https://www.jiomart.com/msassets/images/icons/whatsapp.png' width='40px' height='40px' id='whatAppimg'>
@@ -720,20 +731,13 @@
 
 </html>
 <script>
-  function sidenav() {
-    document.getElementById("mysidebar").style.width = "330px";
-  }
-  function closenav() {
-    document.getElementById("mysidebar").style.width = "0";
-  }
 
+  // FROM HERE SIGN IN SCRIPT
+
+  var numArr = JSON.parse(localStorage.getItem('DataBase')) || [] ;
+  var personalInfo = JSON.parse(localStorage.getItem('UserDetails')) || [] ;
 
   document.querySelector('#Gotp').addEventListener('click',otpValidate);
-    var numArr = JSON.parse(localStorage.getItem('DataBase')) || [] ;
-    var numberIdentifier = JSON.parse(localStorage.getItem('NumbersArray')) || [];
-    if(numberIdentifier.length > 0){
-        numberIdentifier.length = 0;
-    }
 
 
     function otpValidate(){
@@ -763,8 +767,10 @@
             document.querySelector('#otpnum').value="";
                 numArr.map(function(elem){
 
-                    if(mobNum == elem.mobile){
-
+                    if(Number(mobNum) == Number(elem.mobile)){
+                        if(personalInfo.length>1){
+                          personalInfo.length = 0;
+                        }
                         document.getElementById('Gotp').hidden = true;
                         document.querySelector('#loginbtn').hidden = false ;
                         document.querySelector('#otp').hidden = false ;
@@ -772,21 +778,15 @@
                         document.querySelector('#loginbtn').addEventListener('click',function(){
                             var check = document.querySelector('#otpnum').value;
                             if( check == 123456){
-                                var numObj={
-                                    enteredNum : mobNum,
-                                }
-                                numberIdentifier.push(numObj);
-                                localStorage.setItem('NumbersArray',JSON.stringify(numberIdentifier));
+                              personalInfo.push(elem);
+
+                              localStorage.setItem('UserDetails',JSON.stringify(personalInfo) )
                                 window.location.href ='Products.html';
                             }
                             else{
                               alert('enter valid OTP')
                             }
                         })
-                    }
-
-                    else{
-                        signInForm();
                     }
                 });
 
@@ -820,6 +820,8 @@
         document.querySelector('#otp').hidden = false ;
         document.querySelector('#name').value ="";
         document.querySelector('#email').value ="";
+        document.querySelector('#Date').value ="";
+        document.querySelector('#gen').value ="";
         document.querySelector('#otpnum').value ="";
         var mobNum = document.querySelector('#mob').value ;
 
@@ -830,20 +832,19 @@
 
             var name = document.querySelector('#name').value;
             var email = document.querySelector('#email').value;
-            var password = document.querySelector('#password').value;
-            var repassword = document.querySelector('#re-t-password').value;
+            var gender = document.querySelector('#gen').value;
+            var dob = document.querySelector('#Date').value;
             var check = document.querySelector('#otpnum').value ;
             var details = {
                 Fname : name,
                 mail : email,
-                pwd : password,
+                Gen : gender,
+                dateOfBirth : dob,
                 mobile : mobNum ,
             };
 
-            if( mobNum.length == 10 && name.length >=3 && password.length > 5 && password == repassword  && check == 123456){
+            if( mobNum.length == 10 && name.length >=3  && check == 123456){
 
-                numberIdentifier.push(numObj);
-                localStorage.setItem('NumbersArray',JSON.stringify(numberIdentifier));
                 numArr.push(details);
                 localStorage.setItem('DataBase',JSON.stringify(numArr));
                 window.location.href = 'myAccount.html';
@@ -863,5 +864,32 @@
     document.querySelector('.privacy').addEventListener('click', function(){
         window.location.href ='Privacy.html'
     });
+
+
+    // FROM HERE NAVBAR SCRIPT
+
+  document.querySelector('#hello_text').textContent = personalInfo[0].Fname || 'Hello Signin';
+  document.querySelector('#signin_text').textContent = personalInfo[0].Fname || 'signup';
+  document.querySelector('#hello_button').addEventListener('click',function(){
+    window.location.href = 'myaccount.html';
+  });
+  document.querySelector('#signin_text').addEventListener('click',function(){
+    window.location.href = 'myaccount.html';
+  });
+  document.querySelector('#loction_icon').addEventListener('click',function(){
+    window.location.href = 'https://www.google.com/maps';
+  });
+
+
+
+  function sidenav() {
+    document.getElementById("mysidebar").style.width = "330px";
+  }
+  function closenav() {
+    document.getElementById("mysidebar").style.width = "0";
+  }
+
+
+
 
 </script>
