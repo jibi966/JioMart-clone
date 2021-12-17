@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+      src="https://kit.fontawesome.com/683b4b40e3.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+    <style id='nav'>
+        * {
+          margin: 0;
+          padding: 0;
+          font-family: sans-serif;
+        }
+  
+        #nav_bar {
+          width: 100%;
+          height: 80px;
+          background-color: #008ecc;
+          display: flex;
+        }
+        #menu {
+          color: white;
+          font-size: 40px;
+          margin-left: 120px;
+          margin-top: 20px;
+        }
+        h1 {
+          margin-left: 30px;
+          color: white;
+          margin-top: 20px;
+          font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        }
+        #search {
+          height: 40px;
+          width: 700px;
+          background-color: white;
+          margin-left: 40px;
+          margin-top: 20px;
+          border-radius: 5px;
+          display: flex;
+        }
+        #search_menu {
+          color: rgb(7, 7, 7);
+          font-size: 20px;
+          margin-left: 40px;
+          margin-top: 5px;
+        }
+        #search_bar {
+          height: 30px;
+          width: 600px;
+          margin-left: 20px;
+          margin-top: 3px;
+          border-radius: 5px;
+          border: none;
+          background-color: transparent;
+          resize: none;
+          outline: none;
+        }
+        #search_button {
+          border: none;
+          background-color: transparent;
+          resize: none;
+          outline: none;
+          color: rgb(7, 7, 7);
+          font-size: 20px;
+          margin-right: 20px;
+          margin-bottom: 3px;
+        }
+  
+        #signin_icon {
+          margin-left: 90px;
+          font-size: 25px;
+          border: none;
+          background-color: transparent;
+          outline: none;
+          color: white;
+        }
+        #signin_text {
+          font-size: 14px;
+          font-weight: bold;
+          border: none;
+          background-color: transparent;
+          outline: none;
+          color: white;
+        }
+        #cart_icon {
+          margin-left: 90px;
+          font-size: 20px;
+          border: none;
+          background-color: transparent;
+          resize: none;
+          outline: none;
+          color: white;
+        }
+        #cart_text {
+          font-weight: bold;
+          font-size: 14px;
+          border: none;
+          background-color: transparent;
+          resize: none;
+          outline: none;
+          color: white;
+        }
+        /* -- --------------------------------------------------nav bar 2------------------------------------------- -- */
+  
+        .navbar2 {
+          background-color: #ececed;
+          text-align: center;
+        }
+        .navbar2 ul {
+          display: flex;
+          list-style: none;
+          margin-left: 50px;
+        }
+        .navbar2 ul li {
+          width: 160px;
+          height: 40px;
+          text-align: center;
+          margin-top: 20px;
+        }
+        .navbar2 ul li a {
+          text-decoration: none;
+          color: black;
+          font-family: sans-serif;
+          font-weight: bolder;
+          font-size: 15px;
+        }
+        .navbar2 ul li i {
+          color: #878b9c;
+        }
+        #loction_icon {
+          display: flex;
+        }
+        #loction_icon p {
+          margin-bottom: 0;
+          margin-top: -15px;
+          margin-left: -10px;
+        }
+        #loction_icon i {
+          font-size: 30px;
+          color: #878b9c;
+        }
+        .menu_text:nth-child(1) {
+          margin-left: 70px;
+        }
+        .menu_text:nth-child(2) {
+          margin-left: -20px;
+        }
+        .menu_text:nth-child(3) {
+          margin-left: 20px;
+        }
+        .menu_text:nth-child(4) {
+          margin-left: 20px;
+        }
+        .menu_text:nth-child(5) {
+          margin-left: 10px;
+        }
+        .menu_text:nth-child(6) {
+          margin-left: -20px;
+        }
+        .menu_text:nth-child(7) {
+          margin-left: -20px;
+        }
+        .menu_text:nth-child(8) {
+          margin-left: -20px;
+        }
+        .menu_text:nth-child(9) {
+          margin-left: -60px;
+        }
+        .sub_menu_1 {
+          display: none;
+        }
+        .navbar2 ul li:hover .sub_menu_1 {
+          display: block;
+          position: absolute;
+          background-color: #ececed;
+        }
+        .navbar2 ul li:hover .sub_menu_1 ul {
+          display: block;
+          margin-left: 20px;
+          margin-top: 30px;
+          justify-content: center;
+          align-items: center;
+        }
+        .navbar2 ul li:hover .sub_menu_1 ul li {
+          background: transparent;
+          border-radius: 0;
+          text-align: left;
+  
+          margin-top: 10px;
+          width: 250px;
+        }
+        .navbar2 ul li:hover .sub_menu_1 ul li a:hover {
+          color: lightskyblue;
+        }
+  
+        /* -------------------------------------------------------------sidenav bar------------------------------------------------------ */
+        .sidenav {
+          height: 100%;
+          width: 0;
+          position: fixed;
+          top: 0;
+          left: 0;
+          background-color: white;
+          overflow: hidden;
+          transition: 0.5s;
+        }
+        #sidenav_home > a {
+          padding: 20px 8px 8px 20px;
+          text-decoration: none;
+          color: black;
+          display: block;
+          transition: 0.3s;
+        }
+        .closebtn {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          font-size: 25px;
+          margin-left: 70px;
+          color: white;
+          margin-top: 10px;
+        }
+        .myacc {
+          background-color: #008ecc;
+          height: 100px;
+        }
+        #hello_button {
+          display: flex;
+          border: none;
+          background-color: transparent;
+          resize: none;
+          outline: none;
+          color: white;
+          margin-left: 10px;
+        }
+        #hello_icon {
+          font-size: 25px;
+          margin-top: 18px;
+          margin-left: 5px;
+        }
+        #hello_text {
+          margin-left: 14px;
+          font-size: 15px;
+          margin-top: 25px;
+        }
+        #account {
+          display: flex;
+        }
+        .accdiv {
+          border: 1px solid white;
+          width: 150px;
+          height: 25px;
+          color: white;
+          text-align: center;
+          margin-left: 7px;
+          padding-top: 7px;
+          font-weight: bold;
+          margin-top: 10px;
+        }
+        #order_box {
+          margin-left: 5px;
+        }
+  
+        .line {
+          height: 5px;
+          width: 100%;
+          background-color: #ececed;
+          margin-top: 6px;
+        }
+        #sidenav_home {
+          overflow: scroll;
+          height: 600px;
+          top: 0;
+          left: 0;
+          background-color: white;
+        }
+        #sidenav_home > h4,
+        p {
+          padding: 10px 0px 0px 20px;
+          margin-right: 20px;
+        }
+        #playstore {
+          display: flex;
+          margin-left: 20px;
+          margin-top: 10px;
+        }
+        .top1{
+            height: 120px;
+            width:1000px ;
+            /* border: 1px solid red; */
+            font-size: 52px;
+            font-weight: bold;
+            text-align: center;
+            font-family: sans-serif;
+            margin: auto;
+        }
+        .classic{
+            height: 370px;
+            /* border: 1px solid red; */
+            display: flex;
+            
+        }
+        .one{
+            height: 312px;
+            width:200px;
+            /* border: 1px solid rgb(0, 14, 90); */
+            margin-right: 16px;
+            display: flex;
+            
+        }
+        .container{          
+           display: flex;
+            overflow-x:auto;
+            
+ }
+ .container .one{
+     min-width: 180px;    
+ }
+ .container::-webkit-scrollbar {
+    
+}
+    
+.indiv{
+
+    height: 310px;
+    width: 200px;
+}
+  
+.btn,.btn2{height: 35px;
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row-reverse;
+    cursor: pointer;     
+}
+.all{
+    height:320px ;
+    width: 185px;
+    margin-left: 20px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    border-radius: 10px;
+    margin-top:1px; 
+    display: flex;
+    /* border: 1px solid red; */
+}
+
+.imgdiv{
+    width: 60%;
+    height: 50%;
+    display: flex;
+}
+.price{
+    height: 37px;
+    padding-left: 10px;
+    margin: 5px;
+    
+}
+.mimg{
+    width: 120px;
+    padding-top: 30px;
+    height:auto;
+    cursor: pointer;
+}
+.hov:hover{
+    width:130px ;
+}
+.plus,.plus2{ 
+   border-radius: 5px;
+    line-height: 35px;
+    height: 100%;
+    width:170px;
+    text-align: left;
+    background-color: #008ecc;
+    color: white;
+    border: 0;
+    font-weight: bolder;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+    padding-left: 10px;
+    cursor: pointer;   
+    margin-right: 17px;
+}
+.inr-sign::before{content:"\20B9";}
+.p1{display: flex;}
+.p2{text-decoration: line-through;}
+.ic1{
+height: 100%;
+padding-top: 8px;
+padding-left:1px;
+}
+.ic2{
+height: 100%;
+width: 20px;
+padding-right: 10px;
+padding-top: 5px;
+}
+.name{
+    padding-left: 15px;
+padding-right:15px; 
+font-family:sans-serif ;
+font-weight:600;
+font-size:15px;
+cursor: pointer;
+}
+
+.minus,.pluss,.pluss2,.minus2{display:none;
+border-radius: 20px;
+color: white;
+background-color: #008ecc;
+border: 0;
+font-size: 25px;
+height: 30px;
+width: 30px;}
+.m1{
+    border: 0;
+    font-size: 18px;
+    padding-top: 6px;
+    background-color: transparent;
+}
+.minus,.minus2{
+    margin-right: 10px;
+}
+.pluss,.pluss2{
+    margin-left: 10px;
+    margin-right: 12px;
+}
+.save{
+    color:#47bb47;
+    font-weight: bolder;
+    line-height: 2px;
+}
+ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+      }
+      footer {
+        background-color: #ededef;
+        margin-top: 20px;
+      }
+      footer p {
+        line-height: 20px;
+      }
+      #footerspan > p {
+        line-height: 0;
+      }
+      #footerspan ~ p {
+        line-height: 20px;
+      }
+      .footer-1 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 30px 100px 30px;
+      }
+      .footer-1 > div {
+        box-sizing: border-box;
+      }
+      #footerDiv3 {
+        width: 70%;
+        border-left: 1px solid gray;
+        padding-left: 30px;
+      }
+      #footerDiv1 a,
+      #footerDiv2 a,
+      #footerDiv3 p {
+        color: gray;
+      }
+      #footerDiv3 a {
+        color: #0b92ce;
+      }
+      .footer-1 p,
+      .footer-1 a {
+        font-size: 13px;
+        font-family: sans-serif;
+      }
+      #footerDiv1,
+      #footerDiv2 {
+        line-height: 20px;
+      }
+      .footer-1 h2 {
+        line-height: 20px;
+        font-size: 13px;
+        font-family: JioBold;
+      }
+
+      #copyRight {
+        display: flex;
+        justify-content: space-around;
+        font-size: 12px;
+        font-family: JioLight;
+        border-top: 1px solid gray;
+      }
+      </style>
+       
+   
+</head>
+<body>
+    <div id='navBar'>
+        <!-- -------------------------------------------------Nav Bar-----------------------------------------------  -->
+            <div id="nav_bar">
+              <i onclick="sidenav()" id="menu" class="fas fa-bars"></i>
+              <h1>JioMart</h1>
+              <div id="search">
+                <input
+                  id="search_bar"
+                  type="text"
+                  placeholder="Search essentials,grcoceries,and more...."
+                />
+                <button id="search_button">
+                  <i id="search_menu" class="fas fa-list-ul"></i>
+                </button>
+              </div>
+              <button id="signin_icon" class="signin">
+                <i class="fas fa-user-alt"></i>
+              </button>
+              <button id="signin_text" class="signin">Sign in/ sign up</button>
+              <button id="cart_icon"><i class="fas fa-shopping-cart"></i></button>
+              <button id="cart_text">Cart</button>
+            </div>
+            <!-- --------------------------------------------------nav bar 2------------------------------------------- -->
+
+            <div class="navbar2">
+              <ul class="menu">
+                <li id="loction_icon" class="menu_text">
+                  <i id="loction_icon" class="fas fa-map-marker-alt"></i>
+                  <p>Deliver to <br />444303</p>
+                </li>
+                <li class="menu_text">
+                  <a href="">Fruits & Vegetables <i class="fas fa-chevron-down"></i></a>
+                  <div class="sub_menu_1">
+                    <ul>
+                      <li><a href="">Fresh Fruits</a></li>
+                      <li><a href="">Fresh Vegetables</a></li>
+                      <li><a href="">Herbs & Seasonings</a></li>
+                      <li><a href="">Exotic & Vegetables</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="menu_text">
+                  <a href="">Premium Fruits <i class="fas fa-chevron-down"></i></a>
+                  <div class="sub_menu_1">
+                    <ul>
+                      <li><a href="">Avocado, Peach, Plum</a></li>
+                      <li><a href="">Cherries, Berries & Exotic Fruits</a></li>
+                      <li><a href="">Pomegranate, Papaya & Pineapple</a></li>
+                      <li><a href="">Citrus, Mango & Grapes</a></li>
+                      <li><a href="">Apples & Pears</a></li>
+                      <li><a href="">Banana, Melon & Cocunut</a></li>
+                      <li><a href="">Seasonal & Minor Fruits</a></li>
+                      <li><a href="">Dates</a></li>
+                      <li><a href="">Organic & Residue Certified</a></li>
+                      <li><a href="">Gift, Assorted & XL Packs</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="menu_text">
+                  <a href="">Dairy & Bakery <i class="fas fa-chevron-down"></i></a>
+                  <div class="sub_menu_1">
+                    <ul>
+                      <li><a href="">Dairy</a></li>
+                      <li><a href="">Toast & Khari</a></li>
+                      <li><a href="">Cakes & Muffins</a></li>
+                      <li><a href="">Breads and Buns</a></li>
+                      <li><a href="">Baked Cookies</a></li>
+                      <li><a href="">Bakery Snacks</a></li>
+                      <li><a href="">Batter & Chutney</a></li>
+                      <li><a href="">Cheese</a></li>
+                      <li><a href="">Ghee</a></li>
+                      <li><a href="">Paneer & Tofu</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="menu_text">
+                  <a href="">Staples <i class="fas fa-chevron-down"></i></a>
+                  <div class="sub_menu_1">
+                    <ul>
+                      <li><a href="">Atta, Flours & Sooji</a></li>
+                      <li><a href="">Dals & Pulses</a></li>
+                      <li><a href="">Rice & Rice Products</a></li>
+                      <li><a href="">Edible Oils</a></li>
+                      <li><a href="">Massalas & Spices</a></li>
+                      <li><a href="">Salt, Sugar and Jaggery</a></li>
+                      <li><a href="">Soya Products, Wheat & Other</a></li>
+                      <li><a href="">Grains</a></li>
+                      <li><a href="">Dry Fruits & Nuts</a></li>
+                      <li><a href="">Combo Offer</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="menu_text">
+                  <a href="">Men <i class="fas fa-chevron-down"></i></a>
+                  <div class="sub_menu_1">
+                    <ul>
+                      <li><a href="">Clothing Accessories</a></li>
+                      <li><a href="">Western Wear</a></li>
+                      <li><a href="">Inner Wear</a></li>
+                      <li><a href="">Bags, Belts & Wallets</a></li>
+                      <li><a href="">Ethnic Wear</a></li>
+                      <li><a href="">Footwear</a></li>
+                      <li><a href="">Fusion Wear</a></li>
+                      <li><a href="">Night & Lounge</a></li>
+                      <li><a href="">Fashion Jewellery</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="menu_text">
+                  <a href="">Women <i class="fas fa-chevron-down"></i></a>
+                  <div class="sub_menu_1">
+                    <ul>
+                      <li><a href="">Clothing Accessories</a></li>
+                      <li><a href="">Western Wear</a></li>
+                      <li><a href="">Inner Wear</a></li>
+                      <li><a href="">Bags, Belts & Wallets</a></li>
+                      <li><a href="">Ethnic Wear</a></li>
+                      <li><a href="">Footwear</a></li>
+                      <li><a href="">Fusion Wear</a></li>
+                      <li><a href="">Night & Lounge</a></li>
+                      <li><a href="">Fashion Jewellery</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="menu_text">
+                  <a href="">Boys <i class="fas fa-chevron-down"></i></a>
+                  <div class="sub_menu_1">
+                    <ul>
+                      <li><a href="">Western Wear</a></li>
+                      <li><a href="">Ethnic Wear</a></li>
+                      <li><a href="">Clothing Accessories</a></li>
+                      <li><a href="">Footwear</a></li>
+                      <li><a href="">Inner Wear</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="menu_text">
+                  <a href="">Girls <i class="fas fa-chevron-down"></i></a>
+                  <div class="sub_menu_1">
+                    <ul>
+                      <li><a href="">Western Wear</a></li>
+                      <li><a href="">Ethnic Wear</a></li>
+                      <li><a href="">Clothing Accessories</a></li>
+                      <li><a href="">Bags, Belts & Wallets</a></li>
+                      <li><a href="">Footwear</a></li>
+                      <li><a href="">Night & Lounge</a></li>
+                      <li><a href="">Inner Wear</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </body>
+
+          <!-- -------------------------------------------------sidenav side ----------------------------------- -->
+          <div id="mysidebar" class="sidenav">
+            <div id="myacc" class="myacc">
+              <a href="" class="closebtn" onclick="closenav()"
+                ><i class="fas fa-times"></i
+              ></a>
+              <button id="hello_button">
+                <span id="hello_icon" class="hello"
+                  ><i class="fas fa-user-circle"></i>
+                </span>
+                <h3 id="hello_text" class="hello">Hello, Sign in</h3>
+              </button>
+
+              <div id="account">
+                <div id="account_box" class="accdiv">Account</div>
+                <div id="order_box" class="accdiv">Orders</div>
+              </div>
+            </div>
+
+            <div id="sidenav_home">
+              <a href="index.html">Home</a>
+              <a href="products.html">Shop Category</a>
+              <a href="cart.html">My list</a>
+              <a href="">JioMart wallet</a>
+              <a href="">Jiomart cashback</a>
+              <a href="">Jiomart Gift Store</a>
+              <a href="">Jiomart Gift Card</a>
+              <a href="">All offers</a>
+              <div class="line"></div>
+              <a href="myaccount.html">My Account</a>
+              <a href="">Need Help</a>
+              <a href="about.html">About us</a>
+              <a href="">Guide</a>
+              <div class="line"></div>
+              <h4>CONTACT US</h4>
+              <p>
+                WhatsApp us :
+                <a
+                  href="https://api.whatsapp.com/send/?phone=917000370003&text=Hi&app_absent=0"
+                  target="_blank"
+                  >70003 70003</a
+                >
+              </p>
+              <span id="footerspan">
+                <p>Call Us : <a href="">1800 890 1222</a></p>
+                <p>8:00 AM to 8:00 PM,365 days</p>
+              </span>
+              <p>
+                Please note that you are accessing the BETA Version of
+                <a href="">www.jiomart.com</a>
+              </p>
+              <p>
+                Should you encounter any bugs, glitches, lack of functionality, delayed
+                deliveries, billing errors or other problems on the beta website, please
+                email us on <a href="">cs@jiomart.com</a>
+              </p>
+              <h4>DOWNLOAD APP</h4>
+              <div id="playstore">
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.jpl.jiomart"
+                  target="_blank"
+                  style="margin-right: 16px"
+                >
+                  <img
+                    src="https://www.jiomart.com/images/cms/wysiwyg/app-icons/play_store.png"
+                    alt="Donwload Jio mart app from Play store"
+                  />
+                </a>
+                <a
+                  href="https://apps.apple.com/in/app/jiomart/id1522085683"
+                  target="_blank"
+                >
+                  <img
+                    src="https://www.jiomart.com/images/cms/wysiwyg/app-icons/ios_store.png"
+                    alt="Donwload Jio mart for IOS app from App store"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+      </div>
+    <div class="top1"> <span style="">This festive season, celebrate with the</span> <br>
+         <span style="color: #008ecc; font-size: 40px;"><b>JioMart</b></span>
+         <span style="font-weight: normal;">GiftStore</span></div>
+    <div style="height: 330px; width: 1275px;margin: auto; margin-top: 20px;">
+        <img width="100%" height="100%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP71pLiNK4ngUJu0vUAcp_VRmgzRzV3wJ5H3pqYzZuRkIvFPnuv6gdO4OpWq7K7NJcTyI&usqp=CAU" alt="">
+    </div>
+    <h2 style="font-size: 40px; margin-left: 20px; margin-top: 20px;">Send a special gift to your loved ones, perfectly gift-wrapped!</h2>
+    <div style="display: flex;">
+        <div style="">
+            <div style=" height: 280px;width: 250px;margin-left: 30px; margin-top: 30px;">
+                <div style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; height: 270px;"><img height="146px" width="245px" src="https://www.jiomart.com/assets/smartweb/images/icons/bulk-gift-image.png" alt=""><br>
+                <h4 style="margin-top: 20px;">Looking for bulk gift options?</h4>
+            <button style="height: 40px; width: 90%; margin-top: 20px; background-color: #008ecc; color: white;border: 0; border-radius: 5px;margin-left: 10px;">Contact us</button>
+            </div>
+            
+                </div>
+                <div style=" height: 280px; width: 250px; margin-left: 20px;">
+                    <h4 style="margin-top: 20px;margin-left: 20px; font-size: 25px;">Filters</h4>
+                    <h4 style="margin-top: 20px;margin-left: 20px; font-size: 25px;">Price</h4>
+                    <input style="padding: 20px; margin-left: 20px;" type="range">
+                    <h4 style="margin-top: 20px;margin-left: 20px; font-size: 25px;">Discount</h4>
+                    <input  style="padding: 20px; margin-left: 20px;" type="range">
+                </div></div>
+        <div style="height: 400px; width: 1200px; margin-left: 30px;margin-top: 30px;">
+            <div>
+                <div class="classic">
+                    <div class="container">
+                        <div class="one">
+                            <div class="all">
+                                <div class="indiv">
+                                    <div class="imgdiv">
+                                        <div class="ic1"><img src="https://www.freeiconspng.com/uploads/sale-promo-percent-20-off-png-6.png" height="40px" alt=""></div>
+                                        <div class="mimg"><img class="hov" src="https://www.jiomart.com/images/product/150x150/590860268/india-gate-rozana-basmati-rice-5-kg-saffola-gold-rice-bran-based-blended-oil-3-l-combo-pack-0-20211112.jpg" width="120px" alt=""></div>
+                                    </div>
+                                   <div class="name">India Gate Rozana Basmati Rice 5 kg..</div>
+                                    <div class="price">
+                                        <div><b><span class="inr-sign"> 849.00</b></div>
+                                        <div class="p1">M.R.P:<div class="p2"><span class="inr-sign"> 1,125.00</span>
+                                        </div></div>
+                                        <p class="save">Save <span class="inr-sign">276.00</span></p>
+                                        <div class="btn">
+                                            <div><button class="pluss">+</button></div>
+                                            <div><button class="plus">Add To Cart   
+                                            </button></div>
+                                            <div><button class="minus">-</button></div>
+                                        </div>
+                                    </div>    
+                             </div>     
+                         </div>
+                     </div>  
+                 <div class="one">
+                    <div class="all">
+                        <div class="indiv">
+                            <div class="imgdiv">
+                              <div class="ic1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWiR5VgAm2UWgD5In6AlQaaaBnNoC44pCYuYK45cw7oxUpCFuccq26FEIkNCXCuFQH2o0&usqp=CAU" height="40px" alt=""></div>
+                              <div class="mimg"><img class="hov" src="https://www.jiomart.com/images/product/150x150/590032849/parle-20-20-gold-cashew-almond-cookies-600-g-0-20200819.jpg" width="120px" alt=""></div>
+                            </div>
+                            <div class="name">Parle 20-20 Gold Cashew Almond cook..</div>
+                            <div class="price">
+                                <div><b><span class="inr-sign"> 65.00</b></div>
+                                <div class="p1">M.R.P:<div class="p2"><span class="inr-sign"> 130.00</span>
+                                </div></div>
+                                <p class="save">Save <span class="inr-sign">65.00</span></p>
+                                <div class="btn2">
+                                    <div><button class="pluss2">+</button></div>
+                                    <div><button class="plus2">Add To Cart   
+                                    </button></div>
+                                    <div><button class="minus2">-</button></div>
+                                </div>
+                            </div>    
+                     </div>     
+                 </div>
+                 </div>
+                 <div class="one">
+                  <div class="all">
+                    <div class="indiv">
+                        <div class="imgdiv">
+                          <div class="ic1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRkw4I720czVHLZTjTB4Q0K2ZIoFH4yfSSRp5P9xrnvtra2_r1j0fQZJIpJ24HwCYRnQI&usqp=CAU" height="40px" alt=""></div>
+                          <div class="mimg"><img class="hov" src="https://www.jiomart.com/images/product/150x150/590836230/parle-hide-seek-chocolate-chip-cookies-400-g-0-20211028.jpg" width="120px" alt=""></div>
+                        </div>
+                        <div class="name">Parle HIde & Seek Chocolate Chip Co..</div>
+                        <div class="price">
+                            <div><b><span class="inr-sign"> 80.00</b></div>
+                            <div class="p1">M.R.P:<div class="p2"><span class="inr-sign"> 120.00</span>
+                            </div></div>
+                            <p class="save">Save <span class="inr-sign"> 40.00</span></p>
+                            <div class="btn2">
+                                <div><button class="pluss2">+</button></div>
+                                <div><button class="plus2">Add To Cart   
+                                </button></div>
+                                <div><button class="minus2">-</button></div>
+                            </div>
+                        </div>    
+                 </div>     
+                </div>
+                 </div>
+                 <div class="one">
+                  <div class="all">
+                    <div class="indiv">
+                        <div class="imgdiv">
+                          <div class="ic1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWiR5VgAm2UWgD5In6AlQaaaBnNoC44pCYuYK45cw7oxUpCFuccq26FEIkNCXCuFQH2o0&usqp=CAU" height="40px" alt=""></div>
+                          <div class="mimg"><img class="hov" src="https://www.jiomart.com/images/product/150x150/590441792/parle-20-20-gold-cashew-almond-cookies-1-kg-0-20210813.jpg" width="120px" alt=""></div>
+                          </div>
+                     <div class="name">Parle 20-20 Gold Cashew Almond cook..</div>
+                      <div class="price">
+                          <div><b><span class="inr-sign"> 115.00</b></div>
+                          <div class="p1">M.R.P:<div class="p2"><span class="inr-sign"> 230.00</span>
+                          </div></div>
+                          <p class="save">Save <span class="inr-sign"> 115.00</span></p>
+                          <div class="btn2">
+                              <div><button class="pluss2">+</button></div>
+                              <div><button class="plus2">Add To Cart   
+                              </button></div>
+                              <div><button class="minus2">-</button></div>
+                            </div>
+                        </div>    
+                 </div>     
+                </div>
+                 </div>
+                 <div class="one">
+                  <div class="all">
+                    <div class="indiv">
+                        <div class="imgdiv">
+                          <div class="ic1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbdHE-itFFn_5bJqMdeJ-2llla2HnAuaLCZQ&usqp=CAU" height="40px" alt=""></div>
+                          <div class="mimg"><img class="hov" src="https://www.jiomart.com/images/product/150x150/491278308/priya-fortified-with-vitamin-a-d-refined-sunflower-oil-1-l-0-20210119.jpg" width="120px" alt=""></div>
+                          </div>
+                     <div class="name">Priya Fortified With Vitamin A & D..</div>
+                      <div class="price">
+                          <div><b><span class="inr-sign"> 132.00</b></div>
+                          <div class="p1">M.R.P:<div class="p2"><span class="inr-sign"> 210.00</span>
+                          </div></div>
+                          <p class="save">Save <span class="inr-sign">78.00</span></p>
+                          <div class="btn2">
+                              <div><button class="pluss2">+</button></div>
+                              <div><button class="plus2">Add To Cart   
+                              </button></div>
+                              <div><button class="minus2">-</button></div>
+                            </div>
+                        </div>    
+                 </div>     
+                </div>
+                 </div>
+                 <div class="one">
+                  <div class="all">
+                    <div class="indiv">
+                        <div class="imgdiv">
+                          <div class="ic1"><img src="https://www.freeiconspng.com/uploads/sale-promo-percent-20-off-png-6.png" height="40px" alt=""></div>
+                          <div class="mimg"><img class="hov" src="https://www.jiomart.com/images/product/150x150/491055460/colgate-strong-teeth-dental-cream-toothpaste-buy-2-200-g-get-100-g-free-0-20211011.jpg" width="120px" alt=""></div>
+                      </div>
+                     <div class="name">Colgate Strong Teeth Dental Cream T..</div>
+                      <div class="price">
+                          <div><b><span class="inr-sign"> 171.00</b></div>
+                          <div class="p1">M.R.P:<div class="p2"><span class="inr-sign"> 231.00</span>
+                          </div></div>
+                          <p class="save">Save <span class="inr-sign"> 60.00</span></p>
+                          <div class="btn">
+                              <div><button class="pluss">+</button></div>
+                              <div><button class="plus">Add To Cart   
+                              </button></div>
+                              <div><button class="minus">-</button></div>
+                            </div>
+                        </div>    
+                 </div>     
+                </div>
+                 </div>
+                 <div class="one">
+                  <div class="all">
+                    <div class="indiv">
+                        <div class="imgdiv">
+                          <div class="ic1"><img src="https://www.freeiconspng.com/uploads/sale-promo-percent-20-off-png-6.png" height="40px" alt=""></div>
+                          <div class="mimg"><img class="hov" src="https://www.jiomart.com/images/product/150x150/491441280/surf-excel-matic-top-load-detergent-powder-4-kg-get-extra-2-kg-free-0-20210125.jpg" width="120px" alt=""></div>
+                      </div>
+                     <div class="name">Surf Excel Matic Top Load Detergent..</div>
+                      <div class="price">
+                          <div><b><span class="inr-sign"> 840.00</b></div>
+                          <div class="p1">M.R.P:<div class="p2"><span class="inr-sign"> 1,120.00</span>
+                          </div></div>
+                          <p class="save">Save <span class="inr-sign"> 280.00</span></p>
+                          <div class="btn">
+                              <div><button class="pluss">+</button></div>
+                              <div><button class="plus">Add To Cart   
+                              </button></div>
+                              <div><button class="minus">-</button></div>
+                            </div>
+                        </div>    
+                 </div>     
+                </div>
+                 </div>
+                 <div class="one">
+                  <div class="all">
+                    <div class="indiv">
+                        <div class="imgdiv">
+                          <div class="ic1"><img src="https://www.freeiconspng.com/uploads/sale-promo-percent-20-off-png-6.png" height="40px" alt=""></div>
+                          <div class="mimg"><img class="hov" src="https://www.jiomart.com/images/product/150x150/490503479/kissan-fresh-tomato-ketchup-950-g-0-20210715.jpg" width="120px" alt=""></div>
+                      </div>
+                     <div class="name">Kissan Fresh Tomato Ketchup 950g..</div>
+                      <div class="price">
+                          <div><b><span class="inr-sign"> 89.00</b></div>
+                          <div class="p1">M.R.P:<div class="p2"><span class="inr-sign"> 120.00</span>
+                          </div></div>
+                          <p class="save">Save <span class="inr-sign"> 31.00</span></p>
+                          <div class="btn">
+                              <div><button class="pluss">+</button></div>
+                              <div><button class="plus">Add To Cart   
+                              </button></div>
+                              <div><button class="minus">-</button></div>
+                            </div>
+                        </div>    
+                 </div>     
+                </div>
+                 </div>
+                 <div class="one">
+                  <div class="all">
+                    <div class="indiv">
+                        <div class="imgdiv">
+                          <div class="ic1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWiR5VgAm2UWgD5In6AlQaaaBnNoC44pCYuYK45cw7oxUpCFuccq26FEIkNCXCuFQH2o0&usqp=CAU" height="40px" alt=""></div>
+                          <div class="mimg"><img class="hov" src="https://www.jiomart.com/images/product/150x150/491439871/white-knight-cocktail-paper-napkins-30x30-cm-100-pcs-0-20210427.jpg" width="120px" alt=""></div>
+                          </div>
+                     <div class="name">White Knight Cocktail Paper Napkins..</div>
+                      <div class="price">
+                          <div><b><span class="inr-sign"> 30.00</b></div>
+                          <div class="p1">M.R.P:<div class="p2"><span class="inr-sign"> 60.00</span>
+                          </div></div>
+                          <p class="save">Save <span class="inr-sign"> 30.00</span></p>
+                          <div class="btn2">
+                              <div><button class="pluss2">+</button></div>
+                              <div><button class="plus2">Add To Cart   
+                              </button></div>
+                              <div><button class="minus2">-</button></div>
+                            </div>
+                        </div>    
+                 </div>     
+                </div>
+                 </div>
+                 <div class="one">
+                  <div class="all">
+                    <div class="indiv">
+                        <div class="imgdiv">
+                          <div class="ic1"><img src="https://www.freeiconspng.com/uploads/sale-promo-percent-20-off-png-6.png" height="40px" alt=""></div>
+                          <div class="mimg"><img class="hov" src="https://www.jiomart.com/images/product/150x150/491441281/surf-excel-matic-front-load-detergent-powder-4-kg-get-extra-2-kg-free-0-20210622.jpg" width="120px" alt=""></div>
+                      </div>
+                     <div class="name">Surf Ecxel Matic Front Load Deterge..</div>
+                      <div class="price">
+                          <div><b><span class="inr-sign"> 1,019.00</b></div>
+                          <div class="p1">M.R.P:<div class="p2"><span class="inr-sign"> 1,240.00</span>
+                          </div></div>
+                          <p class="save">Save <span class="inr-sign"> 221.00</span></p>
+                          <div class="btn">
+                              <div><button class="pluss">+</button></div>
+                              <div><button class="plus">Add To Cart   
+                              </button></div>
+                              <div><button class="minus">-</button></div>
+                            </div>
+                        </div>    
+                 </div>     
+                </div>
+                 </div>
+                 <div class="one">
+                  <div class="all">
+                    <div class="indiv">
+                        <div class="imgdiv">
+                          <div class="ic1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWiR5VgAm2UWgD5In6AlQaaaBnNoC44pCYuYK45cw7oxUpCFuccq26FEIkNCXCuFQH2o0&usqp=CAU" height="40px" alt=""></div>
+                          <div class="mimg"><img class="hov" src="https://www.jiomart.com/images/product/150x150/490896732/vim-lemon-concentrated-dishwash-gel-750-ml-0-20210624.jpg" width="120px" alt=""></div>
+                          </div>
+                     <div class="name">Vim Lemon Dishwash Liquid 750ml..</div>
+                      <div class="price">
+                          <div><b><span class="inr-sign"> 131.00</b></div>
+                          <div class="p1">M.R.P:<div class="p2"><span class="inr-sign"> 185.00</span>
+                          </div></div>
+                          <p class="save">Save <span class="inr-sign"> 54.00</span></p>
+                          <div class="btn2">
+                              <div><button class="pluss2">+</button></div>
+                              <div><button class="plus2">Add To Cart   
+                              </button></div>
+                              <div><button class="minus2">-</button></div>
+                            </div>
+                        </div>    
+                 </div>     
+                </div>
+                 </div>
+                </div>
+                </div> 
+            </div></div>
+    </div>
+    <footer>
+        <div class="footer-1">
+          <div id="footerDiv1">
+            <ul>
+              <li>
+                <h2>MOST POPULAR CATEGORIES</h2>
+              </li>
+              <li><a href="">Staples</a></li>
+              <li><a href="">Beverages</a></li>
+              <li><a href="">Personal Care</a></li>
+              <li><a href="">Home Care</a></li>
+              <li><a href="">Fruits and Vegetables</a></li>
+              <li><a href="">Baby Care</a></li>
+              <li><a href="">Snacks & Branded Foods</a></li>
+              <li><a href="">Dairy & Bakery</a></li>
+            </ul>
+          </div>
+          <div id="footerDiv2">
+            <ul>
+              <li>
+                <h2>CUSTOMER SERVICES</h2>
+              </li>
+              <li><a href="">About Us</a></li>
+              <li><a href="">FAQ</a></li>
+              <li><a href="">Terms and conditions</a></li>
+              <li><a href="">Privacy policy</a></li>
+              <li><a href="">E-waste Policy</a></li>
+            </ul>
+          </div>
+          <div id="footerDiv3">
+            <h2>CONTACT US</h2>
+            <p>
+              WhatsApp us :
+              <a
+                href="https://api.whatsapp.com/send/?phone=917000370003&text=Hi&app_absent=0"
+                target="_blank"
+                >70003 70003</a
+              >
+            </p>
+            <span id="footerspan">
+              <p>Call Us : <a href="">1800 890 1222</a>
+            <br></p>
+              
+            </span>
+            <p>
+              Please note that you are accessing the BETA Version of
+              <a href="">www.jiomart.com</a>
+            </p>
+            <p>
+              Should you encounter any bugs, glitches, lack of functionality,
+              delayed deliveries, billing errors or other problems on the beta
+              website, please email us on <a href="">cs@jiomart.com</a>
+            </p>
+            <h2 style="line-height: 50px">DOWNLOAD APP</h2>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.jpl.jiomart"
+              target="_blank"
+              style="margin-right: 16px"
+            >
+              <img
+                src="https://www.jiomart.com/images/cms/wysiwyg/app-icons/play_store.png"
+                alt="Donwload Jio mart app from Play store"
+              />
+            </a>
+            <a
+              href="https://apps.apple.com/in/app/jiomart/id1522085683"
+              target="_blank"
+            >
+              <img
+                src="https://www.jiomart.com/images/cms/wysiwyg/app-icons/ios_store.png"
+                alt="Donwload Jio mart for IOS app from App store"
+              />
+            </a>
+          </div>
+        </div>
+        <div id="copyRight">
+          <p>
+            Best viewed on Microsoft Edge 81+, Mozilla Firefox 75+, Safari 5.1.5+,
+            Google Chrome 80+
+          </p>
+          <p>© 2021 All rights reserved. Reliance Retail Ltd.</p>
+        </div>
+      </footer>
+    
+    
+    
+    
+</body>
+</html>
+<script>
+    function sidenav() {
+      document.getElementById("mysidebar").style.width = "330px";
+    }
+    function closenav() {
+      document.getElementById("mysidebar").style.width = "0";
+    }
+    var personalInfo = JSON.parse(localStorage.getItem('UserDetails')) || [] ;
+    document.querySelector('#hello_text').textContent = personalInfo[0].Fname || 'Hello Signin';
+    document.querySelector('#signin_text').textContent = personalInfo[0].Fname || 'signup';
+    document.querySelector('#hello_button').addEventListener('click',function(){
+      window.location.href = 'myaccount.html';
+    });
+    document.querySelector('#signin_text').addEventListener('click',function(){
+      window.location.href = 'myaccount.html';
+    });
+    document.querySelector('#loction_icon').addEventListener('click',function(){
+      window.location.href = 'https://www.google.com/maps';
+    });
+    
+    
+    
+    </script>
