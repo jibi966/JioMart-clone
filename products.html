@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        *{
+            background-color: whitesmoke;
+            font-family: sans-serif;
+        }
         /* .header{border: 1px solid red; height: 150px;} */
         .leftside{width: 245px;height:900px;}
         .cat{font-size: 20px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -37,10 +41,58 @@
             box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
         }
         .right{
-            border: 1px solid rgb(10, 10, 10);
-            width: 900px;
-            height: 800px;
-        }        
+            width: 1200px;
+            margin-left: 50px;
+        }      
+        .sortingCls{
+            display: flex;
+            margin-top: 20px;
+        }  
+        .sortingCls>p:nth-child(1){
+            margin-right: 37%;
+        }
+        .sortingCls>button,
+        #sortName,
+        #sortPrice {
+            margin: 12px 0 0 10px;
+            height: 28px;
+            width: 100px;
+            background-color: white;
+            border: transparent;
+            border-radius: 5px;
+        }
+        .productsVeg{
+            background-color: white;
+            width: 97%;
+            padding: 15px;
+            display: grid;
+            grid-template-columns: repeat(4,280px);
+            grid-template-rows: repeat(5,340px);
+            grid-gap: 15px;
+            
+        }
+        .productsVeg>div{
+            background-color: white;
+            outline: 1px solid gray;
+            border-radius: 10px;
+            padding: 15px;
+        }
+        .productsVeg > div > img{   
+            margin: auto;
+            display: block;
+            height: 60%;
+        }
+        .productsVeg > div > img:hover{
+          transform: scale(0.9);
+        }
+        #cartbtn{
+            background-color: #008ecc;
+            border: transparent;
+            width: 100%;
+            height: 10%;
+            color: white;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -223,13 +275,224 @@
 </div>
       <!-- jibin bro start your work inside right div -->
       <!-- change the height and width of class right according to ur need  -->
-    <div class="right"></div>
+    <div class="right">
+        <img src="https://www.jiomart.com/images/category/229/fresh-vegetables-20200704.jpg" alt="" width="100%">
+        <div class="sortingCls"><p>Showing <b>20</b> of <b>49</b> items</p>
+        <p>Sort by:</p>
+        <select id="sortName" onchange="nameSort()">
+            <option>Name</option>
+            <option value="nasc">Ascending</option>
+            <option value="ndsc">Descending</option>
+        </select>
+    <select id="sortPrice" onchange="priceSort()">
+        <option>Price</option>
+        <option value="asc">Low To High</option>
+        <option value="dsc">High To Low</option>
+    </select>
+    <button>Popularity</button>
+    <button>All Products</button>
+</div>
+<div class="productsVeg"></div>
+    </div>
 </body>
 </html>
 <script>
+    var data = [
+    {
+      MRP: 22,
+      type: "Potato",
+      image_url:
+        "https://www.jiomart.com/images/product/150x150/590003516/potato-per-kg-0-20200710.jpg",
+    },
+    {
+      MRP: 64,
+      type: "Tomato",
+      image_url:
+        "https://www.jiomart.com/images/product/150x150/590003517/tomato-per-kg-0-20200710.jpg",
+    },
+    {
+      MRP: 32,
+      type: "Coconut 1 pc",
+      image_url:
+        "https://www.jiomart.com/images/product/150x150/590000086/coconut-1-pc-0-20201118.jpg",
+    },
+    {
+      MRP: 39.50,
+      type: "Bhendi",
+      image_url:
+        "https://www.jiomart.com/images/product/240x240/590003550/bhendi-okra-per-500-g-0-20201118.jpg",
+    },
+    {
+      MRP: 24.50,
+
+      type: "Cucumber",
+      image_url:
+        "https://www.jiomart.com/images/product/150x150/590003548/cucumber-500-g-0-20200710.jpg",
+    },
+    {
+      MRP: 110,
+      type: "Onion sambhar",
+      image_url:
+        "https://www.jiomart.com/images/product/150x150/590004163/onion-sambhar-1-kg-0-20201118.jpg",
+    },
+    {
+      MRP: 29.50,
+
+      type: "Cucumber Regular",
+      image_url:
+        "https://www.jiomart.com/images/product/150x150/590034099/cucumber-regular-500-g-0-20200902.jpg",
+    },
+    {
+      MRP: 14,
+      type: "Sweet cone 1 pc",
+      image_url:
+        "https://www.jiomart.com/images/product/150x150/590001266/sweet-corn-1-pc-0-20201118.jpg",
+    },
+    {
+      MRP: 39.50,
+
+      type: "Brinjal Black big",
+      image_url:
+        "https://www.jiomart.com/images/product/150x150/590003544/brinjal-black-big-500-g-0-20200710.jpg",
+    },
+    {
+      MRP: 17.50,
+      type: "Potato baby",
+      image_url:
+        "https://www.jiomart.com/images/product/240x240/590000094/potato-baby-500-g-0-20200731.jpg",
+    },
+    {
+      MRP: 22.50,
+
+      type: "Green peas",
+      image_url:
+        "https://www.jiomart.com/images/product/240x240/590004083/green-peas-500-g-0-20200710.jpg",
+    },
+    {
+      MRP: 35,
+
+      type: "French beans",
+      image_url:
+        "https://www.jiomart.com/images/product/240x240/590003549/french-beans-500-g-0-20200710.jpg",
+    },
+    {
+      MRP: 49.50,
+      type: "Amla (Indian goosberry)",
+      image_url:
+        "https://www.jiomart.com/images/product/240x240/590000126/amla-indian-gooseberry-500-g-0-20201118.jpg",
+    },
+    {
+      MRP: 40,
+
+      type: "Snake gourd",
+      image_url:
+        "https://www.jiomart.com/images/product/240x240/590034102/snake-gourd-500-g-0-20200902.jpg",
+    },
+    {
+      MRP: 199,
+      type: "Ground Nut Fresh",
+      image_url:
+        "https://www.jiomart.com/images/product/240x240/590034300/ground-nuts-fresh-500-g-0-20200910.jpg",
+    },
+    {
+      MRP: 70,
+
+      type: "Pointed Gourd",
+      image_url:
+        "https://www.jiomart.com/images/product/240x240/590321586/pointed-gourd-1-kg-pack-0-20210531.jpg",
+    },
+    {
+      MRP: 49,
+      type: "Sprouts channa brown",
+      image_url:
+        "https://www.jiomart.com/images/product/240x240/590000825/sprouts-channa-brown-per-pack-0-20201118.jpg",
+    },
+    {
+      MRP: 99,
+
+      type: "Matki sprouts",
+      image_url:
+        "https://www.jiomart.com/images/product/240x240/590001833/matki-sprout-pack-0-20201118.jpg",
+    },
+    {
+      MRP: 9,
+      type: "Arbi-colocasia-leaves-1-bunch",
+      image_url:
+        "https://www.jiomart.com/images/product/240x240/590000721/arbi-colocasia-leaves-1-bunch-0-20201118.jpg",
+    },
+    {
+      MRP: 69,
+
+      type: "Sprouted-beans-1-pack",
+      image_url:
+        "https://www.jiomart.com/images/product/240x240/590000253/sprouted-beans-1-pack-0-20201118.jpg",
+    },
+  ];
+  var cartArr=JSON.parse(localStorage.getItem("cartData")) || [];
+  display(data);
+  function display(data){
+      document.querySelector(".productsVeg").innerHTML="";
+    data.map(function(elem){
+      var mainDiv=document.createElement("div");
+      var image=document.createElement("img");
+      image.setAttribute("src",elem.image_url);
+      var name=document.createElement("h4");
+      name.textContent=elem.type;
+      name.style.backgroundColor="white";
+      var price=document.createElement("p");
+      price.textContent="M.R.P: "+elem.MRP;
+      price.style.backgroundColor="white";
+      var btn = document.createElement("button");
+      btn.textContent="Add To Cart";
+      btn.setAttribute("id","cartbtn");
+      var count=1;
+      btn.addEventListener("click",function(){
+          btn.textContent=count++;
+          addtoCart(elem);
+        })
+      mainDiv.append(image,name,price,btn);
+      document.querySelector(".productsVeg").append(mainDiv);
+  });
+  }
+  function addtoCart(elem){
+        cartArr.push(elem);
+        localStorage.setItem("cartData",JSON.stringify(cartArr));
+  }
+function priceSort(){
+    var sel=document.querySelector("#sortPrice").value;
+    if(sel=="asc"){
+        data.sort(function(a,b){
+            return a.MRP-b.MRP;
+        })
+    }
+    if(sel=="dsc"){
+        data.sort(function(a,b){
+            return b.MRP-a.MRP;
+        })
+    }
+    display(data);
+}
+function nameSort(){
+    var sel=document.querySelector("#sortName").value;
+    if(sel=="nasc"){
+        data.sort(function(a,b){
+     if(b.type>a.type){
+         return -1;
+     } 
+    })
+    }   
+    if(sel=="ndsc"){
+        data.sort(function(a,b){
+     if(a.type>b.type){
+         return -1;
+     } 
+    })
+    } 
+    display(data);
+}
+
     var coll = document.getElementsByClassName("collapsible");
 var i;
-
 for (i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
     this.classList.toggle("active");
