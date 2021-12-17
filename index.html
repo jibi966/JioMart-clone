@@ -492,6 +492,7 @@
         grid-template-rows: repeat(2, 430px);
         grid-gap: 20px;
         padding: 10px;
+        cursor: pointer;
       }
       .largeImageStart > div > img {
         height: 100%;
@@ -510,8 +511,14 @@
         outline: 1px solid lightgray;
       }
       .hotDeals > div > img {
+        cursor: pointer;
         width: 100%;
         height: 100%;
+        transition: transform .9s;
+      }
+      .hotDeals > div > img:hover{
+        -ms-transform: scale(1.11); 
+          transform: scale(1.11);
       }
       .essential_main_box {
         /* border:1px solid red; */
@@ -557,12 +564,15 @@
         margin: auto;
         text-align: center;
         font-weight: bold;
+        transition: transform .9s;
       }
       .essential_img:hover {
-        font-size: 20px;
+        -ms-transform: scale(1.1);
+  transform: scale(1.1); 
+        /* font-size: 20px; */
         /* shape-image-threshold: 300px; */
         /* width:300px; */
-        inline-size: 300px;
+        /* inline-size: 300px; */
         /* margin: auto;    */
         /* image-rendering: auto;  */
         /* box-sizing: 400px;         */
