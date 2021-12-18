@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <style>
+
+        #container{
+            width: 250px;
+            margin: auto;
+            padding: 10px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        }
+        input,select{
+            margin-bottom: 10px;
+            padding:5px;
+            width: 220px;
+        }
+        button:hover{
+            background-color: lightgreen;
+            color: rgb(14, 18, 235);
+            cursor: pointer;
+        }
+        button{
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id='container'>
+        <h1>Data Page</h1>
+        <label>Product Name</label><br>
+        <input type="text" placeholder='Product Name' id='prodName'><br>
+        <label>Price</label><br>
+        <input type="number" placeholder='Enter Price' id='price'><br>
+        <label>Image Url</label><br>
+        <input type="url" placeholder='imgUrl' id='imgUrl' ><br>
+        <input  id="cate" type='text' placeholder='Category'>
+        <br>
+        <button id='query'>Submit</button><br>
+        <button id='prodPage'>Product Page</button>
+    </div>
+
+
+</body>
+</html>
+<script>
+    document.querySelector('#prodPage').addEventListener('click',function(){
+        window.location.href = "Product.html"
+    });
+    document.querySelector('#query').addEventListener('click',add);
+
+    var prod = JSON.parse(localStorage.getItem("shoppingItems")) || [];
+    function add(event) {
+        event.preventDefault();
+        var name = document.querySelector("#prodName").value;
+        var price = document.querySelector("#price").value;
+        var type = document.querySelector("#cate").value;
+        var image = document.querySelector("#imgUrl").value;
+        var prodObj = {
+            name: name,
+            price: price,
+            category: type,
+            image: image,
+        };
+        prod.push(prodObj);
+        localStorage.setItem("shoppingItems", JSON.stringify(prod));
+    }
+
+
+</script>

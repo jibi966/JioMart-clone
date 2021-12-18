@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/683b4b40e3.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>MY Account</title>
+ 
+    <style>
+ * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+
+      #nav_bar {
+        width: 100%;
+        height: 80px;
+        background-color: #008ecc;
+        display: flex;
+        position: fixed;
+      }
+      #menu {
+        color: white;
+        font-size: 40px;
+        margin-left: 120px;
+        margin-top: 20px;
+      }
+      h1 {
+        margin-left: 30px;
+        color: white;
+        margin-top: 20px;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+      #search {
+        height: 40px;
+        width: 700px;
+        background-color: white;
+        margin-left: 40px;
+        margin-top: 20px;
+        border-radius: 5px;
+        display: flex;
+      }
+      #search_menu {
+        color: rgb(7, 7, 7);
+        font-size: 20px;
+        margin-left: 40px;
+        margin-top: 5px;
+      }
+      #search_bar {
+        height: 30px;
+        width: 600px;
+        margin-left: 20px;
+        margin-top: 3px;
+        border-radius: 5px;
+        border: none;
+        background-color: transparent;
+        resize: none;
+        outline: none;
+      }
+      #search_button {
+        border: none;
+        background-color: transparent;
+        resize: none;
+        outline: none;
+        color: rgb(7, 7, 7);
+        font-size: 20px;
+        margin-right: 20px;
+        margin-bottom: 3px;
+      }
+
+      #signin_icon {
+        margin-left: 90px;
+        font-size: 25px;
+        border: none;
+        background-color: transparent;
+        outline: none;
+        color: white;
+      }
+      #signin_text {
+        font-size: 14px;
+        font-weight: bold;
+        border: none;
+        background-color: transparent;
+        outline: none;
+        color: white;
+      }
+      #cart_icon {
+        margin-left: 90px;
+        font-size: 20px;
+        border: none;
+        background-color: transparent;
+        resize: none;
+        outline: none;
+        color: white;
+      }
+      #cart_text {
+        font-weight: bold;
+        font-size: 14px;
+        border: none;
+        background-color: transparent;
+        resize: none;
+        outline: none;
+        color: white;
+      }
+      /* -- --------------------------------------------------nav bar 2------------------------------------------- -- */
+
+      .navbar2 {
+        background-color: #ececed;
+        text-align: center;
+        position: fixed;
+        margin-top: 80px;
+        width: 100%;
+      }
+      .navbar2 ul {
+        display: flex;
+        list-style: none;
+        margin-left: 50px;
+      }
+      .navbar2 ul li {
+        width: 160px;
+        height: 40px;
+        text-align: center;
+        margin-top: 20px;
+      }
+      .navbar2 ul li a {
+        text-decoration: none;
+        color: black;
+        font-family: sans-serif;
+        font-weight: bolder;
+        font-size: 15px;
+      }
+      .navbar2 ul li i {
+        color: #878b9c;
+      }
+      #loction_icon {
+        display: flex;
+      }
+      #loction_icon p {
+        margin-bottom: 0;
+        margin-top: -15px;
+        margin-left: -10px;
+      }
+      #loction_icon i {
+        font-size: 30px;
+        color: #878b9c;
+      }
+      .menu_text:nth-child(1) {
+        margin-left: 70px;
+      }
+      .menu_text:nth-child(2) {
+        margin-left: -20px;
+      }
+      .menu_text:nth-child(3) {
+        margin-left: 20px;
+      }
+      .menu_text:nth-child(4) {
+        margin-left: 20px;
+      }
+      .menu_text:nth-child(5) {
+        margin-left: 10px;
+      }
+      .menu_text:nth-child(6) {
+        margin-left: -20px;
+      }
+      .menu_text:nth-child(7) {
+        margin-left: -20px;
+      }
+      .menu_text:nth-child(8) {
+        margin-left: -20px;
+      }
+      .menu_text:nth-child(9) {
+        margin-left: -60px;
+      }
+      .sub_menu_1 {
+        display: none;
+      }
+      .navbar2 ul li:hover .sub_menu_1 {
+        display: block;
+        position: absolute;
+        background-color: #ececed;
+      }
+      .navbar2 ul li:hover .sub_menu_1 ul {
+        display: block;
+        margin-left: 20px;
+        margin-top: 30px;
+        justify-content: center;
+        align-items: center;
+      }
+      .navbar2 ul li:hover .sub_menu_1 ul li {
+        background: transparent;
+        border-radius: 0;
+        text-align: left;
+
+        margin-top: 10px;
+        width: 250px;
+      }
+      .navbar2 ul li:hover .sub_menu_1 ul li a:hover {
+        color: lightskyblue;
+      }
+
+      /* -------------------------------------------------------------sidenav bar------------------------------------------------------ */
+      .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: white;
+        overflow: hidden;
+        transition: 0.5s;
+      }
+      #sidenav_home > a {
+        padding: 20px 8px 8px 20px;
+        text-decoration: none;
+        color: black;
+        display: block;
+        transition: 0.3s;
+      }
+      .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 25px;
+        margin-left: 70px;
+        color: white;
+        margin-top: 10px;
+      }
+      .myacc {
+        background-color: #008ecc;
+        height: 100px;
+      }
+      #hello_button {
+        display: flex;
+        border: none;
+        background-color: transparent;
+        resize: none;
+        outline: none;
+        color: white;
+        margin-left: 10px;
+      }
+      #hello_icon {
+        font-size: 25px;
+        margin-top: 18px;
+        margin-left: 5px;
+      }
+      #hello_text {
+        margin-left: 14px;
+        font-size: 15px;
+        margin-top: 25px;
+      }
+      #account {
+        display: flex;
+      }
+      .accdiv {
+        border: 1px solid white;
+        width: 150px;
+        height: 25px;
+        color: white;
+        text-align: center;
+        margin-left: 7px;
+        padding-top: 7px;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+      #order_box {
+        margin-left: 5px;
+      }
+
+      .line {
+        height: 5px;
+        width: 100%;
+        background-color: #ececed;
+        margin-top: 6px;
+      }
+      #sidenav_home {
+        overflow: scroll;
+        height: 600px;
+        top: 0;
+        left: 0;
+        background-color: white;
+      }
+      #sidenav_home > h4,
+      p {
+        padding: 10px 0px 0px 20px;
+        margin-right: 20px;
+      }
+      #playstore {
+        display: flex;
+        margin-left: 20px;
+        margin-top: 10px;
+      }
+        
+        #My_Account_main_box{
+            height: 650px;
+            width:90%;
+            margin: auto;
+            padding-top: 100px;
+        }
+        #My_Account_Title{
+            width:50%;
+            height: 35px;
+            color: black;
+            padding:0 0 20px 20px;
+        }
+        #My_Account_Profile_Page{
+            width:100%;
+            height: 230px;
+            display: flex;
+        }
+        #My_Profile_Details_Methods{
+            height: 100%;
+            width:70%;
+            margin-right: 30px;
+            background-color:  #008ecc;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        }
+        #My_profile_bg_Name_email_phon{
+            width:400px;
+            height: 30%;
+            display: flex;
+            margin-left: 20px;
+            margin-top:15px;
+        }
+        #My_Profile_bg{
+            width:56px;
+            height: 56px;
+            margin-right:20px ;
+            background-image: url("https://www.jiomart.com/msassets/images/icons/profile_white.svg");
+        }
+        #profile_name_email_phon{
+            width:300px;
+            height: 100%;
+
+        }
+        #Customer_Name{
+            font-weight: bold;
+            font-size:20px ;
+            color: white;
+        }
+        #My_Account_Link{
+            width:80%;
+            height: 50%;
+            margin-left: 20px;
+            margin-top:15px;
+        }
+        .Account_Link{
+            width:100%;
+            height: 47%;
+            display: flex;
+            margin-bottom: 5px;
+            background-color: #66bbe0;
+        }
+        #payment_bg{
+            width:20%;
+            height: 100%;
+            margin-right: 15px;
+            background-position-x: 12px;
+            background-position-y: 12px;
+            background-repeat: no-repeat;
+            background-image: url("https://www.jiomart.com/msassets/images/icons/credit_card.svg");
+        }
+        .Payment_Methods{
+            width:48%;
+            height:100%;
+            display: flex;
+        }
+        .methods_tital{
+            width:78%;
+            height: 60%;
+            margin: auto;
+        }
+        #order_history_bg{
+            width:20%;
+            height: 100%;
+            margin-right: 15px;
+            background-position-x: 12px;
+            background-position-y: 12px;
+            background-repeat: no-repeat;
+            background-image: url("https://www.jiomart.com/msassets/images/icons/orders.svg");
+        }
+        #Delivery_bg{
+            width:20%;
+            height: 100%;
+            margin-right: 15px;
+            background-position-x: 12px;
+            background-position-y: 12px;
+            background-repeat: no-repeat;
+            background-image: url("https://www.jiomart.com/msassets/images/icons/location_white.svg");
+        }
+        #Account_Info_Title{
+            width:95%;
+            height: 20%;
+            display: flex;
+            justify-content: space-between;
+
+        }
+        #Account_Info{
+            padding: 2%;
+            width:100%;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        }
+        #Account_Info_Detail{
+            width:95%;
+
+            display: flex;
+            justify-content: space-between;
+
+        }
+        @media screen and (min-width:0px) and (max-width:800px){
+            #Account_Info_Detail{
+                display: flex;
+                flex-direction: column;
+            }
+            #Account_Info{
+                overflow: scroll;
+            }
+            .Account_Info_box>div>p{
+               padding: 10px 0px 10px 20px;
+            }
+        }
+        .Account_Info_box>div>h5{
+           padding: 10px 0px 10px 20px;
+        }
+        #full_name{
+            width:100%;
+            height: 46%;
+            margin-bottom: 2%;
+        }
+        #Email_id{
+            width:100%;
+            height: 46%;
+        }
+        #mobile_no{
+            width:100%;
+            height: 46%;
+            margin-bottom: 2%;
+        }
+        #Default_Address{
+            width:100%;
+            height: 46%;
+        }
+        p{
+            color:#868e96;
+            margin-bottom: -20%;
+        }
+        #My_List{
+            height:60%;
+            width:35%;
+            margin-right: 30px;
+            padding: 2%;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+            margin-top: 20px;
+        }
+        #My_List>h4{
+            margin-bottom: 15px;
+        }
+        #My_List>hr{
+            margin-bottom: 20px;
+        }
+        #List_Div{
+            width:90%;
+            height: 72%;
+            margin: auto;
+            margin-top: 20px;
+        }
+        #List_Div>a{
+            text-decoration: 0;
+            color: black;
+            font-weight: bold;
+        }
+        #Log_out{
+            width:90%;
+            height: 20%;
+            margin: auto;
+            color: black;
+        }
+        #Log_out>a{
+            text-decoration: 0;
+            color: black;
+            font-weight: bold;
+        }
+
+    </style>
+  </head>
+  <body>
+        
+    <div id="nav_bar">
+        <i onclick="sidenav()" id="menu" class="fas fa-bars"></i>
+        <h1 onclick="home()">JioMart</h1>
+        <div id="search">
+          <input
+            id="search_bar"
+            type="text"
+            placeholder="Search essentials,grcoceries,and more...."
+          />
+          <button id="search_button">
+            <i id="search_menu" class="fas fa-list-ul"></i>
+          </button>
+        </div>
+        <button id="signin_icon" class="signin" onclick="signin()">
+          <i class="fas fa-user-alt"></i>
+        </button>
+        <button id="signin_text" class="signin" onclick="signin()">Sign in/ sign up</button>
+        <button id="cart_icon" onclick="cart()"><i class="fas fa-shopping-cart"></i></button>
+        <button id="cart_text" onclick="cart()">Cart</button>
+      </div>
+      <!-- --------------------------------------------------nav bar 2------------------------------------------- -->
+
+      <div class="navbar2">
+        <ul class="menu">
+          <li id="loction_icon" class="menu_text">
+            <i id="loction_icon" class="fas fa-map-marker-alt"></i>
+            <p>Deliver to <br />444303</p>
+          </li>
+          <li class="menu_text">
+            <a href="product.html">Fruits & Vegetables <i class="fas fa-chevron-down"></i></a>
+            <div class="sub_menu_1">
+              <ul>
+                <li><a href="product.html">Fresh Fruits</a></li>
+                <li><a href="product.html">Fresh Vegetables</a></li>
+                <li><a href="product.html">Herbs & Seasonings</a></li>
+                <li><a href="product.html">Exotic & Vegetables</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="menu_text">
+            <a href="">Premium Fruits <i class="fas fa-chevron-down"></i></a>
+            <div class="sub_menu_1">
+              <ul>
+                <li><a href="">Avocado, Peach, Plum</a></li>
+                <li><a href="">Cherries, Berries & Exotic Fruits</a></li>
+                <li><a href="">Pomegranate, Papaya & Pineapple</a></li>
+                <li><a href="">Citrus, Mango & Grapes</a></li>
+                <li><a href="">Apples & Pears</a></li>
+                <li><a href="">Banana, Melon & Cocunut</a></li>
+                <li><a href="">Seasonal & Minor Fruits</a></li>
+                <li><a href="">Dates</a></li>
+                <li><a href="">Organic & Residue Certified</a></li>
+                <li><a href="">Gift, Assorted & XL Packs</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="menu_text">
+            <a href="">Dairy & Bakery <i class="fas fa-chevron-down"></i></a>
+            <div class="sub_menu_1">
+              <ul>
+                <li><a href="">Dairy</a></li>
+                <li><a href="">Toast & Khari</a></li>
+                <li><a href="">Cakes & Muffins</a></li>
+                <li><a href="">Breads and Buns</a></li>
+                <li><a href="">Baked Cookies</a></li>
+                <li><a href="">Bakery Snacks</a></li>
+                <li><a href="">Batter & Chutney</a></li>
+                <li><a href="">Cheese</a></li>
+                <li><a href="">Ghee</a></li>
+                <li><a href="">Paneer & Tofu</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="menu_text">
+            <a href="">Staples <i class="fas fa-chevron-down"></i></a>
+            <div class="sub_menu_1">
+              <ul>
+                <li><a href="">Atta, Flours & Sooji</a></li>
+                <li><a href="">Dals & Pulses</a></li>
+                <li><a href="">Rice & Rice Products</a></li>
+                <li><a href="">Edible Oils</a></li>
+                <li><a href="">Massalas & Spices</a></li>
+                <li><a href="">Salt, Sugar and Jaggery</a></li>
+                <li><a href="">Soya Products, Wheat & Other</a></li>
+                <li><a href="">Grains</a></li>
+                <li><a href="">Dry Fruits & Nuts</a></li>
+                <li><a href="">Combo Offer</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="menu_text">
+            <a href="">Men <i class="fas fa-chevron-down"></i></a>
+            <div class="sub_menu_1">
+              <ul>
+                <li><a href="">Clothing Accessories</a></li>
+                <li><a href="">Western Wear</a></li>
+                <li><a href="">Inner Wear</a></li>
+                <li><a href="">Bags, Belts & Wallets</a></li>
+                <li><a href="">Ethnic Wear</a></li>
+                <li><a href="">Footwear</a></li>
+                <li><a href="">Fusion Wear</a></li>
+                <li><a href="">Night & Lounge</a></li>
+                <li><a href="">Fashion Jewellery</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="menu_text">
+            <a href="">Women <i class="fas fa-chevron-down"></i></a>
+            <div class="sub_menu_1">
+              <ul>
+                <li><a href="">Clothing Accessories</a></li>
+                <li><a href="">Western Wear</a></li>
+                <li><a href="">Inner Wear</a></li>
+                <li><a href="">Bags, Belts & Wallets</a></li>
+                <li><a href="">Ethnic Wear</a></li>
+                <li><a href="">Footwear</a></li>
+                <li><a href="">Fusion Wear</a></li>
+                <li><a href="">Night & Lounge</a></li>
+                <li><a href="">Fashion Jewellery</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="menu_text">
+            <a href="">Boys <i class="fas fa-chevron-down"></i></a>
+            <div class="sub_menu_1">
+              <ul>
+                <li><a href="">Western Wear</a></li>
+                <li><a href="">Ethnic Wear</a></li>
+                <li><a href="">Clothing Accessories</a></li>
+                <li><a href="">Footwear</a></li>
+                <li><a href="">Inner Wear</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="menu_text">
+            <a href="">Girls <i class="fas fa-chevron-down"></i></a>
+            <div class="sub_menu_1">
+              <ul>
+                <li><a href="">Western Wear</a></li>
+                <li><a href="">Ethnic Wear</a></li>
+                <li><a href="">Clothing Accessories</a></li>
+                <li><a href="">Bags, Belts & Wallets</a></li>
+                <li><a href="">Footwear</a></li>
+                <li><a href="">Night & Lounge</a></li>
+                <li><a href="">Inner Wear</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+   
+
+    <!-- -------------------------------------------------sidenav side ----------------------------------- -->
+    <div id="mysidebar" class="sidenav">
+      <div id="myacc" class="myacc">
+        <a href="" class="closebtn" onclick="closenav()"
+          ><i class="fas fa-times"></i
+        ></a>
+        <button id="hello_button" onclick="signin()">
+          <span id="hello_icon" class="hello"
+            ><i class="fas fa-user-circle"></i>
+          </span>
+          <h3 id="hello_text" class="hello">Hello, Sign in</h3>
+        </button>
+
+        <div id="account">
+          <div id="account_box" class="accdiv" onclick="account()">Account</div>
+          <div id="order_box" class="accdiv">Orders</div>
+        </div>
+      </div>
+
+      <div id="sidenav_home">
+        <a href="home.html">Home</a>
+        <a href="product.html">Shop Category</a>
+        <a href="cart.html">My list</a>
+        <a href="">JioMart wallet</a>
+        <a href="">Jiomart cashback</a>
+        <a href="">Jiomart Gift Store</a>
+        <a href="">Jiomart Gift Card</a>
+        <a href="">All offers</a>
+        <div class="line"></div>
+        <a href="account.html">My Account</a>
+        <a href="">Need Help</a>
+        <a href="about.html">About us</a>
+        <a href="">Guide</a>
+        <div class="line"></div>
+        <h4>CONTACT US</h4>
+        <p>
+          WhatsApp us :
+          <a
+            href="https://api.whatsapp.com/send/?phone=917000370003&text=Hi&app_absent=0"
+            target="_blank"
+            >70003 70003</a
+          >
+        </p>
+        <span id="footerspan">
+          <p>Call Us : <a href="">1800 890 1222</a></p>
+          <p>8:00 AM to 8:00 PM,365 days</p>
+        </span>
+        <p>
+          Please note that you are accessing the BETA Version of
+          <a href="">www.jiomart.com</a>
+        </p>
+        <p>
+          Should you encounter any bugs, glitches, lack of functionality, delayed
+          deliveries, billing errors or other problems on the beta website, please
+          email us on <a href="">cs@jiomart.com</a>
+        </p>
+        <h4>DOWNLOAD APP</h4>
+        <div id="playstore">
+          <a
+            href="https://play.google.com/store/apps/details?id=com.jpl.jiomart"
+            target="_blank"
+            style="margin-right: 16px"
+          >
+            <img
+              src="https://www.jiomart.com/images/cms/wysiwyg/app-icons/play_store.png"
+              alt="Donwload Jio mart app from Play store"
+            />
+          </a>
+          <a
+            href="https://apps.apple.com/in/app/jiomart/id1522085683"
+            target="_blank"
+          >
+            <img
+              src="https://www.jiomart.com/images/cms/wysiwyg/app-icons/ios_store.png"
+              alt="Donwload Jio mart for IOS app from App store"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+</div>
+        <div id='myaccount-page-starting-point'>
+            <div id="My_Account_main_box">
+                <div id="My_Account_Title">
+                    <h1>My Account</h1>
+                </div>
+                <div id="My_Account_Profile_Page">
+                    <div id="My_Profile_Details_Methods">
+                        <div>
+                            <div id="My_profile_bg_Name_email_phon">
+                                <div id="My_Profile_bg"></div>
+                                <div id="profile_name_email_phon">
+                                    <span id="nam">---</span>
+                                    <div id="mai" style='color: rgb(173, 166, 166);'>@jiomart.com</div>
+                                    <div id="phn" style='color:rgb(173, 166, 166)'>+91- xxxxxxxx</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="My_Account_Link">
+                            <div class="Account_Link">
+                                <div class="Payment_Methods" style="margin-right:4%;">
+                                        <div id="payment_bg">
+                                        </div>
+                                        <div class="methods_tital">
+                                            <span class="pm">Payment Methods</span>
+                                        </div>
+                                </div>
+                                <div class="Payment_Methods" style="margin-right:4%;">
+                                    <div id="order_history_bg">
+                                    </div>
+                                    <div class="methods_tital">
+                                        <span class="pm">Order History</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="Account_Link">
+                                <div class="Payment_Methods" style="margin-right:4%;">
+                                    <div id="Delivery_bg">
+                                    </div>
+                                    <div class="methods_tital">
+                                        <span class="pm">Delivery Addresees</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Account_Info">
+                        <div id="Account_Info_Title">
+                            <h3>Account Information</h3>
+                            <h5 style='color: rgb(114, 60, 60);'>edit</h5>
+                        </div>
+                        <div id="Account_Info_Detail">
+                            <div class="Account_Info_box">
+                                <div id="full_name">
+                                    <p>Full Name</p><br>
+                                    <h5 id='na'>--</h5>
+                                </div>
+                                <div id="Email_id">
+                                    <p>Email id</p><br>
+                                    <h5 id='ma'>--</h5>
+                                </div>
+                            </div>
+                            <div class="Account_Info_box">
+                                <div id="mobile_no">
+                                    <p>Mobile No</p><br>
+                                    <h5 id='ph'>--</h5>
+                                </div>
+                                <div id="date_of_birth">
+                                    <p>Date of  Birth</p><br>
+                                    <h5 id='dob'>--</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="My_List">
+                    <h4>My Lists</h4><hr>
+                    <h4>WishList</h4><hr>
+                    <h4>Legal information</h4><hr>
+                    <h4>Need Help</h4><hr>
+                    <h4>Contact Us</h4><hr>
+                    <h4 id='logout-Btn'>Logout</h4><hr>
+                </div>
+        </div>
+
+    
+</body>
+</html>
+<script>
+  function sidenav() {
+    document.getElementById("mysidebar").style.width = "330px";
+  }
+  function closenav() {
+    document.getElementById("mysidebar").style.width = "0";
+  }
+  var personalInfo = JSON.parse(localStorage.getItem('UserDetails')) || [] ;
+  document.querySelector('#hello_text').textContent = personalInfo[0].Fname || 'Hello Signin';
+  document.querySelector('#signin_text').textContent = personalInfo[0].Fname || 'signup';
+  document.querySelector('#na').textContent = personalInfo[0].Fname || '--';
+  document.querySelector('#nam').textContent = personalInfo[0].Fname || '--';
+  document.querySelector('#ph').textContent = "+91 -"+ personalInfo[0].mobile || '--';
+  document.querySelector('#phn').textContent = "+91 -"+ personalInfo[0].mobile || '--';
+  document.querySelector('#ma').textContent = personalInfo[0].mail || '--';
+  document.querySelector('#mai').textContent = personalInfo[0].mail || '--';
+  document.querySelector('#dob').textContent = personalInfo[0].dateOfBirth || '--';
+  document.querySelector('#logout-Btn').addEventListener('click',function(){
+    localStorage.removeItem('UserDetails');
+    window.location.href = "signin.html"
+  });
+
+
+
+  document.querySelector('#hello_button').addEventListener('click',function(){
+    window.location.href = 'myaccount.html';
+  });
+  document.querySelector('#signin_text').addEventListener('click',function(){
+    window.location.href = 'myaccount.html';
+  });
+  document.querySelector('#loction_icon').addEventListener('click',function(){
+    window.location.href = 'https://www.google.com/maps';
+  });
+
+  function home(){
+      window.location.href ="home.html"
+  }
+  function cart(){
+      window.location.href ="cart.html"
+  }
+  function product(){
+      window.location.href="product.html"
+  }
+  function wallet(){
+    window.location.href="wallet.html"
+  }
+  function signin(){
+    window.location.href="sign.html"
+  }
+  function account(){
+      window.location.href="account.html"
+  }
+
+
+
+</script>

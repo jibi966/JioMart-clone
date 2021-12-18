@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+      src="https://kit.fontawesome.com/683b4b40e3.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Product</title>
+    <style>
+         * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;  
+            
+      }
+
+      #nav_bar {
+        width: 100%;
+        height: 80px;
+        background-color: #008ecc;
+        display: flex;
+        position: fixed;
+      }
+      #menu {
+        color: white;
+        font-size: 40px;
+        margin-left: 120px;
+        margin-top: 20px;
+      }
+      h1 {
+        margin-left: 30px;
+        color: white;
+        margin-top: 20px;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+      #search {
+        height: 40px;
+        width: 700px;
+        background-color: white;
+        margin-left: 40px;
+        margin-top: 20px;
+        border-radius: 5px;
+        display: flex;
+      }
+      #search_menu {
+        color: rgb(7, 7, 7);
+        font-size: 20px;
+        margin-left: 40px;
+        margin-top: 5px;
+      }
+      #search_bar {
+        height: 30px;
+        width: 600px;
+        margin-left: 20px;
+        margin-top: 3px;
+        border-radius: 5px;
+        border: none;
+        background-color: transparent;
+        resize: none;
+        outline: none;
+      }
+      #search_button {
+        border: none;
+        background-color: transparent;
+        resize: none;
+        outline: none;
+        color: rgb(7, 7, 7);
+        font-size: 20px;
+        margin-right: 20px;
+        margin-bottom: 3px;
+      }
+
+      #signin_icon {
+        margin-left: 90px;
+        font-size: 25px;
+        border: none;
+        background-color: transparent;
+        outline: none;
+        color: white;
+      }
+      #signin_text {
+        font-size: 14px;
+        font-weight: bold;
+        border: none;
+        background-color: transparent;
+        outline: none;
+        color: white;
+      }
+      #cart_icon {
+        margin-left: 90px;
+        font-size: 20px;
+        border: none;
+        background-color: transparent;
+        resize: none;
+        outline: none;
+        color: white;
+      }
+      #cart_text {
+        font-weight: bold;
+        font-size: 14px;
+        border: none;
+        background-color: transparent;
+        resize: none;
+        outline: none;
+        color: white;
+      }
+      /* -- --------------------------------------------------nav bar 2------------------------------------------- -- */
+
+      .navbar2 {
+        background-color: #ececed;
+        text-align: center;
+        position: fixed;
+        margin-top: 80px;
+        width: 100%;
+      }
+      .navbar2 ul {
+        display: flex;
+        list-style: none;
+        margin-left: 50px;
+      }
+      .navbar2 ul li {
+        width: 160px;
+        height: 40px;
+        text-align: center;
+        margin-top: 20px;
+      }
+      .navbar2 ul li a {
+        text-decoration: none;
+        color: black;
+        font-family: sans-serif;
+        font-weight: bolder;
+        font-size: 15px;
+      }
+      .navbar2 ul li i {
+        color: #878b9c;
+      }
+      #loction_icon {
+        display: flex;
+      }
+      #loction_icon p {
+        margin-bottom: 0;
+        margin-top: -15px;
+        margin-left: -10px;
+      }
+      #loction_icon i {
+        font-size: 30px;
+        color: #878b9c;
+      }
+      .menu_text:nth-child(1) {
+        margin-left: 70px;
+      }
+      .menu_text:nth-child(2) {
+        margin-left: -20px;
+      }
+      .menu_text:nth-child(3) {
+        margin-left: 20px;
+      }
+      .menu_text:nth-child(4) {
+        margin-left: 20px;
+      }
+      .menu_text:nth-child(5) {
+        margin-left: 10px;
+      }
+      .menu_text:nth-child(6) {
+        margin-left: -20px;
+      }
+      .menu_text:nth-child(7) {
+        margin-left: -20px;
+      }
+      .menu_text:nth-child(8) {
+        margin-left: -20px;
+      }
+      .menu_text:nth-child(9) {
+        margin-left: -60px;
+      }
+      .sub_menu_1 {
+        display: none;
+      }
+      .navbar2 ul li:hover .sub_menu_1 {
+        display: block;
+        position: absolute;
+        background-color: #ececed;
+      }
+      .navbar2 ul li:hover .sub_menu_1 ul {
+        display: block;
+        margin-left: 20px;
+        margin-top: 30px;
+        justify-content: center;
+        align-items: center;
+      }
+      .navbar2 ul li:hover .sub_menu_1 ul li {
+        background: transparent;
+        border-radius: 0;
+        text-align: left;
+
+        margin-top: 10px;
+        width: 250px;
+      }
+      .navbar2 ul li:hover .sub_menu_1 ul li a:hover {
+        color: lightskyblue;
+      }
+
+      /* -------------------------------------------------------------sidenav bar------------------------------------------------------ */
+      .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: white;
+        overflow: hidden;
+        transition: 0.5s;
+      }
+      #sidenav_home > a {
+        padding: 20px 8px 8px 20px;
+        text-decoration: none;
+        color: black;
+        display: block;
+        transition: 0.3s;
+      }
+      .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 25px;
+        margin-left: 70px;
+        color: white;
+        margin-top: 10px;
+      }
+      .myacc {
+        background-color: #008ecc;
+        height: 100px;
+      }
+      #hello_button {
+        display: flex;
+        border: none;
+        background-color: transparent;
+        resize: none;
+        outline: none;
+        color: white;
+        margin-left: 10px;
+      }
+      #hello_icon {
+        font-size: 25px;
+        margin-top: 18px;
+        margin-left: 5px;
+      }
+      #hello_text {
+        margin-left: 14px;
+        font-size: 15px;
+        margin-top: 25px;
+      }
+      #account {
+        display: flex;
+      }
+      .accdiv {
+        border: 1px solid white;
+        width: 150px;
+        height: 25px;
+        color: white;
+        text-align: center;
+        margin-left: 7px;
+        padding-top: 7px;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+      #order_box {
+        margin-left: 5px;
+      }
+
+      .line {
+        height: 5px;
+        width: 100%;
+        background-color: #ececed;
+        margin-top: 6px;
+      }
+      #sidenav_home {
+        overflow: scroll;
+        height: 600px;
+        top: 0;
+        left: 0;
+        background-color: white;
+      }
+      #sidenav_home > h4,
+      p {
+        padding: 10px 0px 0px 20px;
+        margin-right: 20px;
+      }
+      #playstore {
+        display: flex;
+        margin-left: 20px;
+        margin-top: 10px;
+      }
+        /* ----------------------------------------------------------------------------------------------------------------------- */
+        #product_page .right{
+           margin-top: 180px;
+           
+        }
+        
+        .filter{
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+          height:30px ;
+          width: 90%;
+          font-family: sans-serif;
+          font-weight: normal; padding-left: 10px;padding-top: 5px;
+            margin-bottom: 10px;
+            font-size: 20px;
+            padding: 10px;
+
+        }
+        /* .header{border: 1px solid red; height: 150px;} */
+        .leftside{width: 245px;height:900px;}
+        .cat{font-size: 20px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+             font-weight: normal; padding-left: 10px;padding-top: 5px;
+            margin-bottom: 10px;}
+        .content{
+            padding-left: 25px;
+            cursor: pointer;
+            display: none;
+            overflow: hidden;
+        line-height: 25px;}
+        .collapsible{
+            cursor: pointer;
+            padding-top: 8px;
+             display:flex;
+             width: 90%;
+             border: 0;
+             background-color: transparent;
+             font-size: 15px;
+             height: 35px;
+             box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+            }
+        .dropdown{
+            height: 15px;
+            width: 15px;
+            margin-right: 5px;
+        } 
+        .box{
+            box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+        }
+        .right{
+            width: 1200px;
+            margin-left: 50px;
+        }      
+        .sortingCls{
+            display: flex;
+            margin-top: 20px;
+        }  
+        .sortingCls>p:nth-child(1){
+            margin-right: 37%;
+        }
+        .sortingCls>button,
+        #sortName,
+        #sortPrice {
+            margin: 12px 0 0 10px;
+            height: 28px;
+            width: 100px;
+            background-color: white;
+            border: transparent;
+            border-radius: 5px;
+        }
+        .productsVeg{
+            background-color: white;
+            width: 97%;
+            padding: 15px;
+            display: grid;
+            grid-template-columns: repeat(4,280px);
+            grid-template-rows: repeat(5,340px);
+            grid-gap: 15px;
+            
+        }
+        .productsVeg>div{
+            background-color: white;
+            outline: 1px solid gray;
+            border-radius: 10px;
+            padding: 15px;
+        }
+        .productsVeg > div > img{   
+            margin: auto;
+            display: block;
+            height: 60%;
+        }
+        .productsVeg > div > img:hover{
+          transform: scale(0.9);
+        }
+        #cartbtn{
+            background-color: #008ecc;
+            border: transparent;
+            width: 100%;
+            height: 10%;
+            color: white;
+            font-weight: bold;
+        }
+        ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+      }
+      footer {
+        background-color: #ededef;
+        margin-top: 20px;
+      }
+      footer p {
+        line-height: 20px;
+      }
+      #footerspan > p {
+        line-height: 0;
+      }
+      #footerspan ~ p {
+        line-height: 20px;
+      }
+      .footer-1 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 30px 100px 30px;
+      }
+      .footer-1 > div {
+        box-sizing: border-box;
+      }
+      #footerDiv3 {
+        width: 70%;
+        border-left: 1px solid gray;
+        padding-left: 30px;
+      }
+      #footerDiv1 a,
+      #footerDiv2 a,
+      #footerDiv3 p {
+        color: gray;
+      }
+      #footerDiv3 a {
+        color: #0b92ce;
+      }
+      .footer-1 p,
+      .footer-1 a {
+        font-size: 13px;
+        font-family: sans-serif;
+      }
+      #footerDiv1,
+      #footerDiv2 {
+        line-height: 20px;
+      }
+      .footer-1 h2 {
+        line-height: 20px;
+        font-size: 13px;
+        font-family: JioBold;
+      }
+
+      #copyRight {
+        display: flex;
+        justify-content: space-around;
+        font-size: 12px;
+        font-family: JioLight;
+        border-top: 1px solid gray;
+      }
+    </style>
+</head>
+<body>
+    <div id="nav_bar">
+        <i onclick="sidenav()" id="menu" class="fas fa-bars"></i>
+        <h1 onclick="home()">JioMart</h1>
+        <div id="search">
+          <input
+            id="search_bar"
+            type="text"
+            placeholder="Search essentials,grcoceries,and more...."
+          />
+          <button id="search_button">
+            <i id="search_menu" class="fas fa-list-ul"></i>
+          </button>
+        </div>
+        <button id="signin_icon" class="signin" onclick="signin()">
+          <i class="fas fa-user-alt"></i>
+        </button>
+        <button id="signin_text" class="signin" onclick="signin()">Sign in/ sign up</button>
+        <button id="cart_icon" onclick="cart()"><i class="fas fa-shopping-cart"></i></button>
+        <button id="cart_text" onclick="cart()">Cart</button>
+      </div>
+      <!-- --------------------------------------------------nav bar 2------------------------------------------- -->
+
+      <div class="navbar2">
+        <ul class="menu">
+          <li id="loction_icon" class="menu_text">
+            <i id="loction_icon" class="fas fa-map-marker-alt"></i>
+            <p>Deliver to <br />444303</p>
+          </li>
+          <li class="menu_text">
+            <a href="product.html" >Fruits & Vegetables <i class="fas fa-chevron-down"></i></a>
+            <div class="sub_menu_1">
+              <ul>
+                <li><a href="product.html">Fresh Fruits</a></li>
+                <li><a href="product.html">Fresh Vegetables</a></li>
+                <li><a href="product.html">Herbs & Seasonings</a></li>
+                <li><a href="product.html">Exotic & Vegetables</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="menu_text">
+            <a href="">Premium Fruits <i class="fas fa-chevron-down"></i></a>
+            <div class="sub_menu_1">
+              <ul>
+                <li><a href="">Avocado, Peach, Plum</a></li>
+                <li><a href="">Cherries, Berries & Exotic Fruits</a></li>
+                <li><a href="">Pomegranate, Papaya & Pineapple</a></li>
+                <li><a href="">Citrus, Mango & Grapes</a></li>
+                <li><a href="">Apples & Pears</a></li>
+                <li><a href="">Banana, Melon & Cocunut</a></li>
+                <li><a href="">Seasonal & Minor Fruits</a></li>
+                <li><a href="">Dates</a></li>
+                <li><a href="">Organic & Residue Certified</a></li>
+                <li><a href="">Gift, Assorted & XL Packs</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="menu_text">
+            <a href="">Dairy & Bakery <i class="fas fa-chevron-down"></i></a>
+            <div class="sub_menu_1">
+              <ul>
+                <li><a href="">Dairy</a></li>
+                <li><a href="">Toast & Khari</a></li>
+                <li><a href="">Cakes & Muffins</a></li>
+                <li><a href="">Breads and Buns</a></li>
+                <li><a href="">Baked Cookies</a></li>
+                <li><a href="">Bakery Snacks</a></li>
+                <li><a href="">Batter & Chutney</a></li>
+                <li><a href="">Cheese</a></li>
+                <li><a href="">Ghee</a></li>
+                <li><a href="">Paneer & Tofu</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="menu_text">
+            <a href="">Staples <i class="fas fa-chevron-down"></i></a>
+            <div class="sub_menu_1">
+              <ul>
+                <li><a href="">Atta, Flours & Sooji</a></li>
+                <li><a href="">Dals & Pulses</a></li>
+                <li><a href="">Rice & Rice Products</a></li>
+                <li><a href="">Edible Oils</a></li>
+                <li><a href="">Massalas & Spices</a></li>
+                <li><a href="">Salt, Sugar and Jaggery</a></li>
+                <li><a href="">Soya Products, Wheat & Other</a></li>
+                <li><a href="">Grains</a></li>
+                <li><a href="">Dry Fruits & Nuts</a></li>
+                <li><a href="">Combo Offer</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="menu_text">
+            <a href="">Men <i class="fas fa-chevron-down"></i></a>
+            <div class="sub_menu_1">
+              <ul>
+                <li><a href="">Clothing Accessories</a></li>
+                <li><a href="">Western Wear</a></li>
+                <li><a href="">Inner Wear</a></li>
+                <li><a href="">Bags, Belts & Wallets</a></li>
+                <li><a href="">Ethnic Wear</a></li>
+                <li><a href="">Footwear</a></li>
+                <li><a href="">Fusion Wear</a></li>
+                <li><a href="">Night & Lounge</a></li>
+                <li><a href="">Fashion Jewellery</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="menu_text">
+            <a href="">Women <i class="fas fa-chevron-down"></i></a>
+            <div class="sub_menu_1">
+              <ul>
+                <li><a href="">Clothing Accessories</a></li>
+                <li><a href="">Western Wear</a></li>
+                <li><a href="">Inner Wear</a></li>
+                <li><a href="">Bags, Belts & Wallets</a></li>
+                <li><a href="">Ethnic Wear</a></li>
+                <li><a href="">Footwear</a></li>
+                <li><a href="">Fusion Wear</a></li>
+                <li><a href="">Night & Lounge</a></li>
+                <li><a href="">Fashion Jewellery</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="menu_text">
+            <a href="">Boys <i class="fas fa-chevron-down"></i></a>
+            <div class="sub_menu_1">
+              <ul>
+                <li><a href="">Western Wear</a></li>
+                <li><a href="">Ethnic Wear</a></li>
+                <li><a href="">Clothing Accessories</a></li>
+                <li><a href="">Footwear</a></li>
+                <li><a href="">Inner Wear</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="menu_text">
+            <a href="">Girls <i class="fas fa-chevron-down"></i></a>
+            <div class="sub_menu_1">
+              <ul>
+                <li><a href="">Western Wear</a></li>
+                <li><a href="">Ethnic Wear</a></li>
+                <li><a href="">Clothing Accessories</a></li>
+                <li><a href="">Bags, Belts & Wallets</a></li>
+                <li><a href="">Footwear</a></li>
+                <li><a href="">Night & Lounge</a></li>
+                <li><a href="">Inner Wear</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+   
+
+    <!-- -------------------------------------------------sidenav side ----------------------------------- -->
+    <div id="mysidebar" class="sidenav">
+      <div id="myacc" class="myacc">
+        <a href="" class="closebtn" onclick="closenav()"
+          ><i class="fas fa-times"></i
+        ></a>
+        <button id="hello_button" onclick="signin()">
+          <span id="hello_icon" class="hello"
+            ><i class="fas fa-user-circle"></i>
+          </span>
+          <h3 id="hello_text" class="hello" onclick="signin()">Hello, Sign in</h3>
+        </button>
+
+        <div id="account">
+          <div id="account_box" class="accdiv" onclick="account()">Account</div>
+          <div id="order_box" class="accdiv">Orders</div>
+        </div>
+      </div>
+
+      <div id="sidenav_home">
+        <a href="home.html">Home</a>
+        <a href="product.html">Shop Category</a>
+        <a href="cart.html">My list</a>
+        <a href="wallet.html">JioMart wallet</a>
+        <a href="">Jiomart cashback</a>
+        <a href="">Jiomart Gift Store</a>
+        <a href="">Jiomart Gift Card</a>
+        <a href="">All offers</a>
+        <div class="line"></div>
+        <a href="account.html">My Account</a>
+        <a href="">Need Help</a>
+        <a href="about.html">About us</a>
+        <a href="">Guide</a>
+        <div class="line"></div>
+        <h4>CONTACT US</h4>
+        <p>
+          WhatsApp us :
+          <a
+            href="https://api.whatsapp.com/send/?phone=917000370003&text=Hi&app_absent=0"
+            target="_blank"
+            >70003 70003</a
+          >
+        </p>
+        <span id="footerspan">
+          <p>Call Us : <a href="">1800 890 1222</a></p>
+          <p>8:00 AM to 8:00 PM,365 days</p>
+        </span>
+        <p>
+          Please note that you are accessing the BETA Version of
+          <a href="">www.jiomart.com</a>
+        </p>
+        <p>
+          Should you encounter any bugs, glitches, lack of functionality, delayed
+          deliveries, billing errors or other problems on the beta website, please
+          email us on <a href="">cs@jiomart.com</a>
+        </p>
+        <h4>DOWNLOAD APP</h4>
+        <div id="playstore">
+          <a
+            href="https://play.google.com/store/apps/details?id=com.jpl.jiomart"
+            target="_blank"
+            style="margin-right: 16px"
+          >
+            <img
+              src="https://www.jiomart.com/images/cms/wysiwyg/app-icons/play_store.png"
+              alt="Donwload Jio mart app from Play store"
+            />
+          </a>
+          <a
+            href="https://apps.apple.com/in/app/jiomart/id1522085683"
+            target="_blank"
+          >
+            <img
+              src="https://www.jiomart.com/images/cms/wysiwyg/app-icons/ios_store.png"
+              alt="Donwload Jio mart for IOS app from App store"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+</div>
+    <!-- ----------------------------------------------------------------------------- -->
+    <!-- this is where division starts left and right -->
+    <!-- jibin bro go to the line 225 -->
+    <div id="product_page">
+
+    
+    <div style="display: flex; width: 1490px; height: 2150px; "> 
+    <div class="leftside">
+    <div class="box">
+      <div class="cat" style="margin-top: 180px; ">Categories</div>
+      <button type="button" class="collapsible"><div><img class="dropdown" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzlpy2TiXEoF3kZEDe12lk1ctYhZfrubOZ-aBnjX6VnMjgN1Lj9EK5sIoC1MEcu7as_Rg&usqp=CAU"  alt=""></div>
+        Fruits & Vegetables 
+          </button>
+      <div class="content">
+          <a href="product.html">Fresh Fruits</a><br>
+          <a href="product.html">Fresh Vegetables</a><br>
+          <a href="product.html">Herbs & Seasonings</a><br>
+          <a href="product.html">Exotic Fruits & Vegetables</a>
+      </div>
+      <button type="button" class="collapsible"><div><img class="dropdown" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQgd_M8knU3KW37lgwgIapz4qemt9xLbjW5cNAsvpTvlPel8fGe"  alt=""></div>
+        Premium Fruits
+          </button>
+      <div class="content">
+          <a>Avocado, Peach, Plum</a><br>
+          <a>Cherries, Berries & Exotic Fruits</a><br>
+          <a>Pomegranate, Papaya & Pineapple</a><br>
+          <a>Citrus, Mango & Grapes</a><br>
+          <a>Apples & Pears</a><br>
+          <a>Banana, Melons & Coconut</a><br>
+          <a>Seasonal & Minor Fruits</a><br>
+          <a>Dates</a><br>
+          <a>Organic & Residue Certified</a><br>
+          <a>Gift, Assorted & XL Packs</a><br>
+      </div>
+      <button type="button" class="collapsible"><div><img class="dropdown" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQgd_M8knU3KW37lgwgIapz4qemt9xLbjW5cNAsvpTvlPel8fGe"  alt=""></div>
+        Dairy & Bakery
+          </button>
+      <div class="content">
+          <a>Dairy</a><br>
+          <a>Toast & Khari</a><br>
+          <a>Cakes & Muffins</a><br>
+          <a>Breads and Buns</a><br>
+          <a>Baked Cookies</a><br>
+          <a>Bakery Snacks</a><br>
+          <a>Batter & Chutney</a><br>
+          <a>Cheese</a><br>
+          <a>Ghee</a><br>
+          <a>Paneer & Tofu</a><br>
+      </div>
+      <button type="button" class="collapsible"><div><img class="dropdown" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQgd_M8knU3KW37lgwgIapz4qemt9xLbjW5cNAsvpTvlPel8fGe"  alt=""></div>
+       Staples
+          </button>
+      <div class="content">
+          <a>Atta, Flours & Sooji</a><br>
+          <a>Dals & Pulses</a><br>
+          <a>Rice & Rice Products</a><br>
+          <a>Edible Oils</a><br>
+          <a>Masalas & Spices</a><br>
+          <a>Salt, Sugar & Jaggery</a><br>
+          <a>Soya Products, Wheat & Other Grains</a><br>
+          <a>Dry Fruits & Nuts</a><br>
+          <a>Combo Offer</a><br>
+          <a></a><br>
+      </div>
+      <button type="button" class="collapsible"><div><img class="dropdown" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQgd_M8knU3KW37lgwgIapz4qemt9xLbjW5cNAsvpTvlPel8fGe"  alt=""></div>
+        Snacks & Branded Foods
+           </button>
+       <div class="content">
+           <a>Biscuits & Cookies</a><br>
+           <a>Noodle, Pasta, Vermicelli</a><br>
+           <a>Breakfast Cereals</a><br>
+           <a>Snacks & Namkeen</a><br>
+           <a>Chocolates & Candies</a><br>
+           <a>Ready To Cook & Eat</a><br>
+           <a>Frozen Veggies & Snacks</a><br>
+           <a>Spreads, Sauces, Ketchup</a><br>
+           <a>Indian Sweets</a><br>
+           <a>Pickles & Chutney</a><br>
+           <a>Extracts & Flavouring</a><br>
+       </div>
+       <button type="button" class="collapsible"><div><img class="dropdown" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQgd_M8knU3KW37lgwgIapz4qemt9xLbjW5cNAsvpTvlPel8fGe"  alt=""></div>
+        Beverages
+           </button>
+       <div class="content">
+           <a>Tea</a><br>
+           <a>Coffee</a><br>
+           <a>Fruit juices</a><br>
+           <a>Energy & Soft Drinks</a><br>
+           <a>Health Drink & Supplement</a><br>
+           <a>Soda & Flavoured Water</a><br>
+       </div>
+       <button type="button" class="collapsible"><div><img class="dropdown" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQgd_M8knU3KW37lgwgIapz4qemt9xLbjW5cNAsvpTvlPel8fGe"  alt=""></div>
+        Personal Care
+           </button>
+       <div class="content">
+           <a>Hair Care</a><br>
+           <a>Oral Care</a><br>
+           <a>Skin Care</a><br>
+           <a>Bath & Hand Wash</a><br>
+           <a>Body Wash & Bathing Accessories</a><br>
+           <a>Feminine Hygiene</a><br>
+           <a>Men's Grooming</a><br>
+           <a>Deo & Fragrances</a><br>
+           <a>Health & Wellness</a><br>
+           <a>Makeup</a><br>
+       </div>
+       <button type="button" class="collapsible"><div><img class="dropdown" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQgd_M8knU3KW37lgwgIapz4qemt9xLbjW5cNAsvpTvlPel8fGe"  alt=""></div>
+        Home Care
+           </button>
+       <div class="content">
+           <a>Detergents</a><br>
+           <a>Dishwash</a><br>
+           <a>All Purpose Cleaners</a><br>
+           <a>Fresheners & Repellents</a><br>
+           <a>Shoe Care</a><br>
+           <a>Pet Supplies</a><br>
+       </div>
+       <button type="button" class="collapsible"><div><img class="dropdown" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQgd_M8knU3KW37lgwgIapz4qemt9xLbjW5cNAsvpTvlPel8fGe"  alt=""></div>
+        Home & Kitchen
+           </button>
+       <div class="content">
+           <a>Kitchenware</a><br>
+           <a>Dining</a><br>
+           <a>Furnishing</a><br>
+           <a>Home Decor</a><br>
+           <a>Furniture</a><br>
+           <a>Home Appliances</a><br>
+           <a>Toys, Games & Fitness</a><br>
+           <a>Electrical</a><br>
+           <a>Bathroom & Laundry Accessories</a><br>
+           <a>Disposables</a><br>
+           <a>Stationery</a><br>
+           <a>Bags & Travel Luggage</a><br>
+           <a>Mops, Brushes & Scrubs</a><br>
+           <a>Auto Care</a><br>
+           <a>Garden & Outdoor</a><br>
+           <a>Carpentry & work accessories</a><br>
+           <a>Pooja Needs</a><br>
+           <a>Bathroom & Laundry</a><br>
+           <a>Industrial & Scientific Supplies</a><br>
+       </div>
+       <button type="button" class="collapsible"><div><img class="dropdown" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQgd_M8knU3KW37lgwgIapz4qemt9xLbjW5cNAsvpTvlPel8fGe"  alt=""></div>
+        Mom & Baby Care
+           </button>
+       <div class="content">
+           <a>Feeding</a><br>
+           <a>Baby Grooming</a><br>
+           <a>Baby Bedding Sets & Pillows</a><br>
+           <a>Baby Food & Formula</a><br>
+           <a>Baby Bath & Hygiene</a><br>
+           <a>Diapers & Wipes</a><br>
+           <a>Health & Wellness</a><br>
+           <a>Child Proof & Safety</a><br>
+           <a>Baby Gear</a><br>
+           <a>Baby Furnishing</a><br>
+           <a>Baby Furniture</a><br>
+           <a>Baby Toys</a><br>
+           <a>Mom & Maternity</a><br>
+       </div>
+       <button type="button" class="collapsible"><div><img class="dropdown" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQgd_M8knU3KW37lgwgIapz4qemt9xLbjW5cNAsvpTvlPel8fGe"  alt=""></div>
+        Books
+           </button>
+       <div class="content">
+           <a>Children's Books</a><br>
+           <a>Fiction Books</a><br>  
+           <a>School Textbooks</a><br>  
+           <a>Non Fiction Books</a><br>  
+           <a>Exam Central</a><br>    
+           <a>Textbooks</a><br>  
+       </div>
+       <button type="button" class="collapsible"><div><img class="dropdown" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQgd_M8knU3KW37lgwgIapz4qemt9xLbjW5cNAsvpTvlPel8fGe"  alt=""></div>
+        Pets
+           </button>
+       <div class="content">
+           <a>Dogs</a><br>
+           <a>Cats</a><br>  
+           <a>Birds</a><br>    
+       </div>
+    </div>
+    <div style="height: 950px; width: 240px;margin-top: 50px;box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;">
+    <div class="filter">Filters</div>
+  <div style="font-size: 18px;
+  line-height: 35px; padding-left: 5px;">Availability <br>
+    <input type="checkbox" name="" id="">InStock Products <br>
+    Categories <br>
+    <input style="height: 30px;width: 92%; border-radius: 7px; margin-top: 10px;" type="text" placeholder="Search..">
+    <input type="checkbox" name="" id="">Exotic Vegetables <br>
+    <input type="checkbox" name="" id="">Citrus Fruits <br>
+    <input type="checkbox" name="" id="">Gourds<br>
+    <input type="checkbox" name="" id="">Citrus Fruits<br>
+    <input type="checkbox" name="" id="">Others <br>
+    <input type="checkbox" name="" id="">Vegetable Others <br>
+    <input type="checkbox" name="" id="">Beans<br>
+    <input type="checkbox" name="" id="">Leafy Vegetables<br>
+    <input type="checkbox" name="" id="">Root Vegetables <br>
+    <input type="checkbox" name="" id="">Apples<br>
+    <input type="checkbox" name="" id="">Exotic Fruits <br>
+    <input type="checkbox" name="" id="">Brinjal <br>
+    <input type="checkbox" name="" id="">Corn <br>
+    Brands
+    <input style="height: 30px;width: 92%; border-radius: 7px; margin-top: 10px;" type="text" placeholder="Search..">
+    <input type="checkbox" name="" id="">Private Label <br>
+    <input type="checkbox" name="" id="">Trikaya<br>
+    <input type="checkbox" name="" id="">Trueganic <br>
+    <input type="checkbox" name="" id="">Reliance <br>
+    Price <br>
+    <input type="range">
+    <br>
+  </div></div>
+</div>
+      <!-- jibin bro start your work inside right div -->
+      <!-- change the height and width of class right according to ur need  -->
+    <div class="right" >
+        <img src="https://www.jiomart.com/images/category/229/fresh-vegetables-20200704.jpg" alt="" width="100%">
+        <div class="sortingCls"><p>Showing <b>20</b> of <b>49</b> items</p>
+        <p>Sort by:</p>
+        <select id="sortName" onchange="nameSort()">
+            <option>Name</option>
+            <option value="nasc">Ascending</option>
+            <option value="ndsc">Descending</option>
+        </select>
+    <select id="sortPrice" onchange="priceSort()">
+        <option>Price</option>
+        <option value="asc">Low To High</option>
+        <option value="dsc">High To Low</option>
+    </select>
+    <button>Popularity</button>
+    <button>All Products</button>
+ </div>
+ <div class="productsVeg"></div>
+</div>
+</div>
+<footer style="margin-top: 150px;">
+  <div class="footer-1">
+    <div id="footerDiv1">
+      <ul>
+        <li>
+          <h2>MOST POPULAR CATEGORIES</h2>
+        </li>
+        <li><a href="">Staples</a></li>
+        <li><a href="">Beverages</a></li>
+        <li><a href="">Personal Care</a></li>
+        <li><a href="">Home Care</a></li>
+        <li><a href="">Fruits and Vegetables</a></li>
+        <li><a href="">Baby Care</a></li>
+        <li><a href="">Snacks & Branded Foods</a></li>
+        <li><a href="">Dairy & Bakery</a></li>
+      </ul>
+    </div>
+    <div id="footerDiv2">
+      <ul>
+        <li>
+          <h2>CUSTOMER SERVICES</h2>
+        </li>
+        <li><a href="">About Us</a></li>
+        <li><a href="">FAQ</a></li>
+        <li><a href="">Terms and conditions</a></li>
+        <li><a href="">Privacy policy</a></li>
+        <li><a href="">E-waste Policy</a></li>
+      </ul>
+    </div>
+    <div id="footerDiv3">
+      <h2>CONTACT US</h2>
+      <p>
+        WhatsApp us :
+        <a
+          href="https://api.whatsapp.com/send/?phone=917000370003&text=Hi&app_absent=0"
+          target="_blank"
+          >70003 70003</a
+        >
+      </p>
+      <span id="footerspan">
+        <p>Call Us : <a href="">1800 890 1222</a>
+      <br></p>
+        
+      </span>
+      <p>
+        Please note that you are accessing the BETA Version of
+        <a href="">www.jiomart.com</a>
+      </p>
+      <p>
+        Should you encounter any bugs, glitches, lack of functionality,
+        delayed deliveries, billing errors or other problems on the beta
+        website, please email us on <a href="">cs@jiomart.com</a>
+      </p>
+      <h2 style="line-height: 50px">DOWNLOAD APP</h2>
+      <a
+        href="https://play.google.com/store/apps/details?id=com.jpl.jiomart"
+        target="_blank"
+        style="margin-right: 16px"
+      >
+        <img
+          src="https://www.jiomart.com/images/cms/wysiwyg/app-icons/play_store.png"
+          alt="Donwload Jio mart app from Play store"
+        />
+      </a>
+      <a
+        href="https://apps.apple.com/in/app/jiomart/id1522085683"
+        target="_blank"
+      >
+        <img
+          src="https://www.jiomart.com/images/cms/wysiwyg/app-icons/ios_store.png"
+          alt="Donwload Jio mart for IOS app from App store"
+        />
+      </a>
+    </div>
+  </div>
+  <div id="copyRight">
+    <p>
+      Best viewed on Microsoft Edge 81+, Mozilla Firefox 75+, Safari 5.1.5+,
+      Google Chrome 80+
+    </p>
+    <p>© 2021 All rights reserved. Reliance Retail Ltd.</p>
+  </div>
+</footer>
+</div>
+</body>
+</html>
+<script>
+  
+    var data = [
+    {
+      MRP: 22,
+      type: "Potato",
+      image_url:
+        "https://www.jiomart.com/images/product/150x150/590003516/potato-per-kg-0-20200710.jpg",
+    },
+    {
+      MRP: 64,
+      type: "Tomato",
+      image_url:
+        "https://www.jiomart.com/images/product/150x150/590003517/tomato-per-kg-0-20200710.jpg",
+    },
+    {
+      MRP: 32,
+      type: "Coconut 1 pc",
+      image_url:
+        "https://www.jiomart.com/images/product/150x150/590000086/coconut-1-pc-0-20201118.jpg",
+    },
+    {
+      MRP: 39.50,
+      type: "Bhendi",
+      image_url:
+        "https://www.jiomart.com/images/product/240x240/590003550/bhendi-okra-per-500-g-0-20201118.jpg",
+    },
+    {
+      MRP: 24.50,
+
+      type: "Cucumber",
+      image_url:
+        "https://www.jiomart.com/images/product/150x150/590003548/cucumber-500-g-0-20200710.jpg",
+    },
+    {
+      MRP: 110,
+      type: "Onion sambhar",
+      image_url:
+        "https://www.jiomart.com/images/product/150x150/590004163/onion-sambhar-1-kg-0-20201118.jpg",
+    },
+    {
+      MRP: 29.50,
+
+      type: "Cucumber Regular",
+      image_url:
+        "https://www.jiomart.com/images/product/150x150/590034099/cucumber-regular-500-g-0-20200902.jpg",
+    },
+    {
+      MRP: 14,
+      type: "Sweet cone 1 pc",
+      image_url:
+        "https://www.jiomart.com/images/product/150x150/590001266/sweet-corn-1-pc-0-20201118.jpg",
+    },
+    {
+      MRP: 39.50,
+
+      type: "Brinjal Black big",
+      image_url:
+        "https://www.jiomart.com/images/product/150x150/590003544/brinjal-black-big-500-g-0-20200710.jpg",
+    },
+    {
+      MRP: 17.50,
+      type: "Potato baby",
+      image_url:
+        "https://www.jiomart.com/images/product/240x240/590000094/potato-baby-500-g-0-20200731.jpg",
+    },
+    {
+      MRP: 22.50,
+
+      type: "Green peas",
+      image_url:
+        "https://www.jiomart.com/images/product/240x240/590004083/green-peas-500-g-0-20200710.jpg",
+    },
+    {
+      MRP: 35,
+
+      type: "French beans",
+      image_url:
+        "https://www.jiomart.com/images/product/240x240/590003549/french-beans-500-g-0-20200710.jpg",
+    },
+    {
+      MRP: 49.50,
+      type: "Amla (Indian goosberry)",
+      image_url:
+        "https://www.jiomart.com/images/product/240x240/590000126/amla-indian-gooseberry-500-g-0-20201118.jpg",
+    },
+    {
+      MRP: 40,
+
+      type: "Snake gourd",
+      image_url:
+        "https://www.jiomart.com/images/product/240x240/590034102/snake-gourd-500-g-0-20200902.jpg",
+    },
+    {
+      MRP: 199,
+      type: "Ground Nut Fresh",
+      image_url:
+        "https://www.jiomart.com/images/product/240x240/590034300/ground-nuts-fresh-500-g-0-20200910.jpg",
+    },
+    {
+      MRP: 70,
+
+      type: "Pointed Gourd",
+      image_url:
+        "https://www.jiomart.com/images/product/240x240/590321586/pointed-gourd-1-kg-pack-0-20210531.jpg",
+    },
+    {
+      MRP: 49,
+      type: "Sprouts channa brown",
+      image_url:
+        "https://www.jiomart.com/images/product/240x240/590000825/sprouts-channa-brown-per-pack-0-20201118.jpg",
+    },
+    {
+      MRP: 99,
+
+      type: "Matki sprouts",
+      image_url:
+        "https://www.jiomart.com/images/product/240x240/590001833/matki-sprout-pack-0-20201118.jpg",
+    },
+    {
+      MRP: 9,
+      type: "Arbi-colocasia-leaves-1-bunch",
+      image_url:
+        "https://www.jiomart.com/images/product/240x240/590000721/arbi-colocasia-leaves-1-bunch-0-20201118.jpg",
+    },
+    {
+      MRP: 69,
+
+      type: "Sprouted-beans-1-pack",
+      image_url:
+        "https://www.jiomart.com/images/product/240x240/590000253/sprouted-beans-1-pack-0-20201118.jpg",
+    },
+  ];
+  var cartArr=JSON.parse(localStorage.getItem("cartData")) || [];
+  display(data);
+  function display(data){
+      document.querySelector(".productsVeg").innerHTML="";
+    data.map(function(elem){
+      var mainDiv=document.createElement("div");
+      var image=document.createElement("img");
+      image.setAttribute("src",elem.image_url);
+      var name=document.createElement("h4");
+      name.textContent=elem.type;
+      name.style.backgroundColor="white";
+      var price=document.createElement("p");
+      price.textContent="M.R.P: "+elem.MRP;
+      price.style.backgroundColor="white";
+      var btn = document.createElement("button");
+      btn.textContent="Add To Cart";
+      btn.setAttribute("id","cartbtn");
+      var count=1;
+      btn.addEventListener("click",function(){
+          btn.textContent=count++;
+          addtoCart(elem);
+        })
+      mainDiv.append(image,name,price,btn);
+      document.querySelector(".productsVeg").append(mainDiv);
+  });
+  }
+  function addtoCart(elem){
+        cartArr.push(elem);
+        localStorage.setItem("cartData",JSON.stringify(cartArr));
+  }
+function priceSort(){
+    var sel=document.querySelector("#sortPrice").value;
+    if(sel=="asc"){
+        data.sort(function(a,b){
+            return a.MRP-b.MRP;
+        })
+    }
+    if(sel=="dsc"){
+        data.sort(function(a,b){
+            return b.MRP-a.MRP;
+        })
+    }
+    display(data);
+}
+function nameSort(){
+    var sel=document.querySelector("#sortName").value;
+    if(sel=="nasc"){
+        data.sort(function(a,b){
+     if(b.type>a.type){
+         return -1;
+     } 
+    })
+    }   
+    if(sel=="ndsc"){
+        data.sort(function(a,b){
+     if(a.type>b.type){
+         return -1;
+     } 
+    })
+    } 
+    display(data);
+}
+
+    var coll = document.getElementsByClassName("collapsible");
+var i;
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+function sidenav() {
+    document.getElementById("mysidebar").style.width = "330px";
+  }
+  function closenav() {
+    document.getElementById("mysidebar").style.width = "0";
+  }
+
+  function home(){
+      window.location.href ="home.html"
+  }
+  function cart(){
+      window.location.href ="cart.html"
+  }
+  function product(){
+      window.location.href="product.html"
+  }
+  function wallet(){
+    window.location.href="wallet.html"
+  }
+  function signin(){
+    window.location.href="sign.html"
+  }
+  function account(){
+      window.location.href="account.html"
+  }
+  
+  var personalInfo = JSON.parse(localStorage.getItem('UserDetails')) || [] ;
+  document.querySelector('#hello_text').textContent = personalInfo[0].Fname || 'Hello Signin';
+  document.querySelector('#signin_text').textContent = personalInfo[0].Fname || 'signup';
+  document.querySelector('#hello_button').addEventListener('click',function(){
+    window.location.href = 'account.html';
+  });
+  document.querySelector('#signin_text').addEventListener('click',function(){
+    window.location.href = 'account.html';
+  });
+  document.querySelector('#loction_icon').addEventListener('click',function(){
+    window.location.href = 'https://www.google.com/maps';
+  });
+</script>
