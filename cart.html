@@ -811,6 +811,7 @@
     document.querySelector('#CheckOut_Button').addEventListener('click',function(){
       document.querySelector('#CheckOut_Button').hidden = true;
       document.querySelector('#make-payment').hidden = false;
+      document.querySelector('#make-payment').style.backgroundColor = 'grey';
       document.querySelector('#order-sum').setAttribute('src','https://www.jiomart.com/msassets/images/icons/orders_review_active.svg');
       document.querySelector('#make-payment').addEventListener('click',function(){
 
