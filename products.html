@@ -104,13 +104,75 @@
             color: white;
             font-weight: bold;
         }
+        ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+      }
+      footer {
+        background-color: #ededef;
+        margin-top: 20px;
+      }
+      footer p {
+        line-height: 20px;
+      }
+      #footerspan > p {
+        line-height: 0;
+      }
+      #footerspan ~ p {
+        line-height: 20px;
+      }
+      .footer-1 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 30px 100px 30px;
+      }
+      .footer-1 > div {
+        box-sizing: border-box;
+      }
+      #footerDiv3 {
+        width: 70%;
+        border-left: 1px solid gray;
+        padding-left: 30px;
+      }
+      #footerDiv1 a,
+      #footerDiv2 a,
+      #footerDiv3 p {
+        color: gray;
+      }
+      #footerDiv3 a {
+        color: #0b92ce;
+      }
+      .footer-1 p,
+      .footer-1 a {
+        font-size: 13px;
+        font-family: sans-serif;
+      }
+      #footerDiv1,
+      #footerDiv2 {
+        line-height: 20px;
+      }
+      .footer-1 h2 {
+        line-height: 20px;
+        font-size: 13px;
+        font-family: JioBold;
+      }
+
+      #copyRight {
+        display: flex;
+        justify-content: space-around;
+        font-size: 12px;
+        font-family: JioLight;
+        border-top: 1px solid gray;
+      }
     </style>
 </head>
 <body>
-    <div class="header"></div>
+    
     <!-- this is where division starts left and right -->
     <!-- jibin bro go to the line 225 -->
-    <div style="display: flex;"> 
+    <div style="display: flex; width: 1490px; height: 2150px;"> 
     <div class="leftside">
     <div class="box">
       <div class="cat">Categories</div>
@@ -332,11 +394,95 @@
     </select>
     <button>Popularity</button>
     <button>All Products</button>
+ </div>
+ <div class="productsVeg"></div>
 </div>
-<div class="productsVeg"></div>
+</div>
+<footer>
+  <div class="footer-1">
+    <div id="footerDiv1">
+      <ul>
+        <li>
+          <h2>MOST POPULAR CATEGORIES</h2>
+        </li>
+        <li><a href="">Staples</a></li>
+        <li><a href="">Beverages</a></li>
+        <li><a href="">Personal Care</a></li>
+        <li><a href="">Home Care</a></li>
+        <li><a href="">Fruits and Vegetables</a></li>
+        <li><a href="">Baby Care</a></li>
+        <li><a href="">Snacks & Branded Foods</a></li>
+        <li><a href="">Dairy & Bakery</a></li>
+      </ul>
     </div>
-</body>
+    <div id="footerDiv2">
+      <ul>
+        <li>
+          <h2>CUSTOMER SERVICES</h2>
+        </li>
+        <li><a href="">About Us</a></li>
+        <li><a href="">FAQ</a></li>
+        <li><a href="">Terms and conditions</a></li>
+        <li><a href="">Privacy policy</a></li>
+        <li><a href="">E-waste Policy</a></li>
+      </ul>
+    </div>
+    <div id="footerDiv3">
+      <h2>CONTACT US</h2>
+      <p>
+        WhatsApp us :
+        <a
+          href="https://api.whatsapp.com/send/?phone=917000370003&text=Hi&app_absent=0"
+          target="_blank"
+          >70003 70003</a
+        >
+      </p>
+      <span id="footerspan">
+        <p>Call Us : <a href="">1800 890 1222</a>
+      <br></p>
+        
+      </span>
+      <p>
+        Please note that you are accessing the BETA Version of
+        <a href="">www.jiomart.com</a>
+      </p>
+      <p>
+        Should you encounter any bugs, glitches, lack of functionality,
+        delayed deliveries, billing errors or other problems on the beta
+        website, please email us on <a href="">cs@jiomart.com</a>
+      </p>
+      <h2 style="line-height: 50px">DOWNLOAD APP</h2>
+      <a
+        href="https://play.google.com/store/apps/details?id=com.jpl.jiomart"
+        target="_blank"
+        style="margin-right: 16px"
+      >
+        <img
+          src="https://www.jiomart.com/images/cms/wysiwyg/app-icons/play_store.png"
+          alt="Donwload Jio mart app from Play store"
+        />
+      </a>
+      <a
+        href="https://apps.apple.com/in/app/jiomart/id1522085683"
+        target="_blank"
+      >
+        <img
+          src="https://www.jiomart.com/images/cms/wysiwyg/app-icons/ios_store.png"
+          alt="Donwload Jio mart for IOS app from App store"
+        />
+      </a>
+    </div>
+  </div>
+  <div id="copyRight">
+    <p>
+      Best viewed on Microsoft Edge 81+, Mozilla Firefox 75+, Safari 5.1.5+,
+      Google Chrome 80+
+    </p>
+    <p>© 2021 All rights reserved. Reliance Retail Ltd.</p>
+  </div>
+</footer>
 
+</body>
 </html>
 <script>
     var data = [
