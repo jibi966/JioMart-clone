@@ -312,7 +312,7 @@
 
         }
         /* .header{border: 1px solid red; height: 150px;} */
-        .leftside{width: 245px;height:900px;}
+        .leftside{width: 245px;height:900px;margin-left: 5px;}
         .cat{font-size: 20px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
              font-weight: normal; padding-left: 10px;padding-top: 5px;
             margin-bottom: 10px;}
@@ -645,7 +645,7 @@
         <a href="cart.html">My list</a>
         <a href="wallet.html">JioMart wallet</a>
         <a href="">Jiomart cashback</a>
-        <a href="">Jiomart Gift Store</a>
+        <a href="GiftStore.html">Jiomart Gift Store</a>
         <a href="">Jiomart Gift Card</a>
         <a href="">All offers</a>
         <div class="line"></div>
@@ -1252,6 +1252,9 @@ function sidenav() {
   }
   function account(){
       window.location.href="account.html"
+  }
+  function gift(){
+    window.location.href = "GiftStrore.html"
   }
 
   var personalInfo = JSON.parse(localStorage.getItem('UserDetails')) || [] ;
