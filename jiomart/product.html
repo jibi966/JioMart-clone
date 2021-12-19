@@ -13,8 +13,8 @@
          * {
         margin: 0;
         padding: 0;
-        font-family: sans-serif;  
-            
+        font-family: sans-serif;
+
       }
 
       #nav_bar {
@@ -297,9 +297,9 @@
         /* ----------------------------------------------------------------------------------------------------------------------- */
         #product_page .right{
            margin-top: 180px;
-           
+
         }
-        
+
         .filter{
           box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
           height:30px ;
@@ -337,18 +337,18 @@
             height: 15px;
             width: 15px;
             margin-right: 5px;
-        } 
+        }
         .box{
             box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
         }
         .right{
             width: 1200px;
             margin-left: 50px;
-        }      
+        }
         .sortingCls{
             display: flex;
             margin-top: 20px;
-        }  
+        }
         .sortingCls>p:nth-child(1){
             margin-right: 37%;
         }
@@ -370,7 +370,7 @@
             grid-template-columns: repeat(4,280px);
             grid-template-rows: repeat(5,340px);
             grid-gap: 15px;
-            
+
         }
         .productsVeg>div{
             background-color: white;
@@ -378,7 +378,7 @@
             border-radius: 10px;
             padding: 15px;
         }
-        .productsVeg > div > img{   
+        .productsVeg > div > img{
             margin: auto;
             display: block;
             height: 60%;
@@ -393,7 +393,7 @@
             height: 10%;
             color: white;
             font-weight: bold;
-           
+
         }
         .productsVeg > div>h4{
           margin-top: 30px;
@@ -618,7 +618,7 @@
           </li>
         </ul>
       </div>
-   
+
 
     <!-- -------------------------------------------------sidenav side ----------------------------------- -->
     <div id="mysidebar" class="sidenav">
@@ -706,13 +706,13 @@
     <!-- jibin bro go to the line 225 -->
     <div id="product_page">
 
-    
-    <div style="display: flex; width: 1490px; height: 2150px; "> 
+
+    <div style="display: flex; width: 1490px; height: 2150px; ">
     <div class="leftside">
     <div class="box">
       <div class="cat" style="margin-top: 180px; ">Categories</div>
       <button type="button" class="collapsible"><div><img class="dropdown" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzlpy2TiXEoF3kZEDe12lk1ctYhZfrubOZ-aBnjX6VnMjgN1Lj9EK5sIoC1MEcu7as_Rg&usqp=CAU"  alt=""></div>
-        Fruits & Vegetables 
+        Fruits & Vegetables
           </button>
       <div class="content">
           <a href="product.html">Fresh Fruits</a><br>
@@ -865,19 +865,19 @@
            </button>
        <div class="content">
            <a>Children's Books</a><br>
-           <a>Fiction Books</a><br>  
-           <a>School Textbooks</a><br>  
-           <a>Non Fiction Books</a><br>  
-           <a>Exam Central</a><br>    
-           <a>Textbooks</a><br>  
+           <a>Fiction Books</a><br>
+           <a>School Textbooks</a><br>
+           <a>Non Fiction Books</a><br>
+           <a>Exam Central</a><br>
+           <a>Textbooks</a><br>
        </div>
        <button type="button" class="collapsible"><div><img class="dropdown" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQgd_M8knU3KW37lgwgIapz4qemt9xLbjW5cNAsvpTvlPel8fGe"  alt=""></div>
         Pets
            </button>
        <div class="content">
            <a>Dogs</a><br>
-           <a>Cats</a><br>  
-           <a>Birds</a><br>    
+           <a>Cats</a><br>
+           <a>Birds</a><br>
        </div>
     </div>
     <div style="height: 950px; width: 240px;margin-top: 50px;box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;">
@@ -975,7 +975,7 @@
       <span id="footerspan">
         <p>Call Us : <a href="">1800 890 1222</a>
       <br></p>
-        
+
       </span>
       <p>
         Please note that you are accessing the BETA Version of
@@ -1020,7 +1020,7 @@
 </body>
 </html>
 <script>
-  
+
     var data = [
     {
       MRP: 22,
@@ -1202,16 +1202,16 @@ function nameSort(){
         data.sort(function(a,b){
      if(b.type>a.type){
          return -1;
-     } 
+     }
     })
-    }   
+    }
     if(sel=="ndsc"){
         data.sort(function(a,b){
      if(a.type>b.type){
          return -1;
-     } 
+     }
     })
-    } 
+    }
     display(data);
 }
 
@@ -1253,12 +1253,12 @@ function sidenav() {
   function account(){
       window.location.href="account.html"
   }
-  
+
   var personalInfo = JSON.parse(localStorage.getItem('UserDetails')) || [] ;
   document.querySelector('#hello_text').textContent = personalInfo[0].Fname || 'Hello Signin';
   document.querySelector('#signin_text').textContent = personalInfo[0].Fname || 'signup';
   document.querySelector('#hello_button').addEventListener('click',function(){
-    window.location.href = 'myaccount.html';
+    window.location.href = 'account.html';
   });
   document.querySelector('#signin_text').addEventListener('click',function(){
     window.location.href = 'account.html';

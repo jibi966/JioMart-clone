@@ -322,7 +322,7 @@
 
             /* box shadows */
             .login{
-               
+
             border-radius: 18px;
             display: flex;
             flex-flow: wrap;
@@ -332,13 +332,13 @@
             box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
             }
             .signinDiv{
-               
+
             padding: 5% 10%;
             }
             .login>.imgDiv{
             width: 488px;
             height: 528px;
-            
+
             }
             img{
             border-radius:18px 0px;
@@ -443,7 +443,7 @@
             .terms,.privacy:hover{
             cursor: pointer;
             }
-       
+
 
     </style>
   </head>
@@ -598,7 +598,7 @@
           </li>
         </ul>
       </div>
-   
+
 
     <!-- -------------------------------------------------sidenav side ----------------------------------- -->
     <div id="mysidebar" class="sidenav">
@@ -682,10 +682,10 @@
     </div>
 </div>
 
-      
+
         <div id="sign_page" >
 
-     
+
         <div id="signin" >
             <div class="login" >
                 <div class='imgDiv' >
@@ -773,7 +773,7 @@
 
         }
 
-        else if(mobNum.length == 10 && numArr.length > 0 ){
+        else if(mobNum.length ==10 && numArr.length > 0 ){
 
             document.querySelector('#otpnum').value="";
                 numArr.map(function(elem){
@@ -792,6 +792,9 @@
                               personalInfo.push(elem);
 
                               localStorage.setItem('UserDetails',JSON.stringify(personalInfo) )
+                              var person = JSON.parse(localStorage.getItem('UserDetails')) || [] ;
+                              document.querySelector('#hello_text').textContent = person[0].Fname || 'Hello Signin';
+                              document.querySelector('#signin_text').textContent =person[0].Fname || 'signup';
                                 window.location.href ='Product.html';
                             }
                             else{
@@ -799,9 +802,10 @@
                             }
                         })
                     }
+                    else{
+                      signInForm();
+                    }
                 });
-
-
         }
         else{
           signInForm();
@@ -854,11 +858,15 @@
                 mobile : mobNum ,
             };
 
-            if( mobNum.length == 10 && name.length >=3  && check == 123456){
+            if(check == 123456){
 
                 numArr.push(details);
                 localStorage.setItem('DataBase',JSON.stringify(numArr));
+
                 window.location.href = 'account.html';
+                var person = JSON.parse(localStorage.getItem('UserDetails')) || [] ;
+                    document.querySelector('#hello_text').textContent = person[0].Fname || 'Hello Signin';
+                    document.querySelector('#signin_text').textContent =person[0].Fname || 'signup';
 
             }
             else{
