@@ -465,6 +465,34 @@
         font-family: JioLight;
         border-top: 1px solid gray;
       }
+      @media only screen and (min-width:375px) and (max-width:768px){
+        .productsVeg{
+            background-color: white;
+            width: 97%;
+            padding: 15px;
+            display: grid;
+            grid-template-columns: repeat(2,180px);
+            grid-gap: 8px;
+
+        }
+      }
+      @media only screen and (min-width:0) and (max-width:374px){
+        .productsVeg{
+            background-color: white;
+            width: 97%;
+            padding: 15px;
+            display: grid;
+            grid-template-columns: repeat(1,180px);
+            grid-gap: 8px;
+
+        }
+        .productsVeg > div > img{
+            margin: auto;
+            display: block;
+            height: 60%;
+            width: 30%;
+        }
+      }
     </style>
 </head>
 <body>
