@@ -9,7 +9,7 @@
       crossorigin="anonymous"
     ></script>
     <title>MY Account</title>
- 
+
     <style>
  * {
         margin: 0;
@@ -294,7 +294,7 @@
         margin-left: 20px;
         margin-top: 10px;
       }
-        
+
         #My_Account_main_box{
             height: 650px;
             width:90%;
@@ -422,27 +422,25 @@
             .Account_Info_box>div>p{
                padding: 10px 0px 10px 20px;
             }
+            #Email_id>p{
+              margin-bottom: -50px;
+            }
         }
         .Account_Info_box>div>h5{
            padding: 10px 0px 10px 20px;
         }
-        #full_name{
-            width:100%;
-            height: 46%;
-            margin-bottom: 2%;
+        #full_name>p{
+          margin-bottom: -20px;
         }
-        #Email_id{
-            width:100%;
-            height: 46%;
+        #Email_id>p{
+
+          margin-bottom: -20px;
         }
-        #mobile_no{
-            width:100%;
-            height: 46%;
-            margin-bottom: 2%;
+        #mobile_no>p{
+          margin-bottom: -20px;
         }
-        #Default_Address{
-            width:100%;
-            height: 46%;
+        #date_of_birth>p{
+          margin-bottom: -20px;
         }
         p{
             color:#868e96;
@@ -488,7 +486,7 @@
     </style>
   </head>
   <body>
-        
+
     <div id="nav_bar">
         <i onclick="sidenav()" id="menu" class="fas fa-bars"></i>
         <h1 onclick="home()">JioMart</h1>
@@ -639,7 +637,7 @@
           </li>
         </ul>
       </div>
-   
+
 
     <!-- -------------------------------------------------sidenav side ----------------------------------- -->
     <div id="mysidebar" class="sidenav">
@@ -775,11 +773,11 @@
                         <div id="Account_Info_Detail">
                             <div class="Account_Info_box">
                                 <div id="full_name">
-                                    <p>Full Name</p><br>
+                                    <p >Full Name</p><br>
                                     <h5 id='na'>--</h5>
                                 </div>
                                 <div id="Email_id">
-                                    <p>Email id</p><br>
+                                    <p >Email id</p><br>
                                     <h5 id='ma'>--</h5>
                                 </div>
                             </div>
@@ -806,7 +804,7 @@
                 </div>
         </div>
 
-    
+
 </body>
 </html>
 <script>
@@ -816,6 +814,11 @@
   function closenav() {
     document.getElementById("mysidebar").style.width = "0";
   }
+  document.querySelector('#logout-Btn').addEventListener('click',function(){
+    window.location.href = "sign.html"
+    localStorage.removeItem('UserDetails');
+
+  });
   var personalInfo = JSON.parse(localStorage.getItem('UserDetails')) || [] ;
   document.querySelector('#hello_text').textContent = personalInfo[0].Fname || 'Hello Signin';
   document.querySelector('#signin_text').textContent = personalInfo[0].Fname || 'signup';
@@ -826,10 +829,7 @@
   document.querySelector('#ma').textContent = personalInfo[0].mail || '--';
   document.querySelector('#mai').textContent = personalInfo[0].mail || '--';
   document.querySelector('#dob').textContent = personalInfo[0].dateOfBirth || '--';
-  document.querySelector('#logout-Btn').addEventListener('click',function(){
-    localStorage.removeItem('UserDetails');
-    window.location.href = "signin.html"
-  });
+
 
 
 
