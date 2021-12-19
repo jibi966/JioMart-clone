@@ -754,7 +754,7 @@
 
 
     document.querySelector('#count-items').innerHTML = array.length + " "+"items "
-          document.querySelector('#counter').innerHTML = array.length
+    document.querySelector('#counter').innerHTML = array.length
     array.map(function(elem ,index){
       var plus = document.createElement('button')
       var minus = document.createElement('button')
@@ -786,12 +786,17 @@
         p.textContent = no ;
         amount += Number(elem.MRP) ;
         document.querySelector('#total-Bill').textContent = amount ;
+        document.querySelector('#total_bill_amount').textContent = amount;
+        document.querySelector('#checkout_price').textContent = amount;
+
       });
       minus.addEventListener('click',function(event,index){
         no = no-1 ;
         p.textContent = no ;
         amount -= Number(elem.MRP) ;
         document.querySelector('#total-Bill').textContent = amount ;
+        document.querySelector('#total_bill_amount').textContent = amount;
+        document.querySelector('#checkout_price').textContent = amount;
         if(no<0){
 
           array.splice(index,1);
@@ -805,25 +810,26 @@
     document.querySelector('#total-Bill').textContent = amount ;
     var discounted_amount = 0;
     document.querySelector('#total_bill_amount').textContent = amount;
-    document.querySelector('#saved-price').textContent = discounted_amount;
-    document.querySelector('#Discounted-Price').textContent = discounted_amount;
+    document.querySelector('#saved-price').textContent = Math.floor(discounted_amount);
+    document.querySelector('#Discounted-Price').textContent = Math.floor(discounted_amount);
     document.querySelector('#checkout_price').textContent = amount;
     document.querySelector('#apl').addEventListener('click',function(){
       var card =  document.querySelector('#discount-coupon-code').value;
-
+      document.querySelector('#apl').disabled = true;
       if(card == 'Masai30'){
         discounted_amount = amount*0.3;
-        amount = amount - discounted_amount ;
+        amount = amount - Math.floor(discounted_amount) ;
         document.querySelector('#total_bill_amount').textContent = amount;
-        document.querySelector('#Discounted-Price').textContent = discounted_amount;
+        document.querySelector('#Discounted-Price').textContent = Math.floor(discounted_amount);
         document.querySelector('#checkout_price').textContent = amount;
-        document.querySelector('#saved-price').textContent = "saved pice" +" "+discounted_amount;
+        document.querySelector('#saved-price').textContent = "saved pice" +" "+Math.floor(discounted_amount);
+
 
       }else{
         document.querySelector('#total_bill_amount').textContent = amount;
-        document.querySelector('#Discounted-Price').textContent = discounted_amount;
+        document.querySelector('#Discounted-Price').textContent = Math.floor(discounted_amount);
         document.querySelector('#checkout_price').textContent = amount;
-        document.querySelector('#saved-price').textContent ="saved pice" +" "+discounted_amount;
+        document.querySelector('#saved-price').textContent ="saved pice" +" "+Math.floor(discounted_amount);
 
 
       }
@@ -835,7 +841,10 @@
       document.querySelector('#make-payment').style.backgroundColor = 'grey';
       document.querySelector('#order-sum').setAttribute('src','https://www.jiomart.com/msassets/images/icons/orders_review_active.svg');
       document.querySelector('#make-payment').addEventListener('click',function(){
-
+        var obj = {
+          price_amount : amount,
+        }
+        localStorage.setItem('price',JSON.stringify(obj));
         window.location.href = "payment.html";
       })
     });
