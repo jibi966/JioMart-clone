@@ -443,6 +443,14 @@
             .terms,.privacy:hover{
             cursor: pointer;
             }
+            #new-user{
+              color: grey;
+              margin-left: 20px;
+              padding: 2%;
+            }
+            #sign-up-page{
+              color: green;
+            }
 
 
     </style>
@@ -727,9 +735,11 @@
                             <h3>Verify OTP</h3>
                             <input type="number" id='otpnum'>
                         </div>
+                        <p id='new-user'>New User <span id='sign-up-page'>sign up</span></p>
                         <div class='forward'>
                             <img id='Gotp' src="https://img.icons8.com/ios-filled/60/008ECC/circled-chevron-right.png"/>
                             <button id='loginbtn' hidden>verify</button>
+
                         </div>
                     </div>
                 </div>
@@ -748,37 +758,23 @@
   var numArr = JSON.parse(localStorage.getItem('DataBase')) || [] ;
   var personalInfo = JSON.parse(localStorage.getItem('UserDetails')) || [] ;
 
-  document.querySelector('#Gotp').addEventListener('click',otpValidate);
 
+  document.querySelector('#Gotp').addEventListener('click',otpValidate);
+  document.querySelector('#sign-up-page').addEventListener('click',function(){
+    signInForm();
+  });
 
     function otpValidate(){
         var mobNum = document.querySelector('#mob').value ;
 
-        if(mobNum == 007 ){
-          FormData()
 
-          document.getElementById('Gotp').hidden = true;
-          document.querySelector('#loginbtn').hidden = false ;
-          document.querySelector('#otp').hidden = false ;
-          document.querySelector('#loginbtn').addEventListener('click',function(){
-          var check = document.querySelector('#otpnum').value;
-            if( check == 007){
-              window.location.href ='admin.html';
-            }
-            else{
-              alert('check your Number');
-            }
-
-          });
-
-        }
-
-        else if(mobNum.length ==10 && numArr.length > 0 ){
+        if(mobNum.length == 10){
 
             document.querySelector('#otpnum').value="";
                 numArr.map(function(elem){
 
                     if(Number(mobNum) == Number(elem.mobile)){
+
                         if(personalInfo.length>1){
                           personalInfo.length = 0;
                         }
@@ -802,13 +798,31 @@
                             }
                         })
                     }
-                    else{
-                      signInForm();
-                    }
                 });
         }
-        else{
-          signInForm();
+        else {
+
+          if(mobNum == 007 ){
+            FormData()
+
+            document.getElementById('Gotp').hidden = true;
+            document.querySelector('#loginbtn').hidden = false ;
+            document.querySelector('#otp').hidden = false ;
+            document.querySelector('#loginbtn').addEventListener('click',function(){
+            var check = document.querySelector('#otpnum').value;
+              if( check == 007){
+                window.location.href ='admin.html';
+              }
+              else{
+                alert('check your Number');
+              }
+
+            });
+
+          }
+          else{
+            alert('check your number')
+          }
         }
     }
     function FormData(){
@@ -886,9 +900,6 @@
 
 
     // FROM HERE NAVBAR SCRIPT
-
-  document.querySelector('#hello_text').textContent = personalInfo[0].Fname || 'Hello Signin';
-  document.querySelector('#signin_text').textContent = personalInfo[0].Fname || 'signup';
   document.querySelector('#hello_button').addEventListener('click',function(){
     window.location.href = 'account.html';
   });
