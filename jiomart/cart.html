@@ -728,6 +728,9 @@
     </body>
 </html>
 <script>
+  var person = JSON.parse(localStorage.getItem('UserDetails')) || [] ;
+    document.querySelector('#hello_text').textContent = person[0].Fname || 'Hello Signin';
+    document.querySelector('#signin_text').textContent =person[0].Fname || 'signup';
 
   function home(){
       window.location.href ="home.html"
