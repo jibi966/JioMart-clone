@@ -331,10 +331,7 @@
           display: flex;
 
         }
-        #items-shower>div>h4{
-          margin: 50px 5px 0px 5px ;
-          color: slategray;
-        }
+
         #items-shower>img{
           width: 150px;
           height: 100px;
@@ -348,8 +345,13 @@
         #items-shower>div>button{
           width: 30px;
           height: 20px;
-          margin: 100px 0px 0px 5px;
+
+          margin: 100px 10px 0px 5px;
           background-color: skyblue;
+        }
+        #items-shower>div>h4{
+          margin: 50px 10px 0px 5px ;
+          color: slategray;
         }
         #bottom-cart-view{
           margin: auto;
@@ -726,7 +728,7 @@
     </body>
 </html>
 <script>
-     
+
   function home(){
       window.location.href ="home.html"
   }
@@ -782,7 +784,7 @@
       plus.addEventListener('click',function(){
         no = no+1 ;
         p.textContent = no ;
-        amount += Number(elem.MRP) * no ;
+        amount += Number(elem.MRP) ;
         document.querySelector('#total-Bill').textContent = amount ;
       });
       minus.addEventListener('click',function(event,index){
