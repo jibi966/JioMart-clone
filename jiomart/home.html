@@ -2559,9 +2559,7 @@ width: 30px;}
   <!-------------------------------------------- Footer END here-------------------------------------------------- -->
 </html>
 <script>
-  var person = JSON.parse(localStorage.getItem('UserDetails')) || [] ;
-    document.querySelector('#hello_text').textContent = person[0].Fname || 'Hello Signin';
-    document.querySelector('#signin_text').textContent =person[0].Fname || 'signup';
+  
   function sidenav() {
     document.getElementById("mysidebar").style.width = "330px";
   }
@@ -2685,6 +2683,8 @@ width: 30px;}
         mbtn2.textContent=(count2=count2+1)
         mbtn2.setAttribute("class","m1")
     }
-
+    var person = JSON.parse(localStorage.getItem('UserDetails')) || [] ;
+    document.querySelector('#hello_text').textContent = person[0].Fname || 'Hello Signin';
+    document.querySelector('#signin_text').textContent =person[0].Fname || 'signup';
   // pjscript-end
 </script>
