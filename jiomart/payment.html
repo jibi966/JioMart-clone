@@ -123,7 +123,8 @@
 
      }
      .prize p{
-      margin-left: 300px;
+      margin-left: 280px;
+      margin-bottom: 10px;
      }
      .prize h4{
        color: gray;
@@ -134,7 +135,7 @@
        margin-top: 20px;
      }
      .prize_1 p{
-      margin-left: 295px;
+      margin-left: 280px;
      }
  #payment_button{
    margin-top: 100px;
@@ -183,7 +184,7 @@
 </div>
 <div id="box2">
     <div class="icon">
-      
+
 <span><i class="fas fa-shopping-cart"></i><p>cart</p></span>
 <span><i class="fas fa-clipboard-list"></i><p>Order Summary</p></span>
 <span><i class="fas fa-credit-card"></i><p>Payment</p></span>
@@ -191,12 +192,12 @@
     <div id="payment">
      <h3>Payment Details </h3>
      <div class="prize">
-       <h4>MRP Total</h4>
-       <p>$ 122</p>
+       <h4 >MRP Total</h4>
+       <p id='mrp'>$ 122</p>
      </div>
      <div class="prize_1">
       <h5>Total Amount</h5>
-      <p>$ 122</p>
+      <p id='final_mrp'>$ 122</p>
     </div>
     <button id="payment_button">Make Payment</button>
   </div>
@@ -206,6 +207,10 @@
   </body>
 </html>
 <script>
+  var checkout_price_amount = JSON.parse(localStorage.getItem('price'));
+
+  document.querySelector('#mrp').textContent = checkout_price_amount.price_amount + " " +"/-";
+  document.querySelector('#final_mrp').textContent = checkout_price_amount.price_amount + " " +"/-";
   document.querySelector("#form").addEventListener("submit", func);
   function func(event) {
     event.preventDefault();
