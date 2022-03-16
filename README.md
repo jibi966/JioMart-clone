@@ -16,6 +16,9 @@ http://jio-mart-clone.vercel.app
 - Product Sorting
 - Collapsible Side nav bar
 - Can apply Coupon during checkout
+- cart page
+- checkout page
+- payment page(dynamic)
 
 ## Areas of responsibility
 
