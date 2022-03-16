@@ -27,6 +27,7 @@ http://jio-mart-clone.vercel.app
 
 ## Contributers
 - Jibin Babu
+- Prajwal Raut
 - Sayli
 - Nakul deshmukh
 - Niranjan
