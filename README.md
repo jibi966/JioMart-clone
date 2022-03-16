@@ -11,6 +11,13 @@ To try our app just click on [JioMart Clone](http://jio-mart-clone.vercel.app)
 http://jio-mart-clone.vercel.app
 ```
 
+
+## Tech-Stack
+
+- HTML
+- CSS
+- Javascript
+
 ## Features
 
 - Product Sorting
